@@ -3,9 +3,7 @@ ProtonSimulation calculates pristine Bragg Peak in a phantom, produced by a sour
 
 This code is based on my master's degree [dissertation](http://www1.inca.gov.br/pqrt/download/trab/dissertacao_mestrado_victor_gabriel_leandro_alves.pdf) (in Portuguese with english abstract)
 
-This code uses physics lists implementation from:
-Hadrontherapy advanced example for Geant4
-see more at: [Hadrontherapy](https://twiki.cern.ch/twiki/bin/view/Geant4/AdvancedExamplesHadrontherapy)
+This code uses physics lists implementation from [Hadrontherapy](https://twiki.cern.ch/twiki/bin/view/Geant4/AdvancedExamplesHadrontherapy)
 
 This code used the GDML auxiliary information for associating a sensitive detector to a volume.
 The detector construction consists of a call to GDMLProcessor which parses a GDML file and returns the pointer to the world volume.
@@ -24,12 +22,15 @@ geometry in GDML format.
      The Geant4 GDML parser used in ProtonSimulation dynamically downloads the small
      schema file at run time, so internet access is therefore required to
      load GDML in ProtonSimulation at run time. But you can use the GDML SCHEMA
-     located at /path/to/geant4/source/persistency/gdml/schema/schema.xsd.
+     located at: /path/to/geant4/source/persistency/gdml/schema/schema.xsd
 
-Take a look at *.gdml file and change line 3:
-    + xsi:noNamespaceSchemaLocation="http://service-spi.web.cern.ch/service-spi/app/releases/GDML/schema/gdml.xsd">
-    to:
-    + xsi:noNamespaceSchemaLocation="/path/to/geant4/source/persistency/gdml/schema/schema.xsd">
+Take a look at *.gdml file and change line 3.
+     
+     xsi:noNamespaceSchemaLocation="http://service-spi.web.cern.ch/service-spi/app/releases/GDML/schema/gdml.xsd">
+     
+     to:
+     
+     xsi:noNamespaceSchemaLocation="/path/to/geant4/source/persistency/gdml/schema/schema.xsd">
 
 
 ## Getting Started
@@ -41,7 +42,8 @@ On terminal build-folder:
 It saves output.csv file containing kerma results for each scoring ring.
 
 
-using python:
+using python.
+
      python Geant4Simulation.py G4_WATER_GEOMETRY.gdml output.csv run.mac
 
 requirements: [pandas](https://pandas.pydata.org/) and [matplotlib](https://matplotlib.org/)
@@ -50,7 +52,7 @@ it saves and reads output.csv to plot proton pristine Bragg curve:
 
 It saves above figure at build folder.
 
-The file run.mac is based on [GATE proton example]*https://dsarrut.gitbooks.io/gate-exercises/content/ex3.html)
+The file run.mac is based on [GATE proton example](https://dsarrut.gitbooks.io/gate-exercises/content/ex3.html)
 Proton source is defined using GEANT4 [GPS](http://nngroup.physics.sunysb.edu/captain/reference/master/detSim/dox/detSimGPS.html)
 
 Run 10000 particles should be enough.
