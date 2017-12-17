@@ -1,0 +1,20 @@
+#=====================================================
+# VISUALISATION
+#=====================================================
+
+#/vis/open OGLIQt
+/vis/open OGL
+/vis/drawVolume
+/vis/viewer/flush
+/tracking/storeTrajectory             1
+/vis/scene/add/trajectories
+/vis/scene/endOfEventAction           accumulate
+
+/vis/scene/add/axes            0 0 0 40 cm
+/vis/scene/add/text            40 0 0 cm  20 0 0   X
+/vis/scene/add/text            0 40 0 cm  20 0 0   Y
+/vis/scene/add/text            0 0 40 cm  20 0 0   Z
+/vis/viewer/set/auxiliaryEdge true
+
+# Run 1 particles
+/run/beamOn 1000
