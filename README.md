@@ -1,5 +1,7 @@
 # ProtonSimulation
-ProtonSimulation calculates pristine Bragg Peak in a phantom, produced by a source defined using GDML files.
+ProtonSimulation calculates pristine Bragg Peak in a phantom defined using GDML files.
+
+![geometry](https://user-images.githubusercontent.com/6777517/34076063-a55b0aa8-e2c1-11e7-927b-f9782534b38e.jpg)
 
 This code is based on my master's degree [dissertation](http://www1.inca.gov.br/pqrt/download/trab/dissertacao_mestrado_victor_gabriel_leandro_alves.pdf) (in Portuguese with english abstract)
 
