@@ -32,7 +32,7 @@ Take a look at *.gdml file and change line 3.
      
      to:
      
-     xsi:noNamespaceSchemaLocation="/path/to/geant4/source/persistency/gdml/schema/schema.xsd">
+     xsi:noNamespaceSchemaLocation="/path/to/geant4/source/persistency/gdml/schema/gdml.xsd">
 
 
 ## Getting Started
