@@ -9,7 +9,7 @@ This code uses physics lists implementation from [Hadrontherapy](https://twiki.c
 
 This code used the GDML auxiliary information for associating a sensitive detector to a volume.
 The detector construction consists of a call to GDMLProcessor which parses a GDML file and returns the pointer to the world volume.
-The scoring volumes use a GDML tag to create indexed kerma results for each scoring ring.
+The scoring volumes use a GDML tag to create indexed dose results for each scoring volume.
 
 This code implemented methods to extract each scorer position at cartesian axis (x,y,z).
 More details at DetectorConstruction.cc class, G4PhysicalVolumeModel.cc, [hypernews forum](http://hypernews.slac.stanford.edu/HyperNews/geant4/get/geometry/138/1/1.html)
