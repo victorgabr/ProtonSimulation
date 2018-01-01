@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
 <gdml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:noNamespaceSchemaLocation="/home/victor/geant4/source/source/persistency/gdml/schema/schema.xsd">
+xsi:noNamespaceSchemaLocation="/home/victor/geant4/source/source/persistency/gdml/schema/gdml.xsd">
   <define>
   </define>
 
@@ -14,6 +14,7 @@ xsi:noNamespaceSchemaLocation="/home/victor/geant4/source/source/persistency/gdm
       <atom unit="g/mole" value="1.00794"/>
     </material>
   </materials>
+
 
   <solids>
     <box lunit="mm" name="Cube" x="350" y="350" z="2"/>

@@ -23,7 +23,7 @@
 // ********************************************************************
 //
 // --------------------------------------------------------------
-//                 GEANT 4 - BrachySourceKerma
+//                 GEANT 4 - ProtonSimulation
 // --------------------------------------------------------------
 //
 // Code developed by:  Victor Gabriel Leandro Alves
@@ -33,7 +33,6 @@
 //    *    Run.cc                  *
 //    *                             *
 //    *******************************
-//    Saves an output.csv file
 
 #include "Run.hh"
 #include "G4MultiFunctionalDetector.hh"
@@ -81,8 +80,8 @@ Run::Run(const G4String &detectorName) : G4Run() {
 
 Run::~Run() {
     // Cleanup
-    G4int nMap = fMap.size();
-    for (G4int i = 0; i < nMap; i++) {
+    size_t nMap = fMap.size();
+    for (size_t i = 0; i < nMap; i++) {
         if (fMap[i])
             fMap[i]->clear();
     }
@@ -104,11 +103,12 @@ void Run::RecordEvent(const G4Event *aEvent) {
     //=======================================================
     // Sum up HitsMap of this Event  into HitsMap of this RUN
     //=======================================================
-    G4int nCol = fCollID.size();
-    for (G4int i = 0; i < nCol; i++) { // Loop over HitsCollection
+    size_t nCol = fCollID.size();
+    for (size_t i = 0; i < nCol; i++) { // Loop over HitsCollection
         G4THitsMap<G4double> *evtMap = 0;
         if (fCollID[i] >= 0) { // Collection is attached to pHCE
-            evtMap = (G4THitsMap<G4double> *)(pHCE->GetHC(fCollID[i]));
+            // C++11 casting
+            evtMap = dynamic_cast<G4THitsMap<G4double> *>(pHCE->GetHC(fCollID[i]));
         } else {
             G4cout << " Error evtMap Not Found " << i << G4endl;
         }
@@ -121,13 +121,15 @@ void Run::RecordEvent(const G4Event *aEvent) {
 }
 
 void Run::Merge(const G4Run *aRun) {
+
+    // casting local run at compile time
     const Run *localRun = static_cast<const Run *>(aRun);
 
     //=======================================================
     // Merge HitsMap of working threads
     //=======================================================
-    G4int nCol = localRun->fCollID.size();
-    for (G4int i = 0; i < nCol; i++) { // Loop over HitsCollection
+    size_t nCol = localRun->fCollID.size();
+    for (size_t i = 0; i < nCol; i++) { // Loop over HitsCollection
         if (localRun->fCollID[i] >= 0) {
             *fMap[i] += *localRun->fMap[i];
         }
@@ -136,11 +138,14 @@ void Run::Merge(const G4Run *aRun) {
     G4Run::Merge(aRun);
 }
 
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-//
+size_t Run::GetNumberOfHitsMap() const {
+    return fMap.size();
+}
+
+G4THitsMap<G4double> *Run::GetHitsMap(size_t i) {
+    return fMap[i];
+}
 //  Access method for HitsMap of the RUN
-//
-//-----
 // Access HitsMap.
 //  By  MultiFunctionalDetector name and Collection Name.
 G4THitsMap<G4double> *Run::GetHitsMap(const G4String &detName,
@@ -149,15 +154,12 @@ G4THitsMap<G4double> *Run::GetHitsMap(const G4String &detName,
     return GetHitsMap(fullName);
 }
 
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-//
-//-----
 // Access HitsMap.
 //  By full description of collection name, that is
 //    <MultiFunctional Detector Name>/<Primitive Scorer Name>
 G4THitsMap<G4double> *Run::GetHitsMap(const G4String &fullName) {
-    G4int nCol = fCollName.size();
-    for (G4int i = 0; i < nCol; i++) {
+    size_t nCol = fCollName.size();
+    for (size_t i = 0; i < nCol; i++) {
         if (fCollName[i] == fullName) {
             return fMap[i];
         }
@@ -165,23 +167,22 @@ G4THitsMap<G4double> *Run::GetHitsMap(const G4String &fullName) {
     return NULL;
 }
 
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-//
-//-----
 // - Dump All HitsMap of this RUN. (for debuging and monitoring of quantity).
 //   This method calls G4THisMap::PrintAll() for individual HitsMap.
 void Run::DumpAllScorer() {
 
     // - Number of HitsMap in this RUN.
-    G4int n = GetNumberOfHitsMap();
+    size_t n = GetNumberOfHitsMap();
     // - GetHitsMap and dump values.
-    for (G4int i = 0; i < n; i++) {
+    for (size_t i = 0; i < n; i++) {
         G4THitsMap<G4double> *runMap = GetHitsMap(i);
         if (runMap) {
             G4cout << " PrimitiveScorer RUN " << runMap->GetSDname() << ","
                    << runMap->GetName() << G4endl;
             G4cout << " Number of entries " << runMap->entries() << G4endl;
-            std::map<G4int, G4double *>::iterator itr = runMap->GetMap()->begin();
+
+            // C++11 auto type iterator
+            auto itr = runMap->GetMap()->begin();
             for (; itr != runMap->GetMap()->end(); itr++) {
                 G4cout << "  copy no, " << itr->first << "  ,Run Value, "
                        << *(itr->second) << G4endl;
@@ -189,136 +190,3 @@ void Run::DumpAllScorer() {
         }
     }
 }
-
-// void Run::DumpData(G4int nThetaBins) const {
-//    // Titles
-//    std::vector<G4String> title;
-//    title.push_back("Theta");
-
-//    // Output map - energy binning on x axis, theta on y
-//    std::map<G4int, std::vector<G4double>> output;
-
-//    // Standard 10 bins in theta
-//    // TODO replace hardcoded number of bins by number of primitive scorers
-//    // TODO implement ROOT scoring classes
-//    // Energy bins depends on the number of scorers
-//    G4int nEnergyBins = fMap.size();
-
-//    G4int i(0), j(0);
-
-//    // Initialise current to 0 in all bins
-//    for (i = 0; i < nThetaBins; i++) {
-//        for (j = 0; j < nEnergyBins; j++) {
-//            output[i].push_back(0);
-//        }
-//    }
-
-//    // Fill the output map
-//    i = 0;
-//    std::map<G4int, G4THitsMap<G4double> *>::const_iterator iter =
-//    fMap.begin();
-
-//    while (iter != fMap.end()) {
-//        G4THitsMap<G4double> *hitMap = iter->second;
-
-//        title.push_back(hitMap->GetName());
-
-//        std::map<G4int, G4double *> *myMap = hitMap->GetMap();
-
-//        for (j = 0; j < nThetaBins; j++) {
-//            G4double *current = (*myMap)[j];
-//            if (0 != current)
-//                output[j][i] = (*current);
-//        }
-
-//        i++;
-//        iter++;
-//    }
-
-//    Print(title, output);
-//}
-
-// void Run::DumpData(std::map<G4int, G4double> scorerPosisions) const {
-//    // Titles
-//    std::vector<G4String> title;
-//    title.push_back("Theta");
-
-//    // Output map - energy binning on x axis, theta on y
-//    std::map<G4int, std::vector<G4double>> output;
-
-//    // Standard 10 bins in theta
-//    // TODO replace hardcoded number of bins by number of primitive scorers
-//    // TODO implement ROOT scoring classes
-//    // Energy bins depends on the number of scorers
-//    G4int nEnergyBins = fMap.size();
-
-//    G4int i(0), j(0);
-//    G4int nThetaBins = 10;
-//    // Initialise current to 0 in all bins
-//    for (i = 0; i < nThetaBins; i++) {
-//        for (j = 0; j < nEnergyBins; j++) {
-//            output[i].push_back(0);
-//        }
-//    }
-
-//    // Fill the output map
-//    i = 0;
-//    std::map<G4int, G4THitsMap<G4double> *>::const_iterator iter =
-//    fMap.begin();
-
-//    while (iter != fMap.end()) {
-//        G4THitsMap<G4double> *hitMap = iter->second;
-
-//        title.push_back(hitMap->GetName());
-
-//        std::map<G4int, G4double *> *myMap = hitMap->GetMap();
-
-//        for (j = 0; j < nThetaBins; j++) {
-//            G4double *current = (*myMap)[j];
-//            if (0 != current)
-//                output[j][i] = (*current);
-//        }
-
-//        i++;
-//        iter++;
-//    }
-
-//    Print(title, output);
-//}
-
-// void Run::Print(const std::vector<G4String> &title,
-//                const std::map<G4int, std::vector<G4double>> &myMap) const {
-//    // Print to G4cout and an output file
-//    std::ofstream outFile("output.csv");
-
-//    // Print title vector
-//    std::vector<G4String>::const_iterator titleIter = title.begin();
-
-//    while (titleIter != title.end()) {
-//        G4cout << std::setw(8) << *titleIter << " ";
-//        titleIter++;
-//    }
-
-//    G4cout << G4endl;
-
-//    // Print current data
-//    std::map<G4int, std::vector<G4double>>::const_iterator iter =
-//    myMap.begin();
-
-//    while (iter != myMap.end()) {
-//        G4cout << std::setw(8) << std::setprecision(3) << iter->first << " ";
-
-//        std::vector<G4double>::const_iterator energyBinIter =
-//        iter->second.begin();
-
-//        while (energyBinIter != iter->second.end()) {
-//            G4double value = *energyBinIter;
-//            G4cout << std::setw(8) << std::setprecision(3) << value << " ";
-//            outFile << value << ",";
-//            energyBinIter++;
-//        }
-//        outFile << G4endl;
-//        G4cout << G4endl;
-//        iter++;
-//    }
-//}

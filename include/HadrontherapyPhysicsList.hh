@@ -27,12 +27,16 @@
 // https://twiki.cern.ch/twiki/bin/view/Geant4/AdvancedExamplesHadrontherapy
 //
 
+
+
 #ifndef HadrontherapyPhysicsList_h
 #define HadrontherapyPhysicsList_h 1
 
-#include "G4EmConfigurator.hh"
-#include "G4VModularPhysicsList.hh"
-#include "globals.hh"
+#include <G4EmConfigurator.hh>
+#include <G4VModularPhysicsList.hh>
+//#include "G4EmConfigurator.hh"
+//#include "G4VModularPhysicsList.hh"
+//#include "globals.hh"
 
 class G4VPhysicsConstructor;
 class HadrontherapyStepMax;

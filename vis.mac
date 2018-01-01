@@ -16,5 +16,33 @@
 /vis/scene/add/text            0 0 40 cm  20 0 0   Z
 /vis/viewer/set/auxiliaryEdge true
 
+
+#=====================================================
+# Pencil Beam Source - GATE example
+#=====================================================
+
+/gps/particle proton
+/gps/pos/type Beam
+/gps/pos/rot1 0 1 0
+/gps/pos/rot2 1 0 0
+/gps/pos/shape Circle
+/gps/pos/centre 0 0 -37 cm
+#/gps/pos/sigma_x 3 mm
+#/gps/pos/sigma_y 3 mm
+/gps/ene/mono 226 MeV
+/gps/ene/type Gauss
+#/gps/ene/sigma 2.0 MeV
+/gps/direction 0 0 1
+
+
+/control/verbose 2
+/run/verbose 2
+
+# Physics
+/Physics/addPhysics HADRONTHERAPY_1
+
 # Run 1 particles
-/run/beamOn 1000
+/run/beamOn 100
+
+
+

@@ -23,14 +23,14 @@
 // ********************************************************************
 //
 // --------------------------------------------------------------
-//                 GEANT 4 - BrachySourceKerma
+//                 GEANT 4 - ProtonSimulation
 // --------------------------------------------------------------
 //
 // Code developed by:  Victor Gabriel Leandro Alves
 // Copyright 2008-2017
 //    *******************************
 //    *                             *
-//    *    RunAction.c              *
+//    *    RunAction.cc              *
 //    *                             *
 //    *******************************
 #include "RunAction.hh"
@@ -40,16 +40,10 @@
 #include "G4SystemOfUnits.hh"
 #include "G4UnitsTable.hh"
 #include "Run.hh"
-#include <assert.h>
 #include <fstream>
 
+// always iniyialize member variables
 RunAction::RunAction() : G4UserRunAction(), fNx(1), fNy(1), fNz(1) {}
-
-RunAction::RunAction(G4int n) {
-    this->fNx = 1;
-    this->fNy = 1;
-    fNz = n;
-}
 
 RunAction::RunAction(const G4String outputFilename) {
     _outFilename = outputFilename;
@@ -57,32 +51,33 @@ RunAction::RunAction(const G4String outputFilename) {
 
 RunAction::~RunAction() {}
 
-void RunAction::BeginOfRunAction(const G4Run *aRun) {
-    G4cout << "### Run " << aRun->GetRunID() << " start." << G4endl;
-}
-
 G4Run *RunAction::GenerateRun() {
     G4cout << "Creating user define run class Run" << G4endl;
     return new Run("MyDetector");
 }
 
+void RunAction::BeginOfRunAction(const G4Run *aRun) {
+    G4cout << "### Run " << aRun->GetRunID() << " start." << G4endl;
+}
+
 void RunAction::EndOfRunAction(const G4Run *aRun) {
-    //    theRun->DumpData(nScoringVolumes);
+
+    // multithreading
     if (!IsMaster())
         return;
 
-    //- water phantom (Detector) Information.
-    //-- Number of segments in the water phantom.
+    // C++11 casting
     const DetectorConstruction *detector =
-        (const DetectorConstruction *)(G4RunManager::GetRunManager()
-                                       ->GetUserDetectorConstruction());
+        reinterpret_cast<const DetectorConstruction *>(
+            G4RunManager::GetRunManager()->GetUserDetectorConstruction());
 
-    // Getting scorer positions from Detector construction
+    // Getting scorer positions from Detector construction using public instance
+    // variable
     scorerPositions = detector->scorerPositions;
-    fNz = scorerPositions.size();
+    fNz = static_cast<G4int>(scorerPositions.size());
 
-    //- RE02Run object.
-    Run *theRun = (Run *)aRun;
+    //-  C++11 Casting a  Run object
+    Run *theRun = const_cast<Run *>(reinterpret_cast<const Run *>(aRun));
 
     G4int NbOfEvents = aRun->GetNumberOfEvent();
     if (NbOfEvents == 0)
@@ -94,20 +89,24 @@ void RunAction::EndOfRunAction(const G4Run *aRun) {
            << " events. " << G4endl;
     G4cout << "============================================================="
            << G4endl;
-
     // saving results
     saveResults(theRun, _outFilename);
 }
 
+G4int RunAction::CopyNo(G4int ix, G4int iy, G4int iz) {
+    return (iy * (fNx * fNz) + ix * fNz + iz);
+}
+
 void RunAction::saveResults(Run *theRun, const G4String fileName) {
 
+    // getting total hits map of scorers
     G4THitsMap<G4double> *totEdep = theRun->GetHitsMap("MyDetector/myScorer");
 
     // ITERATE on positions map
-
-    std::map<G4int, CLHEP::Hep3Vector>::iterator iter = scorerPositions.begin();
+    // C++11 auto type
+    auto iter = scorerPositions.begin();
     // rescaling z corrdinate to get 0 at phantom surface
-    G4double zMax = -100000000000000.0;
+    G4double zMax = -10000000000000.0;
     while (iter != scorerPositions.end()) {
         // z corrdinate from Hep3Vector
         if (iter->second[2] >= zMax) {
@@ -116,24 +115,35 @@ void RunAction::saveResults(Run *theRun, const G4String fileName) {
         iter++;
     }
 
-
-    std::map<G4int, CLHEP::Hep3Vector>::iterator it = scorerPositions.begin();
     std::ofstream file(fileName);
     G4String header = "replicaNumber,x,y,z,Edep";
+
     G4cout << header << G4endl;
     file << header << G4endl;
+
+    // C++11 auto type
+    auto it = scorerPositions.begin();
     while (it != scorerPositions.end()) {
         // getting scored quantity from hitsmap
-        G4double *totED =
-            (*totEdep)[CopyNo(it->second[0], it->second[1], it->first)];
+        //  Utility method for converting segment number of detector to copyNo of
+        //  HitsMap.
+        // Here x and y index is hard-coded
+        // TODO check this conversion
+        G4int hitsMapCopyNumber = CopyNo(0, 0, it->first);
+        G4double *totED = (*totEdep)[hitsMapCopyNumber];
 
-        if (!totED)
+        if (!totED) {
             totED = new G4double(0.0);
-
-        //rescale to 0 cm at phantom surface
+        }
+        // rescale to 0 cm at phantom surface
         G4double zPos = it->second[2] + zMax;
+
+        //        G4double energy = G4BestUnit((*totED,"Energy").GetValue();
+
         G4cout << it->first << "," << it->second[0] << "," << it->second[1] << ","
-               << zPos<< "," << *totED / MeV << G4endl;
+               << zPos << "," << G4BestUnit(*totED, "Energy") << G4endl;
+
+        // store int file
         file << it->first << "," << it->second[0] << "," << it->second[1] << ","
              << zPos << "," << *totED / MeV << G4endl;
 

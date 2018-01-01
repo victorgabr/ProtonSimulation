@@ -30,7 +30,7 @@
 // Copyright 2008-2017
 //    *******************************
 //    *                             *
-//    *    RunAction.hh              *
+//    *    RunAction.hh             *
 //    *                             *
 //    *******************************
 #ifndef RunAction_HH
@@ -41,7 +41,6 @@
 #include "G4UnitsTable.hh"
 #include "Run.hh"
 #include "RunAction.hh"
-#include <assert.h>
 
 #include "G4ConvergenceTester.hh"
 #include "G4UserRunAction.hh"
@@ -53,7 +52,6 @@ class RunAction : public G4UserRunAction {
 public:
     // Constructor
     RunAction();
-    RunAction(G4int nScoringVolumes);
     RunAction(G4String const outputFilename);
     // Destructor
     virtual ~RunAction();
@@ -64,29 +62,33 @@ public:
     void BeginOfRunAction(const G4Run *);
     void EndOfRunAction(const G4Run *);
     void fillPerEvent(G4double);
-    G4int nScoringVolumes;
-    std::map<G4int, CLHEP::Hep3Vector> scorerPositions;
 
     // utilities
     // Utility method for converting segment number of
     // water phantom to copyNo of HitsMap.
-    G4int CopyNo(G4int ix, G4int iy, G4int iz) {
-        return (iy * (fNx * fNz) + ix * fNz + iz);
-    }
+    // Multidimensional Arrays with Mappings
+    // Working with pointers to pointers is only one way to implement
+    // multidimensional arrays. You can also map the multiple dimensions
+    // to just one [Nx*Ny*Nz] 1D array that is allocated in memory like :
+    // int * p = new int[Nx*Ny*Nz], so to get a position one should use CopyNo
+    // function
+    G4int CopyNo(G4int ix, G4int iy, G4int iz);
 
     void saveResults(Run *aRun, const G4String fileName);
 
-
 private:
-
     // Data member
     G4String _outFilename;
 
     // - vector of MultiFunctionalDetecor names.
     std::vector<G4String> fSDName;
 
-    // for conversion of sengment number to copyNo.
+    // for conversion of segment number to copyNo.
     G4int fNx, fNy, fNz;
+
+public:
+    G4int nScoringVolumes;
+    std::map<G4int, CLHEP::Hep3Vector> scorerPositions;
 };
 
 #endif

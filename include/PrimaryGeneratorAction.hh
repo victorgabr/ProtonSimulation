@@ -32,13 +32,12 @@
 //    *                                          *
 //    ********************************************
 //
-// code developed by Susanna Guatelli
 
 #ifndef PrimaryGeneratorAction_h
 #define PrimaryGeneratorAction_h 1
 
-#include "G4SystemOfUnits.hh"
-#include "G4VUserPrimaryGeneratorAction.hh"
+#include "globals.hh"
+#include <G4VUserPrimaryGeneratorAction.hh>
 
 class G4GeneralParticleSource;
 

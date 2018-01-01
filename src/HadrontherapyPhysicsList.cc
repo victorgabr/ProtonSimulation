@@ -49,6 +49,7 @@
 // Physic dedicated to the ion-ion inelastic processes
 //
 #include "LocalIonIonInelasticPhysic.hh"
+#include <G4VModularPhysicsList.hh>
 
 #include "G4AutoDelete.hh"
 #include "G4DecayPhysics.hh"

@@ -53,28 +53,29 @@ public:
     // Destructor
     virtual ~Run();
 
+private:
+    // Helper function
+    void Print(const std::vector<G4String> &title,
+               const std::map<G4int, std::vector<G4double>> &out) const;
+
+    // Data member
+    std::vector<G4THitsMap<G4double> *> fMap;
+    std::vector<G4String> fCollName;
+    std::vector<G4int> fCollID;
+
 public:
     // Override this method in G4Run
     virtual void RecordEvent(const G4Event *);
     virtual void Merge(const G4Run*);
 
-    // Dump all data
-    void DumpData(G4int n) const;
-    // Dump all using mappings
-    void DumpData(std::map<G4int, G4double> scorerPosisions) const;
-
     // Access methods for scoring information.
     // - Number of HitsMap for this RUN.
     //   This is equal to number of collections.
-    G4int GetNumberOfHitsMap() const {
-        return fMap.size();
-    }
+    size_t GetNumberOfHitsMap() const;
     // - Get HitsMap of this RUN.
     //   by sequential number, by multifucntional name and collection name,
     //   and by collection name with full path.
-    G4THitsMap<G4double> *GetHitsMap(G4int i) {
-        return fMap[i];
-    }
+    G4THitsMap<G4double> *GetHitsMap(size_t i);
     G4THitsMap<G4double> *GetHitsMap(const G4String &detName,
                                      const G4String &colName);
     G4THitsMap<G4double> *GetHitsMap(const G4String &fullName);
@@ -82,16 +83,6 @@ public:
     //   This method calls G4THisMap::PrintAll() for individual HitsMap.
     void DumpAllScorer();
 
-private:
-    // Helper function
-    void Print(const std::vector<G4String> &title,
-               const std::map<G4int, std::vector<G4double>> &out) const;
-
-    // Data member
-    //    std::map<G4int, G4THitsMap<G4double> *> fMap;
-    std::vector<G4THitsMap<G4double> *> fMap;
-    std::vector<G4String> fCollName;
-    std::vector<G4int> fCollID;
 };
 
 #endif

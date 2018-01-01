@@ -23,7 +23,7 @@
 // ********************************************************************
 //
 // --------------------------------------------------------------
-//                 GEANT 4 - BrachySourceKerma
+//                 GEANT 4
 // --------------------------------------------------------------
 //
 // Code developed by:  Victor Gabriel Leandro Alves
@@ -35,44 +35,23 @@
 //    *******************************
 
 #include "DetectorConstruction.hh"
-
-// Geant4 includes
-//
-#include "G4GeometryManager.hh"
-#include "G4VisAttributes.hh"
-#include "globals.hh"
-
-// Materials
-//
-#include "G4Material.hh"
-
-// Geometry includes
-
-#include "G4LogicalVolume.hh"
-#include "G4LogicalVolumeStore.hh"
-#include "G4VPhysicalVolume.hh"
-
-// GDML parser include
-//
-#include "G4GDMLParser.hh"
-#include "G4GDMLReadStructure.hh"
-
 // Scoring
-
-#include "G4MultiFunctionalDetector.hh"
-#include "G4PSDoseDeposit.hh"
-#include "G4PSEnergyDeposit.hh"
-#include "G4PSEnergyDeposit3D.hh"
-#include "G4SDManager.hh"
-#include "G4SDParticleFilter.hh"
-#include "G4TransportationManager.hh"
-#include "G4VSensitiveDetector.hh"
-
-#include <G4Version.hh>
-
-#include "G4Material.hh"
-#include "G4NistManager.hh"
-#include "globals.hh"
+//#include "G4MultiFunctionalDetector.hh"
+//#include "G4PSDoseDeposit.hh"
+//#include "G4PSEnergyDeposit.hh"
+//#include "G4PSEnergyDeposit3D.hh"
+//#include "G4SDManager.hh"
+//#include "G4SDParticleFilter.hh"
+//#include "G4TransportationManager.hh"
+//#include "G4VSensitiveDetector.hh"
+#include <G4PSCylinderSurfaceCurrent.hh>
+#include <G4PSEnergyDeposit.hh>
+#include <G4SDManager.hh>
+#include <G4SDParticleFilter.hh> // Geant4 includes
+//
+//#include "G4GeometryManager.hh"
+//#include "G4VisAttributes.hh"
+//#include "globals.hh"
 
 DetectorConstruction::DetectorConstruction() {
     fReadFile = "";
@@ -104,22 +83,6 @@ void DetectorConstruction::readGDML(G4String fileName) {
     // Giving World Physical Volume from GDML Parser
     //
     fWorldPhysVol = parser.GetWorldVolume();
-
-    // getting the number of scoring volumes
-    // TODO implement a loop to find daugther with parameterized columes
-    //    G4LogicalVolume *lw = fWorldPhysVol->GetLogicalVolume();
-    //    //    G4int nd = lw->GetNoDaughters();
-
-    //    //    lw->GetDaughter(0)->GetLogicalVolume()->Get
-
-    //    // detectors
-    //    // TODO not to hardcode
-    //    G4VPhysicalVolume *pD0 = lw->GetDaughter(1);
-    //    //    G4int nd1 = pD0->GetLogicalVolume()->GetNoDaughters();
-    //    G4VPhysicalVolume *pDauVolume = pD0->GetLogicalVolume()->GetDaughter(0);
-
-    //    G4int nCopies = pDauVolume->GetMultiplicity();
-    //    SetNumberOfVolumes(nCopies);
 }
 
 void DetectorConstruction::setScoring() {
@@ -185,19 +148,27 @@ void DetectorConstruction::setScoring() {
 
     //    G4PSDoseDeposit* scorer = new G4PSDoseDeposit("myScorer");
     G4PSEnergyDeposit *scorer = new G4PSEnergyDeposit("myScorer");
+    //    G4PSCylinderSurfaceCurrent *scorer =
+    //        new G4PSCylinderSurfaceCurrent("myScorer", fCurrent_In);
     //    G4PSEnergyDeposit3D *scorer =
     //        new G4PSEnergyDeposit3D("myScorer", 1, 1, nScoreVols);
 
     // filtering protons
     G4SDParticleFilter *protonFilter = new G4SDParticleFilter("protonFilter");
     protonFilter->add("proton");
+    // filtering protons
+    //    G4SDParticleFilter *gammaFilter = new G4SDParticleFilter("GammaFilter");
+    //    gammaFilter->add("gamma");
+
+    //    scorer->SetFilter(gammaFilter);
+
     //    protonFilter->add("gamma");
     scorer->SetFilter(protonFilter);
     // Registering scorer
     detector->RegisterPrimitive(scorer);
 
     G4cout << "Created G4MultiFunctionalDetector named " << detector->GetName()
-           << ", and a G4PSDoseDeposit "
+           << ", and a G4SDParticleFilter "
            << "named " << scorer->GetName() << G4endl;
 }
 
@@ -205,27 +176,26 @@ std::map<G4int, CLHEP::Hep3Vector> DetectorConstruction::GetScorerPositions() {
     return scorerPositions;
 }
 
-void DetectorConstruction::DescriptionFcnPtr(G4VPhysicalVolume *aPV, int aDepth,
-        int replicaNo,
+void DetectorConstruction::DescriptionFcnPtr(G4VPhysicalVolume *aPV,
+        G4int aDepth, G4int replicaNo,
         const G4Transform3D &aTransform) {
 
     if (aPV->GetCopyNo() == -1) {
-        G4cout << "Name " << aPV->GetName() << G4endl;
+        G4cout << "Name: " << aPV->GetName() << G4endl;
         G4cout << "copy number: " << aPV->GetCopyNo() << G4endl;
         G4cout << "replicaNo: " << replicaNo << G4endl;
-        G4cout << "aDepth : " << aDepth << G4endl;
+        G4cout << "aDepth: " << aDepth << G4endl;
         G4cout << "Transform: " << aTransform.getTranslation() << G4endl;
         G4cout << "Z pos: " << aTransform.getTranslation()[2] << G4endl;
         scorerPositions[replicaNo] = aTransform.getTranslation();
     }
-    // TODO detector positions and associate it with a output.
 }
 
-void DetectorConstruction::TraverseReplicas(G4VPhysicalVolume *aPV, int aDepth,
+void DetectorConstruction::TraverseReplicas(G4VPhysicalVolume *aPV,
+        G4int aDepth,
         const G4Transform3D &aTransform) {
     // Recursively visit all of the geometry below the physical volume
     // pointed to by aPV including replicas.
-
     G4ThreeVector originalTranslation = aPV->GetTranslation();
     G4RotationMatrix *pOriginalRotation = aPV->GetRotation();
 
@@ -237,7 +207,7 @@ void DetectorConstruction::TraverseReplicas(G4VPhysicalVolume *aPV, int aDepth,
 
         aPV->GetReplicationData(axis, nReplicas, width, offset, consuming);
 
-        for (int n = 0; n < nReplicas; n++) {
+        for (G4int n = 0; n < nReplicas; n++) {
             switch (axis) {
             default:
             case kXAxis:
@@ -256,9 +226,6 @@ void DetectorConstruction::TraverseReplicas(G4VPhysicalVolume *aPV, int aDepth,
                 aPV->SetRotation(0);
                 break;
             case kRho:
-                // Lib::Out::putL("GeometryVisitor::visit: WARNING:");
-                // Lib::Out::putL(" built-in replicated volumes replicated");
-                // Lib::Out::putL(" in radius are not yet properly visualizable.");
                 aPV->SetTranslation(G4ThreeVector(0, 0, 0));
                 aPV->SetRotation(0);
                 break;
@@ -273,49 +240,34 @@ void DetectorConstruction::TraverseReplicas(G4VPhysicalVolume *aPV, int aDepth,
             break;
 
             } // axis switch
-
             DescribeAndDescendGeometry(aPV, aDepth, n, aTransform);
-
         } // num replicas for loop
     }   // if replicated
-    else
+    else {
         DescribeAndDescendGeometry(aPV, aDepth, aPV->GetCopyNo(), aTransform);
-
+    }
     // Restore original transformation...
     aPV->SetTranslation(originalTranslation);
     aPV->SetRotation(pOriginalRotation);
 }
 
 void DetectorConstruction::DescribeAndDescendGeometry(
-    G4VPhysicalVolume *aPV, int aDepth, int replicaNo,
+    G4VPhysicalVolume *aPV, G4int aDepth, G4int replicaNo,
     const G4Transform3D &aTransform) {
+
     G4Transform3D *transform =
         new G4Transform3D(*(aPV->GetObjectRotation()), aPV->GetTranslation());
 
     G4Transform3D newTransform = aTransform * (*transform);
+
     delete transform;
-
     // Call the routine we use to print out geometry descriptions, make
-    // tables, etc. It needs to be a memeber function of the class
-
+    // tables, etc. It needs to be a member function of the class
     this->DescriptionFcnPtr(aPV, aDepth, replicaNo, newTransform);
+    G4int nDaughters = aPV->GetLogicalVolume()->GetNoDaughters();
 
-    int nDaughters = aPV->GetLogicalVolume()->GetNoDaughters();
-
-    for (int iDaughter = 0; iDaughter < nDaughters; iDaughter++)
+    for (G4int iDaughter = 0; iDaughter < nDaughters; iDaughter++) {
         TraverseReplicas(aPV->GetLogicalVolume()->GetDaughter(iDaughter),
                          aDepth + 1, newTransform);
-}
-
-// ----------------------------------------------------------------------------
-//
-// Constructs geometries and materials
-//
-
-void DetectorConstruction::SetNumberOfVolumes(G4int n) {
-    nScoreVols = n;
-}
-
-G4int DetectorConstruction::GetNumberOfScoreVolumes() {
-    return nScoreVols;
+    }
 }

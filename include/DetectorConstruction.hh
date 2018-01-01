@@ -37,12 +37,8 @@
 #ifndef DetectorConstruction_H
 #define DetectorConstruction_H 1
 
-#include "G4GDMLParser.hh"
-#include "G4VUserDetectorConstruction.hh"
-
-#include "G4Material.hh"
-
-#include "globals.hh"
+#include <G4GDMLParser.hh>
+#include <G4VUserDetectorConstruction.hh>
 
 class DetectorMessenger;
 
@@ -53,14 +49,13 @@ public:
     // Constructor and destructor
     //
     DetectorConstruction();
-    DetectorConstruction(const G4String& File);
+    DetectorConstruction(const G4String &File);
     ~DetectorConstruction();
 
     // Volume Constructor Method
-    G4VPhysicalVolume* Construct();
+    G4VPhysicalVolume *Construct();
 
     // Writing and Reading GDML
-    void SetNumberOfVolumes(G4int n);
     G4int GetNumberOfScoreVolumes();
 
     void readGDML(G4String fileName);
@@ -74,9 +69,7 @@ private:
     // Reading and Writing Settings
     G4String fReadFile;
 
-    G4VPhysicalVolume* fWorldPhysVol;
-
-
+    G4VPhysicalVolume *fWorldPhysVol;
 
 public:
     // position mapping
@@ -84,16 +77,16 @@ public:
     std::map<G4int, CLHEP::Hep3Vector> scorerPositions;
     std::map<G4int, CLHEP::Hep3Vector> GetScorerPositions();
 
-    void DescriptionFcnPtr(G4VPhysicalVolume* aPV, int aDepth, int replicaNo,
-                           const G4Transform3D& aTransform);
+    void DescriptionFcnPtr(G4VPhysicalVolume *aPV, G4int aDepth, G4int replicaNo,
+                           const G4Transform3D &aTransform);
 
 private:
-    void TraverseReplicas(G4VPhysicalVolume* aPV, int aDepth,
-                          const G4Transform3D& aTransform);
+    void TraverseReplicas(G4VPhysicalVolume *aPV, G4int aDepth,
+                          const G4Transform3D &aTransform);
 
-    void DescribeAndDescendGeometry(G4VPhysicalVolume* aPV, int aDepth,
-                                    int replicaNo,
-                                    const G4Transform3D& aTransform);
+    void DescribeAndDescendGeometry(G4VPhysicalVolume *aPV, G4int aDepth,
+                                    G4int replicaNo,
+                                    const G4Transform3D &aTransform);
 };
 
 // ----------------------------------------------------------------------------

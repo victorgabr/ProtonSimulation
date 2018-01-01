@@ -40,15 +40,8 @@
 // $Id: PrimaryGeneratorAction.ccBrachytherapy example 84280 2014-10-13
 // 07:21:10Z gcosmo $
 //
-
-#include "globals.hh"
-
-#include "G4Event.hh"
-#include "G4GeneralParticleSource.hh"
-#include "G4RunManager.hh"
-#include "G4SystemOfUnits.hh"
 #include "PrimaryGeneratorAction.hh"
-#include "Randomize.hh"
+#include <G4GeneralParticleSource.hh>
 
 PrimaryGeneratorAction::PrimaryGeneratorAction() {
     // Use the GPS to generate primary particles,
@@ -63,6 +56,7 @@ PrimaryGeneratorAction::~PrimaryGeneratorAction() {
 
 void PrimaryGeneratorAction::GeneratePrimaries(G4Event *anEvent) {
     gun->GeneratePrimaryVertex(anEvent);
+
 }
 
 G4double PrimaryGeneratorAction::getParticleEnergy() {
