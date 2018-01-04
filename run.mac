@@ -22,7 +22,7 @@
 
 
 # Run particles
-/run/beamOn 100000
+/run/beamOn 100
 
 
 

@@ -49,7 +49,7 @@ public:
     // Constructor and destructor
     //
     DetectorConstruction();
-    DetectorConstruction(const G4String &File);
+    DetectorConstruction(const G4String File);
     ~DetectorConstruction();
 
     // Volume Constructor Method
@@ -58,7 +58,7 @@ public:
     // Writing and Reading GDML
     G4int GetNumberOfScoreVolumes();
 
-    void readGDML(G4String fileName);
+    void readGDML();
     void setScoring();
 
 private:
@@ -69,6 +69,8 @@ private:
     // Reading and Writing Settings
     G4String fReadFile;
 
+    // Reading and Writing Settings
+    const G4String _gdmlFile;
     G4VPhysicalVolume *fWorldPhysVol;
 
 public:

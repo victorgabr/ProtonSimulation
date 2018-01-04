@@ -43,6 +43,7 @@
 #include "Randomize.hh"
 #include "RunAction.hh"
 #include "globals.hh"
+
 #ifdef G4UI_USE
 #include "G4UIExecutive.hh"
 #endif
@@ -51,9 +52,8 @@
 #include "G4VisExecutive.hh"
 #endif
 
+
 int main(int argc, char **argv) {
-    // Construct the default run manager
-    //
 
     CLHEP::HepRandom::setTheEngine(new CLHEP::RanecuEngine);
     // Set the random number generator manually
@@ -62,9 +62,10 @@ int main(int argc, char **argv) {
     CLHEP::HepRandom::setTheSeed(myseed);
 
     // Set mandatory initialization and user action classes
-    G4String fileName = argv[1];
+    const G4String fileName = argv[1];
     G4String outFilename = argv[2];
     G4String macroFilename = argv[3];
+
     DetectorConstruction *detector = new DetectorConstruction(fileName);
 
     // Start Run manager

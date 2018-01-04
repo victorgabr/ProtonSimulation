@@ -53,18 +53,19 @@
 //#include "G4VisAttributes.hh"
 //#include "globals.hh"
 
-DetectorConstruction::DetectorConstruction() {
-    fReadFile = "";
-}
-
-DetectorConstruction::DetectorConstruction(const G4String &File) {
-    readGDML(File);
-}
+//DetectorConstruction::DetectorConstruction(G4String &File) {
+//    readGDML(File);
+//}
 
 // ----------------------------------------------------------------------------
 //
 // Destructor
 //
+DetectorConstruction::DetectorConstruction(const G4String File):_gdmlFile(File)
+{
+    this->readGDML();
+}
+
 DetectorConstruction::~DetectorConstruction() {
     //    if(detectorMessenger) delete detectorMessenger;
 }
@@ -76,9 +77,9 @@ G4VPhysicalVolume *DetectorConstruction::Construct() {
     return fWorldPhysVol;
 }
 
-void DetectorConstruction::readGDML(G4String fileName) {
+void DetectorConstruction::readGDML() {
     // **** LOOK HERE*** FOR READING GDML FILES
-    parser.Read(fileName);
+    parser.Read(_gdmlFile, false);
     G4cout << *(G4Material::GetMaterialTable()) << G4endl;
     // Giving World Physical Volume from GDML Parser
     //
@@ -157,12 +158,6 @@ void DetectorConstruction::setScoring() {
     G4SDParticleFilter *protonFilter = new G4SDParticleFilter("protonFilter");
     protonFilter->add("proton");
     // filtering protons
-    //    G4SDParticleFilter *gammaFilter = new G4SDParticleFilter("GammaFilter");
-    //    gammaFilter->add("gamma");
-
-    //    scorer->SetFilter(gammaFilter);
-
-    //    protonFilter->add("gamma");
     scorer->SetFilter(protonFilter);
     // Registering scorer
     detector->RegisterPrimitive(scorer);
