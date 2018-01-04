@@ -121,7 +121,9 @@ Note the Makefile and that all the scripts for running the ProtonSimulation appl
 
 [More details](https://geant4.web.cern.ch/geant4/UserDocumentation/UsersGuides/ForApplicationDeveloper/html/ch02s08.html)
 
-Comming soon: Windows 10, Qt5.10.0, MSVC-2017 64 bits. XercesC XLM Parser and ICU builded from source.  
+##  Comming soon: 
+
+Windows 10, Qt5.10.0, MSVC-2017 64 bits. XercesC XLM Parser and ICU builded from source.  
 
 ## Running the tests
 
