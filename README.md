@@ -155,4 +155,4 @@ This project is licensed under http://geant4.web.cern.ch/geant4/license/LICENSE.
 Thanks to:
 * The [GEANT4 developers](http://geant4.web.cern.ch/geant4/collaboration/contacts.shtml)
 * The best free C++ IDE if have found: [QT-creator Open Source](https://www.qt.io/download-qt-for-application-development)
-* John Purcell's [free C++ course](https://www.udemy.com/free-learn-c-tutorial-beginners/) - It helped me understand a lot of C++ details to refactor this code.
+* John Purcell's [free C++ course](https://www.udemy.com/free-learn-c-tutorial-beginners/) - It helped me to understand a lot of C++ details to refactor this code.
