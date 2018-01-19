@@ -19,21 +19,6 @@ To use Geant4 and ProtonSimulation needs to be built with GDML usage on (default
 information please refer to the [GDML website](http://gdml.web.cern.ch/GDML) and
 [manual](http://gdml.web.cern.ch/GDML/doc/GDMLmanual.pdf).
 
-This format is widely supported and other geometry software may be able to export
-geometry in GDML format.
-     The Geant4 GDML parser used in ProtonSimulation dynamically downloads the small
-     schema file at run time, so internet access is therefore required to
-     load GDML in ProtonSimulation at run time. But you can use the GDML SCHEMA
-     located at: /path/to/geant4/source/persistency/gdml/schema/schema.xsd
-
-Take a look at *.gdml file and change line 3.
-     
-     xsi:noNamespaceSchemaLocation="http://service-spi.web.cern.ch/service-spi/app/releases/GDML/schema/gdml.xsd">
-     
-     to:
-     
-     xsi:noNamespaceSchemaLocation="/path/to/geant4/source/persistency/gdml/schema/gdml.xsd">
-
 
 ## Getting Started
 
