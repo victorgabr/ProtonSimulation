@@ -1,5 +1,10 @@
 # ProtonSimulation
-ProtonSimulation calculates pristine Bragg Peak in a phantom defined using GDML files.
+ProtonSimulation calculates pristine Bragg peak and prompt Gamma spectra in a phantom defined using GDML files.
+
+GDML (Geometry Description Markup Language) is an XML schema for detector description.
+To use Geant4 and ProtonSimulation needs to be built with GDML usage on (default true). For more
+information please refer to the [GDML website](http://gdml.web.cern.ch/GDML) and
+[manual](http://gdml.web.cern.ch/GDML/doc/GDMLmanual.pdf).
 
 ![geometry](https://user-images.githubusercontent.com/6777517/34076063-a55b0aa8-e2c1-11e7-927b-f9782534b38e.jpg)
 
@@ -7,47 +12,50 @@ This code is based on my master's degree [dissertation](http://www1.inca.gov.br/
 
 This code uses physics lists implementation from [Hadrontherapy](https://twiki.cern.ch/twiki/bin/view/Geant4/AdvancedExamplesHadrontherapy)
 
-This code used the GDML auxiliary information for associating a sensitive detector to a volume.
-The detector construction consists of a call to GDMLProcessor which parses a GDML file and returns the pointer to the world volume.
-The scoring volumes use a GDML tag to create indexed dose results for each scoring volume.
+This code also implements scoring methods described at [GEANT4 tutorial](http://geant4.slac.stanford.edu/SLACTutorial14/Scoring1.pdf).
 
-This code implemented methods to extract each scorer position at cartesian axis (x,y,z).
-More details at DetectorConstruction.cc class, G4PhysicalVolumeModel.cc, [hypernews forum](http://hypernews.slac.stanford.edu/HyperNews/geant4/get/geometry/138/1/1.html)
-
-GDML (Geometry Description Markup Language) is an XML schema for detector description.
-To use Geant4 and ProtonSimulation needs to be built with GDML usage on (default true). For more
-information please refer to the [GDML website](http://gdml.web.cern.ch/GDML) and
-[manual](http://gdml.web.cern.ch/GDML/doc/GDMLmanual.pdf).
-
+More details at geant4/examples/extended/runAndEvent/RE03
 
 ## Getting Started
-
 On terminal build-folder:
 
-    ./ProtonSimulation G4_WATER_GEOMETRY.gdml output.csv run.mac
+    ./ProtonSimulation G4_WATER_GEOMETRY.gdml
+     
+     or 
+     
+     ./ProtonSimulation Prompt_photon_simulation.gdml
 
-It saves output.csv file containing kerma results for each scoring ring.
 
+The init.mac file is always executed.  
+     
+Python requirements: [pandas](https://pandas.pydata.org/) and [matplotlib](https://matplotlib.org/)
 
-using python.
+The file init.mac is based on [GATE proton example](https://dsarrut.gitbooks.io/gate-exercises/content/ex3.html)
 
-     python Geant4Simulation.py G4_WATER_GEOMETRY.gdml output.csv run.mac
-
-requirements: [pandas](https://pandas.pydata.org/) and [matplotlib](https://matplotlib.org/)
-
-it saves and reads output.csv to plot proton pristine Bragg curve:
-
-It saves above figure at build folder.
-
-The file run.mac is based on [GATE proton example](https://dsarrut.gitbooks.io/gate-exercises/content/ex3.html)
 Proton source is defined using GEANT4 [GPS](http://nngroup.physics.sunysb.edu/captain/reference/master/detSim/dox/detSimGPS.html)
-
-Run 10000 particles should be enough.
-
-/run/beamOn 10000
 
 Example result:
 ![g4_water_geometry gdml - 226 mev- pristine bragg peak](https://user-images.githubusercontent.com/6777517/34075937-409cef8a-e2be-11e7-8cdd-fc9772981484.jpg)
+
+ProtonSimulation code can be used to simulate prompt Gamma spectra at Bragg peak. 
+
+Python classes:
+    
+    macroWriter.py and spectraReader.py
+    
+Exeample results:
+
+Geometry:
+    ![prompgammageometry](https://user-images.githubusercontent.com/6777517/35195840-70315552-feb0-11e7-8cab-e69f70562b6f.jpg)
+
+
+Prompt gamma-ray spectra around 175 MeV proton Bragg peak in water
+
+   ![promptgammarayspectra_175mev](https://user-images.githubusercontent.com/6777517/35195851-98fbdc82-feb0-11e7-8be6-79e6ab2b721c.jpg)
+
+   
+references: [verification of proton range](http://iopscience.iop.org/article/10.1088/0031-9155/59/23/7089/pdf)
+            [MGH website](https://gray.mgh.harvard.edu/research/imaging/246-prompt-gamma)
 
 ### Prerequisites
 
@@ -115,9 +123,13 @@ Windows 10, Qt5.10.0, MSVC-2017 64 bits. XercesC XLM Parser and ICU builded from
 TODO: [Test Driven Development](http://agiledata.org/essays/tdd.html)
 
 ## Built With
-
+* [LLVM 5.0.1](http://llvm.org/)
+* [Clang++](http://clang.llvm.org/)
+* [Clang-format](https://clang.llvm.org/docs/ClangFormat.html)
 * [CMAKE](https://cmake.org/)
 * [QT-Creator](https://en.wikipedia.org/wiki/Qt_Creator)
+
+* [Pycharm-Community](https://www.jetbrains.com/pycharm/)
 
 ## Contributing
 
@@ -129,7 +141,9 @@ Any bug fixes or improvements are welcome.
 
 ## Author
     Victor Gabriel Leandro Alves, D.Sc.
-    Copyright 2017
+    Copyright 2017-2018
+   
+Citations are welcome. :smiley:
 
 ## License
 
@@ -140,4 +154,4 @@ This project is licensed under http://geant4.web.cern.ch/geant4/license/LICENSE.
 Thanks to:
 * The [GEANT4 developers](http://geant4.web.cern.ch/geant4/collaboration/contacts.shtml)
 * The best free C++ IDE if have found: [QT-creator Open Source](https://www.qt.io/download-qt-for-application-development)
-* John Purcell's [free C++ course](https://www.udemy.com/free-learn-c-tutorial-beginners/) - It helped me to understand a lot of C++ details to refactor this code.
+* John Purcell's [free](https://www.udemy.com/free-learn-c-tutorial-beginners/) and [advanced C++ course](https://www.udemy.com/learn-advanced-c-programming/)
