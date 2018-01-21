@@ -19,21 +19,6 @@ To use Geant4 and ProtonSimulation needs to be built with GDML usage on (default
 information please refer to the [GDML website](http://gdml.web.cern.ch/GDML) and
 [manual](http://gdml.web.cern.ch/GDML/doc/GDMLmanual.pdf).
 
-This format is widely supported and other geometry software may be able to export
-geometry in GDML format.
-     The Geant4 GDML parser used in ProtonSimulation dynamically downloads the small
-     schema file at run time, so internet access is therefore required to
-     load GDML in ProtonSimulation at run time. But you can use the GDML SCHEMA
-     located at: /path/to/geant4/source/persistency/gdml/schema/schema.xsd
-
-Take a look at *.gdml file and change line 3.
-     
-     xsi:noNamespaceSchemaLocation="http://service-spi.web.cern.ch/service-spi/app/releases/GDML/schema/gdml.xsd">
-     
-     to:
-     
-     xsi:noNamespaceSchemaLocation="/path/to/geant4/source/persistency/gdml/schema/gdml.xsd">
-
 
 ## Getting Started
 
@@ -155,4 +140,4 @@ This project is licensed under http://geant4.web.cern.ch/geant4/license/LICENSE.
 Thanks to:
 * The [GEANT4 developers](http://geant4.web.cern.ch/geant4/collaboration/contacts.shtml)
 * The best free C++ IDE if have found: [QT-creator Open Source](https://www.qt.io/download-qt-for-application-development)
-* John Purcell's [free C++ course](https://www.udemy.com/free-learn-c-tutorial-beginners/) - It helped me understand a lot of C++ details to refactor this code.
+* John Purcell's [free C++ course](https://www.udemy.com/free-learn-c-tutorial-beginners/) - It helped me to understand a lot of C++ details to refactor this code.
