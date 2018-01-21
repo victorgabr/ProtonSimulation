@@ -1,5 +1,5 @@
 # ProtonSimulation
-ProtonSimulation calculates pristine Bragg peak and prompt Gamma spectra in a phantom defined using GDML files.
+ProtonSimulation calculates pristine Bragg peak and prompt gamma spectra in a phantom defined using GDML files.
 
 GDML (Geometry Description Markup Language) is an XML schema for detector description.
 To use Geant4 and ProtonSimulation needs to be built with GDML usage on (default true). For more
@@ -54,7 +54,7 @@ Prompt gamma-ray spectra around 175 MeV proton Bragg peak in water
    ![promptgammarayspectra_175mev](https://user-images.githubusercontent.com/6777517/35195851-98fbdc82-feb0-11e7-8be6-79e6ab2b721c.jpg)
 
    
-references: [verification of proton range](http://iopscience.iop.org/article/10.1088/0031-9155/59/23/7089/pdf)
+references: [verification of proton range](http://iopscience.iop.org/article/10.1088/0031-9155/59/23/7089/pdf) and
             [MGH website](https://gray.mgh.harvard.edu/research/imaging/246-prompt-gamma)
 
 ### Prerequisites
