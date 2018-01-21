@@ -23,35 +23,26 @@
 // * acceptance of all terms of the Geant4 Software license.          *
 // ********************************************************************
 //
-// Hadrontherapy advanced example for Geant4
-// See more at:
-// https://twiki.cern.ch/twiki/bin/view/Geant4/AdvancedExamplesHadrontherapy
+// Author: S. Guatelli, susanna@uow.edu.au
+//
+#include "ActionInitialization.hh"
+#include "G4RunManager.hh"
+#include "PrimaryGeneratorAction.hh"
 
-#include "HadrontherapyPhysicsListMessenger.hh"
-#include "G4UIcmdWithADoubleAndUnit.hh"
-#include "G4UIcmdWithAString.hh"
-#include "G4UIdirectory.hh"
-#include "HadrontherapyPhysicsList.hh"
+ActionInitialization::ActionInitialization() : G4VUserActionInitialization() {}
 
-HadrontherapyPhysicsListMessenger::HadrontherapyPhysicsListMessenger(
-    HadrontherapyPhysicsList *pPhys)
-    : pPhysicsList(pPhys) {
-    physDir = new G4UIdirectory("/Physics/");
-    physDir->SetGuidance("Commands to activate physics models and set cuts");
+ActionInitialization::~ActionInitialization() {}
 
-    pListCmd = new G4UIcmdWithAString("/Physics/addPhysics", this);
-    pListCmd->SetGuidance("Add physics list.");
-    pListCmd->SetParameterName("PList", false);
-    pListCmd->AvailableForStates(G4State_PreInit, G4State_Idle);
+void ActionInitialization::BuildForMaster() const {
+    // In MT mode, to be clearer, the RunAction class for the master thread
+    // might be
+    // different than the one used for the workers.
+    // This RunAction will be called before and after starting the
+    // workers.
 }
 
-HadrontherapyPhysicsListMessenger::~HadrontherapyPhysicsListMessenger() {
-    delete physDir;
-}
-
-void HadrontherapyPhysicsListMessenger::SetNewValue(G4UIcommand *command,
-                                                    G4String newValue) {
-    if (command == pListCmd) {
-        pPhysicsList->AddPhysicsList(newValue);
-    }
+void ActionInitialization::Build() const {
+    // Initialize the primary particles
+    PrimaryGeneratorAction *primary = new PrimaryGeneratorAction();
+    SetUserAction(primary);
 }

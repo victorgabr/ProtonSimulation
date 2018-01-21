@@ -1,0 +1,40 @@
+# Call visualization macro
+/control/execute vis.mac
+
+# call scoring macro
+#/control/execute scoring.mac
+/control/execute promptGammaSpectra.mac
+
+# Pencil Beam Source - GATE example
+/gps/particle proton
+/gps/pos/type Beam
+/gps/pos/rot1 0 1 0
+/gps/pos/rot2 1 0 0
+/gps/pos/shape Circle
+/gps/pos/centre 0 0 -40 cm
+#/gps/pos/sigma_x 1 mm
+#/gps/pos/sigma_y 2 mm
+/gps/ene/mono 175 MeV
+#/gps/ene/type Gauss
+#/gps/ene/sigma 2.0 MeV
+/gps/direction 0 0 1
+
+# Run particles
+# Run particles
+/vis/disable
+/control/verbose 2
+/run/verbose 2
+/run/beamOn 100000
+
+# enable vis again
+/vis/enable
+# Draw columns
+/vis/scene/create
+/vis/sceneHandler/attach scene-0
+# /score/colorMap/setMinMax ! 0. 800.
+#/score/drawColumn spectraDetector fux0 0 0
+
+# dump scorer to file
+#/score/dumpQuantityToFile boxMesh_4 eDep EnergyDeposition_Proton_100MeV.csv
+#/score/dumpAllQuantitiesToFile boxMesh_1 ProtonSpectra.csv
+/score/dumpAllQuantitiesToFile spectraDetector PromptGammaSpectra.csv

@@ -1,0 +1,2008 @@
+#Defines a detector using a boxMesh command
+/score/create/boxMesh spectraDetector
+/score/mesh/boxSize 200.0 5.0 20.0 mm
+/score/mesh/nBin 1 1 1
+/score/mesh/translate/xyz 0.0 -150.0 0.0  mm
+# scoring spectra
+/score/quantity/flatSurfaceFlux fux0
+/score/filter/particleWithKineticEnergy range0 0.0 10.0 keV gamma
+/score/quantity/flatSurfaceFlux fux1
+/score/filter/particleWithKineticEnergy range1 10.0 20.0 keV gamma
+/score/quantity/flatSurfaceFlux fux2
+/score/filter/particleWithKineticEnergy range2 20.0 30.0 keV gamma
+/score/quantity/flatSurfaceFlux fux3
+/score/filter/particleWithKineticEnergy range3 30.0 40.0 keV gamma
+/score/quantity/flatSurfaceFlux fux4
+/score/filter/particleWithKineticEnergy range4 40.0 50.0 keV gamma
+/score/quantity/flatSurfaceFlux fux5
+/score/filter/particleWithKineticEnergy range5 50.0 60.0 keV gamma
+/score/quantity/flatSurfaceFlux fux6
+/score/filter/particleWithKineticEnergy range6 60.0 70.0 keV gamma
+/score/quantity/flatSurfaceFlux fux7
+/score/filter/particleWithKineticEnergy range7 70.0 80.0 keV gamma
+/score/quantity/flatSurfaceFlux fux8
+/score/filter/particleWithKineticEnergy range8 80.0 90.0 keV gamma
+/score/quantity/flatSurfaceFlux fux9
+/score/filter/particleWithKineticEnergy range9 90.0 100.0 keV gamma
+/score/quantity/flatSurfaceFlux fux10
+/score/filter/particleWithKineticEnergy range10 100.0 110.0 keV gamma
+/score/quantity/flatSurfaceFlux fux11
+/score/filter/particleWithKineticEnergy range11 110.0 120.0 keV gamma
+/score/quantity/flatSurfaceFlux fux12
+/score/filter/particleWithKineticEnergy range12 120.0 130.0 keV gamma
+/score/quantity/flatSurfaceFlux fux13
+/score/filter/particleWithKineticEnergy range13 130.0 140.0 keV gamma
+/score/quantity/flatSurfaceFlux fux14
+/score/filter/particleWithKineticEnergy range14 140.0 150.0 keV gamma
+/score/quantity/flatSurfaceFlux fux15
+/score/filter/particleWithKineticEnergy range15 150.0 160.0 keV gamma
+/score/quantity/flatSurfaceFlux fux16
+/score/filter/particleWithKineticEnergy range16 160.0 170.0 keV gamma
+/score/quantity/flatSurfaceFlux fux17
+/score/filter/particleWithKineticEnergy range17 170.0 180.0 keV gamma
+/score/quantity/flatSurfaceFlux fux18
+/score/filter/particleWithKineticEnergy range18 180.0 190.0 keV gamma
+/score/quantity/flatSurfaceFlux fux19
+/score/filter/particleWithKineticEnergy range19 190.0 200.0 keV gamma
+/score/quantity/flatSurfaceFlux fux20
+/score/filter/particleWithKineticEnergy range20 200.0 210.0 keV gamma
+/score/quantity/flatSurfaceFlux fux21
+/score/filter/particleWithKineticEnergy range21 210.0 220.0 keV gamma
+/score/quantity/flatSurfaceFlux fux22
+/score/filter/particleWithKineticEnergy range22 220.0 230.0 keV gamma
+/score/quantity/flatSurfaceFlux fux23
+/score/filter/particleWithKineticEnergy range23 230.0 240.0 keV gamma
+/score/quantity/flatSurfaceFlux fux24
+/score/filter/particleWithKineticEnergy range24 240.0 250.0 keV gamma
+/score/quantity/flatSurfaceFlux fux25
+/score/filter/particleWithKineticEnergy range25 250.0 260.0 keV gamma
+/score/quantity/flatSurfaceFlux fux26
+/score/filter/particleWithKineticEnergy range26 260.0 270.0 keV gamma
+/score/quantity/flatSurfaceFlux fux27
+/score/filter/particleWithKineticEnergy range27 270.0 280.0 keV gamma
+/score/quantity/flatSurfaceFlux fux28
+/score/filter/particleWithKineticEnergy range28 280.0 290.0 keV gamma
+/score/quantity/flatSurfaceFlux fux29
+/score/filter/particleWithKineticEnergy range29 290.0 300.0 keV gamma
+/score/quantity/flatSurfaceFlux fux30
+/score/filter/particleWithKineticEnergy range30 300.0 310.0 keV gamma
+/score/quantity/flatSurfaceFlux fux31
+/score/filter/particleWithKineticEnergy range31 310.0 320.0 keV gamma
+/score/quantity/flatSurfaceFlux fux32
+/score/filter/particleWithKineticEnergy range32 320.0 330.0 keV gamma
+/score/quantity/flatSurfaceFlux fux33
+/score/filter/particleWithKineticEnergy range33 330.0 340.0 keV gamma
+/score/quantity/flatSurfaceFlux fux34
+/score/filter/particleWithKineticEnergy range34 340.0 350.0 keV gamma
+/score/quantity/flatSurfaceFlux fux35
+/score/filter/particleWithKineticEnergy range35 350.0 360.0 keV gamma
+/score/quantity/flatSurfaceFlux fux36
+/score/filter/particleWithKineticEnergy range36 360.0 370.0 keV gamma
+/score/quantity/flatSurfaceFlux fux37
+/score/filter/particleWithKineticEnergy range37 370.0 380.0 keV gamma
+/score/quantity/flatSurfaceFlux fux38
+/score/filter/particleWithKineticEnergy range38 380.0 390.0 keV gamma
+/score/quantity/flatSurfaceFlux fux39
+/score/filter/particleWithKineticEnergy range39 390.0 400.0 keV gamma
+/score/quantity/flatSurfaceFlux fux40
+/score/filter/particleWithKineticEnergy range40 400.0 410.0 keV gamma
+/score/quantity/flatSurfaceFlux fux41
+/score/filter/particleWithKineticEnergy range41 410.0 420.0 keV gamma
+/score/quantity/flatSurfaceFlux fux42
+/score/filter/particleWithKineticEnergy range42 420.0 430.0 keV gamma
+/score/quantity/flatSurfaceFlux fux43
+/score/filter/particleWithKineticEnergy range43 430.0 440.0 keV gamma
+/score/quantity/flatSurfaceFlux fux44
+/score/filter/particleWithKineticEnergy range44 440.0 450.0 keV gamma
+/score/quantity/flatSurfaceFlux fux45
+/score/filter/particleWithKineticEnergy range45 450.0 460.0 keV gamma
+/score/quantity/flatSurfaceFlux fux46
+/score/filter/particleWithKineticEnergy range46 460.0 470.0 keV gamma
+/score/quantity/flatSurfaceFlux fux47
+/score/filter/particleWithKineticEnergy range47 470.0 480.0 keV gamma
+/score/quantity/flatSurfaceFlux fux48
+/score/filter/particleWithKineticEnergy range48 480.0 490.0 keV gamma
+/score/quantity/flatSurfaceFlux fux49
+/score/filter/particleWithKineticEnergy range49 490.0 500.0 keV gamma
+/score/quantity/flatSurfaceFlux fux50
+/score/filter/particleWithKineticEnergy range50 500.0 510.0 keV gamma
+/score/quantity/flatSurfaceFlux fux51
+/score/filter/particleWithKineticEnergy range51 510.0 520.0 keV gamma
+/score/quantity/flatSurfaceFlux fux52
+/score/filter/particleWithKineticEnergy range52 520.0 530.0 keV gamma
+/score/quantity/flatSurfaceFlux fux53
+/score/filter/particleWithKineticEnergy range53 530.0 540.0 keV gamma
+/score/quantity/flatSurfaceFlux fux54
+/score/filter/particleWithKineticEnergy range54 540.0 550.0 keV gamma
+/score/quantity/flatSurfaceFlux fux55
+/score/filter/particleWithKineticEnergy range55 550.0 560.0 keV gamma
+/score/quantity/flatSurfaceFlux fux56
+/score/filter/particleWithKineticEnergy range56 560.0 570.0 keV gamma
+/score/quantity/flatSurfaceFlux fux57
+/score/filter/particleWithKineticEnergy range57 570.0 580.0 keV gamma
+/score/quantity/flatSurfaceFlux fux58
+/score/filter/particleWithKineticEnergy range58 580.0 590.0 keV gamma
+/score/quantity/flatSurfaceFlux fux59
+/score/filter/particleWithKineticEnergy range59 590.0 600.0 keV gamma
+/score/quantity/flatSurfaceFlux fux60
+/score/filter/particleWithKineticEnergy range60 600.0 610.0 keV gamma
+/score/quantity/flatSurfaceFlux fux61
+/score/filter/particleWithKineticEnergy range61 610.0 620.0 keV gamma
+/score/quantity/flatSurfaceFlux fux62
+/score/filter/particleWithKineticEnergy range62 620.0 630.0 keV gamma
+/score/quantity/flatSurfaceFlux fux63
+/score/filter/particleWithKineticEnergy range63 630.0 640.0 keV gamma
+/score/quantity/flatSurfaceFlux fux64
+/score/filter/particleWithKineticEnergy range64 640.0 650.0 keV gamma
+/score/quantity/flatSurfaceFlux fux65
+/score/filter/particleWithKineticEnergy range65 650.0 660.0 keV gamma
+/score/quantity/flatSurfaceFlux fux66
+/score/filter/particleWithKineticEnergy range66 660.0 670.0 keV gamma
+/score/quantity/flatSurfaceFlux fux67
+/score/filter/particleWithKineticEnergy range67 670.0 680.0 keV gamma
+/score/quantity/flatSurfaceFlux fux68
+/score/filter/particleWithKineticEnergy range68 680.0 690.0 keV gamma
+/score/quantity/flatSurfaceFlux fux69
+/score/filter/particleWithKineticEnergy range69 690.0 700.0 keV gamma
+/score/quantity/flatSurfaceFlux fux70
+/score/filter/particleWithKineticEnergy range70 700.0 710.0 keV gamma
+/score/quantity/flatSurfaceFlux fux71
+/score/filter/particleWithKineticEnergy range71 710.0 720.0 keV gamma
+/score/quantity/flatSurfaceFlux fux72
+/score/filter/particleWithKineticEnergy range72 720.0 730.0 keV gamma
+/score/quantity/flatSurfaceFlux fux73
+/score/filter/particleWithKineticEnergy range73 730.0 740.0 keV gamma
+/score/quantity/flatSurfaceFlux fux74
+/score/filter/particleWithKineticEnergy range74 740.0 750.0 keV gamma
+/score/quantity/flatSurfaceFlux fux75
+/score/filter/particleWithKineticEnergy range75 750.0 760.0 keV gamma
+/score/quantity/flatSurfaceFlux fux76
+/score/filter/particleWithKineticEnergy range76 760.0 770.0 keV gamma
+/score/quantity/flatSurfaceFlux fux77
+/score/filter/particleWithKineticEnergy range77 770.0 780.0 keV gamma
+/score/quantity/flatSurfaceFlux fux78
+/score/filter/particleWithKineticEnergy range78 780.0 790.0 keV gamma
+/score/quantity/flatSurfaceFlux fux79
+/score/filter/particleWithKineticEnergy range79 790.0 800.0 keV gamma
+/score/quantity/flatSurfaceFlux fux80
+/score/filter/particleWithKineticEnergy range80 800.0 810.0 keV gamma
+/score/quantity/flatSurfaceFlux fux81
+/score/filter/particleWithKineticEnergy range81 810.0 820.0 keV gamma
+/score/quantity/flatSurfaceFlux fux82
+/score/filter/particleWithKineticEnergy range82 820.0 830.0 keV gamma
+/score/quantity/flatSurfaceFlux fux83
+/score/filter/particleWithKineticEnergy range83 830.0 840.0 keV gamma
+/score/quantity/flatSurfaceFlux fux84
+/score/filter/particleWithKineticEnergy range84 840.0 850.0 keV gamma
+/score/quantity/flatSurfaceFlux fux85
+/score/filter/particleWithKineticEnergy range85 850.0 860.0 keV gamma
+/score/quantity/flatSurfaceFlux fux86
+/score/filter/particleWithKineticEnergy range86 860.0 870.0 keV gamma
+/score/quantity/flatSurfaceFlux fux87
+/score/filter/particleWithKineticEnergy range87 870.0 880.0 keV gamma
+/score/quantity/flatSurfaceFlux fux88
+/score/filter/particleWithKineticEnergy range88 880.0 890.0 keV gamma
+/score/quantity/flatSurfaceFlux fux89
+/score/filter/particleWithKineticEnergy range89 890.0 900.0 keV gamma
+/score/quantity/flatSurfaceFlux fux90
+/score/filter/particleWithKineticEnergy range90 900.0 910.0 keV gamma
+/score/quantity/flatSurfaceFlux fux91
+/score/filter/particleWithKineticEnergy range91 910.0 920.0 keV gamma
+/score/quantity/flatSurfaceFlux fux92
+/score/filter/particleWithKineticEnergy range92 920.0 930.0 keV gamma
+/score/quantity/flatSurfaceFlux fux93
+/score/filter/particleWithKineticEnergy range93 930.0 940.0 keV gamma
+/score/quantity/flatSurfaceFlux fux94
+/score/filter/particleWithKineticEnergy range94 940.0 950.0 keV gamma
+/score/quantity/flatSurfaceFlux fux95
+/score/filter/particleWithKineticEnergy range95 950.0 960.0 keV gamma
+/score/quantity/flatSurfaceFlux fux96
+/score/filter/particleWithKineticEnergy range96 960.0 970.0 keV gamma
+/score/quantity/flatSurfaceFlux fux97
+/score/filter/particleWithKineticEnergy range97 970.0 980.0 keV gamma
+/score/quantity/flatSurfaceFlux fux98
+/score/filter/particleWithKineticEnergy range98 980.0 990.0 keV gamma
+/score/quantity/flatSurfaceFlux fux99
+/score/filter/particleWithKineticEnergy range99 990.0 1000.0 keV gamma
+/score/quantity/flatSurfaceFlux fux100
+/score/filter/particleWithKineticEnergy range100 1000.0 1010.0 keV gamma
+/score/quantity/flatSurfaceFlux fux101
+/score/filter/particleWithKineticEnergy range101 1010.0 1020.0 keV gamma
+/score/quantity/flatSurfaceFlux fux102
+/score/filter/particleWithKineticEnergy range102 1020.0 1030.0 keV gamma
+/score/quantity/flatSurfaceFlux fux103
+/score/filter/particleWithKineticEnergy range103 1030.0 1040.0 keV gamma
+/score/quantity/flatSurfaceFlux fux104
+/score/filter/particleWithKineticEnergy range104 1040.0 1050.0 keV gamma
+/score/quantity/flatSurfaceFlux fux105
+/score/filter/particleWithKineticEnergy range105 1050.0 1060.0 keV gamma
+/score/quantity/flatSurfaceFlux fux106
+/score/filter/particleWithKineticEnergy range106 1060.0 1070.0 keV gamma
+/score/quantity/flatSurfaceFlux fux107
+/score/filter/particleWithKineticEnergy range107 1070.0 1080.0 keV gamma
+/score/quantity/flatSurfaceFlux fux108
+/score/filter/particleWithKineticEnergy range108 1080.0 1090.0 keV gamma
+/score/quantity/flatSurfaceFlux fux109
+/score/filter/particleWithKineticEnergy range109 1090.0 1100.0 keV gamma
+/score/quantity/flatSurfaceFlux fux110
+/score/filter/particleWithKineticEnergy range110 1100.0 1110.0 keV gamma
+/score/quantity/flatSurfaceFlux fux111
+/score/filter/particleWithKineticEnergy range111 1110.0 1120.0 keV gamma
+/score/quantity/flatSurfaceFlux fux112
+/score/filter/particleWithKineticEnergy range112 1120.0 1130.0 keV gamma
+/score/quantity/flatSurfaceFlux fux113
+/score/filter/particleWithKineticEnergy range113 1130.0 1140.0 keV gamma
+/score/quantity/flatSurfaceFlux fux114
+/score/filter/particleWithKineticEnergy range114 1140.0 1150.0 keV gamma
+/score/quantity/flatSurfaceFlux fux115
+/score/filter/particleWithKineticEnergy range115 1150.0 1160.0 keV gamma
+/score/quantity/flatSurfaceFlux fux116
+/score/filter/particleWithKineticEnergy range116 1160.0 1170.0 keV gamma
+/score/quantity/flatSurfaceFlux fux117
+/score/filter/particleWithKineticEnergy range117 1170.0 1180.0 keV gamma
+/score/quantity/flatSurfaceFlux fux118
+/score/filter/particleWithKineticEnergy range118 1180.0 1190.0 keV gamma
+/score/quantity/flatSurfaceFlux fux119
+/score/filter/particleWithKineticEnergy range119 1190.0 1200.0 keV gamma
+/score/quantity/flatSurfaceFlux fux120
+/score/filter/particleWithKineticEnergy range120 1200.0 1210.0 keV gamma
+/score/quantity/flatSurfaceFlux fux121
+/score/filter/particleWithKineticEnergy range121 1210.0 1220.0 keV gamma
+/score/quantity/flatSurfaceFlux fux122
+/score/filter/particleWithKineticEnergy range122 1220.0 1230.0 keV gamma
+/score/quantity/flatSurfaceFlux fux123
+/score/filter/particleWithKineticEnergy range123 1230.0 1240.0 keV gamma
+/score/quantity/flatSurfaceFlux fux124
+/score/filter/particleWithKineticEnergy range124 1240.0 1250.0 keV gamma
+/score/quantity/flatSurfaceFlux fux125
+/score/filter/particleWithKineticEnergy range125 1250.0 1260.0 keV gamma
+/score/quantity/flatSurfaceFlux fux126
+/score/filter/particleWithKineticEnergy range126 1260.0 1270.0 keV gamma
+/score/quantity/flatSurfaceFlux fux127
+/score/filter/particleWithKineticEnergy range127 1270.0 1280.0 keV gamma
+/score/quantity/flatSurfaceFlux fux128
+/score/filter/particleWithKineticEnergy range128 1280.0 1290.0 keV gamma
+/score/quantity/flatSurfaceFlux fux129
+/score/filter/particleWithKineticEnergy range129 1290.0 1300.0 keV gamma
+/score/quantity/flatSurfaceFlux fux130
+/score/filter/particleWithKineticEnergy range130 1300.0 1310.0 keV gamma
+/score/quantity/flatSurfaceFlux fux131
+/score/filter/particleWithKineticEnergy range131 1310.0 1320.0 keV gamma
+/score/quantity/flatSurfaceFlux fux132
+/score/filter/particleWithKineticEnergy range132 1320.0 1330.0 keV gamma
+/score/quantity/flatSurfaceFlux fux133
+/score/filter/particleWithKineticEnergy range133 1330.0 1340.0 keV gamma
+/score/quantity/flatSurfaceFlux fux134
+/score/filter/particleWithKineticEnergy range134 1340.0 1350.0 keV gamma
+/score/quantity/flatSurfaceFlux fux135
+/score/filter/particleWithKineticEnergy range135 1350.0 1360.0 keV gamma
+/score/quantity/flatSurfaceFlux fux136
+/score/filter/particleWithKineticEnergy range136 1360.0 1370.0 keV gamma
+/score/quantity/flatSurfaceFlux fux137
+/score/filter/particleWithKineticEnergy range137 1370.0 1380.0 keV gamma
+/score/quantity/flatSurfaceFlux fux138
+/score/filter/particleWithKineticEnergy range138 1380.0 1390.0 keV gamma
+/score/quantity/flatSurfaceFlux fux139
+/score/filter/particleWithKineticEnergy range139 1390.0 1400.0 keV gamma
+/score/quantity/flatSurfaceFlux fux140
+/score/filter/particleWithKineticEnergy range140 1400.0 1410.0 keV gamma
+/score/quantity/flatSurfaceFlux fux141
+/score/filter/particleWithKineticEnergy range141 1410.0 1420.0 keV gamma
+/score/quantity/flatSurfaceFlux fux142
+/score/filter/particleWithKineticEnergy range142 1420.0 1430.0 keV gamma
+/score/quantity/flatSurfaceFlux fux143
+/score/filter/particleWithKineticEnergy range143 1430.0 1440.0 keV gamma
+/score/quantity/flatSurfaceFlux fux144
+/score/filter/particleWithKineticEnergy range144 1440.0 1450.0 keV gamma
+/score/quantity/flatSurfaceFlux fux145
+/score/filter/particleWithKineticEnergy range145 1450.0 1460.0 keV gamma
+/score/quantity/flatSurfaceFlux fux146
+/score/filter/particleWithKineticEnergy range146 1460.0 1470.0 keV gamma
+/score/quantity/flatSurfaceFlux fux147
+/score/filter/particleWithKineticEnergy range147 1470.0 1480.0 keV gamma
+/score/quantity/flatSurfaceFlux fux148
+/score/filter/particleWithKineticEnergy range148 1480.0 1490.0 keV gamma
+/score/quantity/flatSurfaceFlux fux149
+/score/filter/particleWithKineticEnergy range149 1490.0 1500.0 keV gamma
+/score/quantity/flatSurfaceFlux fux150
+/score/filter/particleWithKineticEnergy range150 1500.0 1510.0 keV gamma
+/score/quantity/flatSurfaceFlux fux151
+/score/filter/particleWithKineticEnergy range151 1510.0 1520.0 keV gamma
+/score/quantity/flatSurfaceFlux fux152
+/score/filter/particleWithKineticEnergy range152 1520.0 1530.0 keV gamma
+/score/quantity/flatSurfaceFlux fux153
+/score/filter/particleWithKineticEnergy range153 1530.0 1540.0 keV gamma
+/score/quantity/flatSurfaceFlux fux154
+/score/filter/particleWithKineticEnergy range154 1540.0 1550.0 keV gamma
+/score/quantity/flatSurfaceFlux fux155
+/score/filter/particleWithKineticEnergy range155 1550.0 1560.0 keV gamma
+/score/quantity/flatSurfaceFlux fux156
+/score/filter/particleWithKineticEnergy range156 1560.0 1570.0 keV gamma
+/score/quantity/flatSurfaceFlux fux157
+/score/filter/particleWithKineticEnergy range157 1570.0 1580.0 keV gamma
+/score/quantity/flatSurfaceFlux fux158
+/score/filter/particleWithKineticEnergy range158 1580.0 1590.0 keV gamma
+/score/quantity/flatSurfaceFlux fux159
+/score/filter/particleWithKineticEnergy range159 1590.0 1600.0 keV gamma
+/score/quantity/flatSurfaceFlux fux160
+/score/filter/particleWithKineticEnergy range160 1600.0 1610.0 keV gamma
+/score/quantity/flatSurfaceFlux fux161
+/score/filter/particleWithKineticEnergy range161 1610.0 1620.0 keV gamma
+/score/quantity/flatSurfaceFlux fux162
+/score/filter/particleWithKineticEnergy range162 1620.0 1630.0 keV gamma
+/score/quantity/flatSurfaceFlux fux163
+/score/filter/particleWithKineticEnergy range163 1630.0 1640.0 keV gamma
+/score/quantity/flatSurfaceFlux fux164
+/score/filter/particleWithKineticEnergy range164 1640.0 1650.0 keV gamma
+/score/quantity/flatSurfaceFlux fux165
+/score/filter/particleWithKineticEnergy range165 1650.0 1660.0 keV gamma
+/score/quantity/flatSurfaceFlux fux166
+/score/filter/particleWithKineticEnergy range166 1660.0 1670.0 keV gamma
+/score/quantity/flatSurfaceFlux fux167
+/score/filter/particleWithKineticEnergy range167 1670.0 1680.0 keV gamma
+/score/quantity/flatSurfaceFlux fux168
+/score/filter/particleWithKineticEnergy range168 1680.0 1690.0 keV gamma
+/score/quantity/flatSurfaceFlux fux169
+/score/filter/particleWithKineticEnergy range169 1690.0 1700.0 keV gamma
+/score/quantity/flatSurfaceFlux fux170
+/score/filter/particleWithKineticEnergy range170 1700.0 1710.0 keV gamma
+/score/quantity/flatSurfaceFlux fux171
+/score/filter/particleWithKineticEnergy range171 1710.0 1720.0 keV gamma
+/score/quantity/flatSurfaceFlux fux172
+/score/filter/particleWithKineticEnergy range172 1720.0 1730.0 keV gamma
+/score/quantity/flatSurfaceFlux fux173
+/score/filter/particleWithKineticEnergy range173 1730.0 1740.0 keV gamma
+/score/quantity/flatSurfaceFlux fux174
+/score/filter/particleWithKineticEnergy range174 1740.0 1750.0 keV gamma
+/score/quantity/flatSurfaceFlux fux175
+/score/filter/particleWithKineticEnergy range175 1750.0 1760.0 keV gamma
+/score/quantity/flatSurfaceFlux fux176
+/score/filter/particleWithKineticEnergy range176 1760.0 1770.0 keV gamma
+/score/quantity/flatSurfaceFlux fux177
+/score/filter/particleWithKineticEnergy range177 1770.0 1780.0 keV gamma
+/score/quantity/flatSurfaceFlux fux178
+/score/filter/particleWithKineticEnergy range178 1780.0 1790.0 keV gamma
+/score/quantity/flatSurfaceFlux fux179
+/score/filter/particleWithKineticEnergy range179 1790.0 1800.0 keV gamma
+/score/quantity/flatSurfaceFlux fux180
+/score/filter/particleWithKineticEnergy range180 1800.0 1810.0 keV gamma
+/score/quantity/flatSurfaceFlux fux181
+/score/filter/particleWithKineticEnergy range181 1810.0 1820.0 keV gamma
+/score/quantity/flatSurfaceFlux fux182
+/score/filter/particleWithKineticEnergy range182 1820.0 1830.0 keV gamma
+/score/quantity/flatSurfaceFlux fux183
+/score/filter/particleWithKineticEnergy range183 1830.0 1840.0 keV gamma
+/score/quantity/flatSurfaceFlux fux184
+/score/filter/particleWithKineticEnergy range184 1840.0 1850.0 keV gamma
+/score/quantity/flatSurfaceFlux fux185
+/score/filter/particleWithKineticEnergy range185 1850.0 1860.0 keV gamma
+/score/quantity/flatSurfaceFlux fux186
+/score/filter/particleWithKineticEnergy range186 1860.0 1870.0 keV gamma
+/score/quantity/flatSurfaceFlux fux187
+/score/filter/particleWithKineticEnergy range187 1870.0 1880.0 keV gamma
+/score/quantity/flatSurfaceFlux fux188
+/score/filter/particleWithKineticEnergy range188 1880.0 1890.0 keV gamma
+/score/quantity/flatSurfaceFlux fux189
+/score/filter/particleWithKineticEnergy range189 1890.0 1900.0 keV gamma
+/score/quantity/flatSurfaceFlux fux190
+/score/filter/particleWithKineticEnergy range190 1900.0 1910.0 keV gamma
+/score/quantity/flatSurfaceFlux fux191
+/score/filter/particleWithKineticEnergy range191 1910.0 1920.0 keV gamma
+/score/quantity/flatSurfaceFlux fux192
+/score/filter/particleWithKineticEnergy range192 1920.0 1930.0 keV gamma
+/score/quantity/flatSurfaceFlux fux193
+/score/filter/particleWithKineticEnergy range193 1930.0 1940.0 keV gamma
+/score/quantity/flatSurfaceFlux fux194
+/score/filter/particleWithKineticEnergy range194 1940.0 1950.0 keV gamma
+/score/quantity/flatSurfaceFlux fux195
+/score/filter/particleWithKineticEnergy range195 1950.0 1960.0 keV gamma
+/score/quantity/flatSurfaceFlux fux196
+/score/filter/particleWithKineticEnergy range196 1960.0 1970.0 keV gamma
+/score/quantity/flatSurfaceFlux fux197
+/score/filter/particleWithKineticEnergy range197 1970.0 1980.0 keV gamma
+/score/quantity/flatSurfaceFlux fux198
+/score/filter/particleWithKineticEnergy range198 1980.0 1990.0 keV gamma
+/score/quantity/flatSurfaceFlux fux199
+/score/filter/particleWithKineticEnergy range199 1990.0 2000.0 keV gamma
+/score/quantity/flatSurfaceFlux fux200
+/score/filter/particleWithKineticEnergy range200 2000.0 2010.0 keV gamma
+/score/quantity/flatSurfaceFlux fux201
+/score/filter/particleWithKineticEnergy range201 2010.0 2020.0 keV gamma
+/score/quantity/flatSurfaceFlux fux202
+/score/filter/particleWithKineticEnergy range202 2020.0 2030.0 keV gamma
+/score/quantity/flatSurfaceFlux fux203
+/score/filter/particleWithKineticEnergy range203 2030.0 2040.0 keV gamma
+/score/quantity/flatSurfaceFlux fux204
+/score/filter/particleWithKineticEnergy range204 2040.0 2050.0 keV gamma
+/score/quantity/flatSurfaceFlux fux205
+/score/filter/particleWithKineticEnergy range205 2050.0 2060.0 keV gamma
+/score/quantity/flatSurfaceFlux fux206
+/score/filter/particleWithKineticEnergy range206 2060.0 2070.0 keV gamma
+/score/quantity/flatSurfaceFlux fux207
+/score/filter/particleWithKineticEnergy range207 2070.0 2080.0 keV gamma
+/score/quantity/flatSurfaceFlux fux208
+/score/filter/particleWithKineticEnergy range208 2080.0 2090.0 keV gamma
+/score/quantity/flatSurfaceFlux fux209
+/score/filter/particleWithKineticEnergy range209 2090.0 2100.0 keV gamma
+/score/quantity/flatSurfaceFlux fux210
+/score/filter/particleWithKineticEnergy range210 2100.0 2110.0 keV gamma
+/score/quantity/flatSurfaceFlux fux211
+/score/filter/particleWithKineticEnergy range211 2110.0 2120.0 keV gamma
+/score/quantity/flatSurfaceFlux fux212
+/score/filter/particleWithKineticEnergy range212 2120.0 2130.0 keV gamma
+/score/quantity/flatSurfaceFlux fux213
+/score/filter/particleWithKineticEnergy range213 2130.0 2140.0 keV gamma
+/score/quantity/flatSurfaceFlux fux214
+/score/filter/particleWithKineticEnergy range214 2140.0 2150.0 keV gamma
+/score/quantity/flatSurfaceFlux fux215
+/score/filter/particleWithKineticEnergy range215 2150.0 2160.0 keV gamma
+/score/quantity/flatSurfaceFlux fux216
+/score/filter/particleWithKineticEnergy range216 2160.0 2170.0 keV gamma
+/score/quantity/flatSurfaceFlux fux217
+/score/filter/particleWithKineticEnergy range217 2170.0 2180.0 keV gamma
+/score/quantity/flatSurfaceFlux fux218
+/score/filter/particleWithKineticEnergy range218 2180.0 2190.0 keV gamma
+/score/quantity/flatSurfaceFlux fux219
+/score/filter/particleWithKineticEnergy range219 2190.0 2200.0 keV gamma
+/score/quantity/flatSurfaceFlux fux220
+/score/filter/particleWithKineticEnergy range220 2200.0 2210.0 keV gamma
+/score/quantity/flatSurfaceFlux fux221
+/score/filter/particleWithKineticEnergy range221 2210.0 2220.0 keV gamma
+/score/quantity/flatSurfaceFlux fux222
+/score/filter/particleWithKineticEnergy range222 2220.0 2230.0 keV gamma
+/score/quantity/flatSurfaceFlux fux223
+/score/filter/particleWithKineticEnergy range223 2230.0 2240.0 keV gamma
+/score/quantity/flatSurfaceFlux fux224
+/score/filter/particleWithKineticEnergy range224 2240.0 2250.0 keV gamma
+/score/quantity/flatSurfaceFlux fux225
+/score/filter/particleWithKineticEnergy range225 2250.0 2260.0 keV gamma
+/score/quantity/flatSurfaceFlux fux226
+/score/filter/particleWithKineticEnergy range226 2260.0 2270.0 keV gamma
+/score/quantity/flatSurfaceFlux fux227
+/score/filter/particleWithKineticEnergy range227 2270.0 2280.0 keV gamma
+/score/quantity/flatSurfaceFlux fux228
+/score/filter/particleWithKineticEnergy range228 2280.0 2290.0 keV gamma
+/score/quantity/flatSurfaceFlux fux229
+/score/filter/particleWithKineticEnergy range229 2290.0 2300.0 keV gamma
+/score/quantity/flatSurfaceFlux fux230
+/score/filter/particleWithKineticEnergy range230 2300.0 2310.0 keV gamma
+/score/quantity/flatSurfaceFlux fux231
+/score/filter/particleWithKineticEnergy range231 2310.0 2320.0 keV gamma
+/score/quantity/flatSurfaceFlux fux232
+/score/filter/particleWithKineticEnergy range232 2320.0 2330.0 keV gamma
+/score/quantity/flatSurfaceFlux fux233
+/score/filter/particleWithKineticEnergy range233 2330.0 2340.0 keV gamma
+/score/quantity/flatSurfaceFlux fux234
+/score/filter/particleWithKineticEnergy range234 2340.0 2350.0 keV gamma
+/score/quantity/flatSurfaceFlux fux235
+/score/filter/particleWithKineticEnergy range235 2350.0 2360.0 keV gamma
+/score/quantity/flatSurfaceFlux fux236
+/score/filter/particleWithKineticEnergy range236 2360.0 2370.0 keV gamma
+/score/quantity/flatSurfaceFlux fux237
+/score/filter/particleWithKineticEnergy range237 2370.0 2380.0 keV gamma
+/score/quantity/flatSurfaceFlux fux238
+/score/filter/particleWithKineticEnergy range238 2380.0 2390.0 keV gamma
+/score/quantity/flatSurfaceFlux fux239
+/score/filter/particleWithKineticEnergy range239 2390.0 2400.0 keV gamma
+/score/quantity/flatSurfaceFlux fux240
+/score/filter/particleWithKineticEnergy range240 2400.0 2410.0 keV gamma
+/score/quantity/flatSurfaceFlux fux241
+/score/filter/particleWithKineticEnergy range241 2410.0 2420.0 keV gamma
+/score/quantity/flatSurfaceFlux fux242
+/score/filter/particleWithKineticEnergy range242 2420.0 2430.0 keV gamma
+/score/quantity/flatSurfaceFlux fux243
+/score/filter/particleWithKineticEnergy range243 2430.0 2440.0 keV gamma
+/score/quantity/flatSurfaceFlux fux244
+/score/filter/particleWithKineticEnergy range244 2440.0 2450.0 keV gamma
+/score/quantity/flatSurfaceFlux fux245
+/score/filter/particleWithKineticEnergy range245 2450.0 2460.0 keV gamma
+/score/quantity/flatSurfaceFlux fux246
+/score/filter/particleWithKineticEnergy range246 2460.0 2470.0 keV gamma
+/score/quantity/flatSurfaceFlux fux247
+/score/filter/particleWithKineticEnergy range247 2470.0 2480.0 keV gamma
+/score/quantity/flatSurfaceFlux fux248
+/score/filter/particleWithKineticEnergy range248 2480.0 2490.0 keV gamma
+/score/quantity/flatSurfaceFlux fux249
+/score/filter/particleWithKineticEnergy range249 2490.0 2500.0 keV gamma
+/score/quantity/flatSurfaceFlux fux250
+/score/filter/particleWithKineticEnergy range250 2500.0 2510.0 keV gamma
+/score/quantity/flatSurfaceFlux fux251
+/score/filter/particleWithKineticEnergy range251 2510.0 2520.0 keV gamma
+/score/quantity/flatSurfaceFlux fux252
+/score/filter/particleWithKineticEnergy range252 2520.0 2530.0 keV gamma
+/score/quantity/flatSurfaceFlux fux253
+/score/filter/particleWithKineticEnergy range253 2530.0 2540.0 keV gamma
+/score/quantity/flatSurfaceFlux fux254
+/score/filter/particleWithKineticEnergy range254 2540.0 2550.0 keV gamma
+/score/quantity/flatSurfaceFlux fux255
+/score/filter/particleWithKineticEnergy range255 2550.0 2560.0 keV gamma
+/score/quantity/flatSurfaceFlux fux256
+/score/filter/particleWithKineticEnergy range256 2560.0 2570.0 keV gamma
+/score/quantity/flatSurfaceFlux fux257
+/score/filter/particleWithKineticEnergy range257 2570.0 2580.0 keV gamma
+/score/quantity/flatSurfaceFlux fux258
+/score/filter/particleWithKineticEnergy range258 2580.0 2590.0 keV gamma
+/score/quantity/flatSurfaceFlux fux259
+/score/filter/particleWithKineticEnergy range259 2590.0 2600.0 keV gamma
+/score/quantity/flatSurfaceFlux fux260
+/score/filter/particleWithKineticEnergy range260 2600.0 2610.0 keV gamma
+/score/quantity/flatSurfaceFlux fux261
+/score/filter/particleWithKineticEnergy range261 2610.0 2620.0 keV gamma
+/score/quantity/flatSurfaceFlux fux262
+/score/filter/particleWithKineticEnergy range262 2620.0 2630.0 keV gamma
+/score/quantity/flatSurfaceFlux fux263
+/score/filter/particleWithKineticEnergy range263 2630.0 2640.0 keV gamma
+/score/quantity/flatSurfaceFlux fux264
+/score/filter/particleWithKineticEnergy range264 2640.0 2650.0 keV gamma
+/score/quantity/flatSurfaceFlux fux265
+/score/filter/particleWithKineticEnergy range265 2650.0 2660.0 keV gamma
+/score/quantity/flatSurfaceFlux fux266
+/score/filter/particleWithKineticEnergy range266 2660.0 2670.0 keV gamma
+/score/quantity/flatSurfaceFlux fux267
+/score/filter/particleWithKineticEnergy range267 2670.0 2680.0 keV gamma
+/score/quantity/flatSurfaceFlux fux268
+/score/filter/particleWithKineticEnergy range268 2680.0 2690.0 keV gamma
+/score/quantity/flatSurfaceFlux fux269
+/score/filter/particleWithKineticEnergy range269 2690.0 2700.0 keV gamma
+/score/quantity/flatSurfaceFlux fux270
+/score/filter/particleWithKineticEnergy range270 2700.0 2710.0 keV gamma
+/score/quantity/flatSurfaceFlux fux271
+/score/filter/particleWithKineticEnergy range271 2710.0 2720.0 keV gamma
+/score/quantity/flatSurfaceFlux fux272
+/score/filter/particleWithKineticEnergy range272 2720.0 2730.0 keV gamma
+/score/quantity/flatSurfaceFlux fux273
+/score/filter/particleWithKineticEnergy range273 2730.0 2740.0 keV gamma
+/score/quantity/flatSurfaceFlux fux274
+/score/filter/particleWithKineticEnergy range274 2740.0 2750.0 keV gamma
+/score/quantity/flatSurfaceFlux fux275
+/score/filter/particleWithKineticEnergy range275 2750.0 2760.0 keV gamma
+/score/quantity/flatSurfaceFlux fux276
+/score/filter/particleWithKineticEnergy range276 2760.0 2770.0 keV gamma
+/score/quantity/flatSurfaceFlux fux277
+/score/filter/particleWithKineticEnergy range277 2770.0 2780.0 keV gamma
+/score/quantity/flatSurfaceFlux fux278
+/score/filter/particleWithKineticEnergy range278 2780.0 2790.0 keV gamma
+/score/quantity/flatSurfaceFlux fux279
+/score/filter/particleWithKineticEnergy range279 2790.0 2800.0 keV gamma
+/score/quantity/flatSurfaceFlux fux280
+/score/filter/particleWithKineticEnergy range280 2800.0 2810.0 keV gamma
+/score/quantity/flatSurfaceFlux fux281
+/score/filter/particleWithKineticEnergy range281 2810.0 2820.0 keV gamma
+/score/quantity/flatSurfaceFlux fux282
+/score/filter/particleWithKineticEnergy range282 2820.0 2830.0 keV gamma
+/score/quantity/flatSurfaceFlux fux283
+/score/filter/particleWithKineticEnergy range283 2830.0 2840.0 keV gamma
+/score/quantity/flatSurfaceFlux fux284
+/score/filter/particleWithKineticEnergy range284 2840.0 2850.0 keV gamma
+/score/quantity/flatSurfaceFlux fux285
+/score/filter/particleWithKineticEnergy range285 2850.0 2860.0 keV gamma
+/score/quantity/flatSurfaceFlux fux286
+/score/filter/particleWithKineticEnergy range286 2860.0 2870.0 keV gamma
+/score/quantity/flatSurfaceFlux fux287
+/score/filter/particleWithKineticEnergy range287 2870.0 2880.0 keV gamma
+/score/quantity/flatSurfaceFlux fux288
+/score/filter/particleWithKineticEnergy range288 2880.0 2890.0 keV gamma
+/score/quantity/flatSurfaceFlux fux289
+/score/filter/particleWithKineticEnergy range289 2890.0 2900.0 keV gamma
+/score/quantity/flatSurfaceFlux fux290
+/score/filter/particleWithKineticEnergy range290 2900.0 2910.0 keV gamma
+/score/quantity/flatSurfaceFlux fux291
+/score/filter/particleWithKineticEnergy range291 2910.0 2920.0 keV gamma
+/score/quantity/flatSurfaceFlux fux292
+/score/filter/particleWithKineticEnergy range292 2920.0 2930.0 keV gamma
+/score/quantity/flatSurfaceFlux fux293
+/score/filter/particleWithKineticEnergy range293 2930.0 2940.0 keV gamma
+/score/quantity/flatSurfaceFlux fux294
+/score/filter/particleWithKineticEnergy range294 2940.0 2950.0 keV gamma
+/score/quantity/flatSurfaceFlux fux295
+/score/filter/particleWithKineticEnergy range295 2950.0 2960.0 keV gamma
+/score/quantity/flatSurfaceFlux fux296
+/score/filter/particleWithKineticEnergy range296 2960.0 2970.0 keV gamma
+/score/quantity/flatSurfaceFlux fux297
+/score/filter/particleWithKineticEnergy range297 2970.0 2980.0 keV gamma
+/score/quantity/flatSurfaceFlux fux298
+/score/filter/particleWithKineticEnergy range298 2980.0 2990.0 keV gamma
+/score/quantity/flatSurfaceFlux fux299
+/score/filter/particleWithKineticEnergy range299 2990.0 3000.0 keV gamma
+/score/quantity/flatSurfaceFlux fux300
+/score/filter/particleWithKineticEnergy range300 3000.0 3010.0 keV gamma
+/score/quantity/flatSurfaceFlux fux301
+/score/filter/particleWithKineticEnergy range301 3010.0 3020.0 keV gamma
+/score/quantity/flatSurfaceFlux fux302
+/score/filter/particleWithKineticEnergy range302 3020.0 3030.0 keV gamma
+/score/quantity/flatSurfaceFlux fux303
+/score/filter/particleWithKineticEnergy range303 3030.0 3040.0 keV gamma
+/score/quantity/flatSurfaceFlux fux304
+/score/filter/particleWithKineticEnergy range304 3040.0 3050.0 keV gamma
+/score/quantity/flatSurfaceFlux fux305
+/score/filter/particleWithKineticEnergy range305 3050.0 3060.0 keV gamma
+/score/quantity/flatSurfaceFlux fux306
+/score/filter/particleWithKineticEnergy range306 3060.0 3070.0 keV gamma
+/score/quantity/flatSurfaceFlux fux307
+/score/filter/particleWithKineticEnergy range307 3070.0 3080.0 keV gamma
+/score/quantity/flatSurfaceFlux fux308
+/score/filter/particleWithKineticEnergy range308 3080.0 3090.0 keV gamma
+/score/quantity/flatSurfaceFlux fux309
+/score/filter/particleWithKineticEnergy range309 3090.0 3100.0 keV gamma
+/score/quantity/flatSurfaceFlux fux310
+/score/filter/particleWithKineticEnergy range310 3100.0 3110.0 keV gamma
+/score/quantity/flatSurfaceFlux fux311
+/score/filter/particleWithKineticEnergy range311 3110.0 3120.0 keV gamma
+/score/quantity/flatSurfaceFlux fux312
+/score/filter/particleWithKineticEnergy range312 3120.0 3130.0 keV gamma
+/score/quantity/flatSurfaceFlux fux313
+/score/filter/particleWithKineticEnergy range313 3130.0 3140.0 keV gamma
+/score/quantity/flatSurfaceFlux fux314
+/score/filter/particleWithKineticEnergy range314 3140.0 3150.0 keV gamma
+/score/quantity/flatSurfaceFlux fux315
+/score/filter/particleWithKineticEnergy range315 3150.0 3160.0 keV gamma
+/score/quantity/flatSurfaceFlux fux316
+/score/filter/particleWithKineticEnergy range316 3160.0 3170.0 keV gamma
+/score/quantity/flatSurfaceFlux fux317
+/score/filter/particleWithKineticEnergy range317 3170.0 3180.0 keV gamma
+/score/quantity/flatSurfaceFlux fux318
+/score/filter/particleWithKineticEnergy range318 3180.0 3190.0 keV gamma
+/score/quantity/flatSurfaceFlux fux319
+/score/filter/particleWithKineticEnergy range319 3190.0 3200.0 keV gamma
+/score/quantity/flatSurfaceFlux fux320
+/score/filter/particleWithKineticEnergy range320 3200.0 3210.0 keV gamma
+/score/quantity/flatSurfaceFlux fux321
+/score/filter/particleWithKineticEnergy range321 3210.0 3220.0 keV gamma
+/score/quantity/flatSurfaceFlux fux322
+/score/filter/particleWithKineticEnergy range322 3220.0 3230.0 keV gamma
+/score/quantity/flatSurfaceFlux fux323
+/score/filter/particleWithKineticEnergy range323 3230.0 3240.0 keV gamma
+/score/quantity/flatSurfaceFlux fux324
+/score/filter/particleWithKineticEnergy range324 3240.0 3250.0 keV gamma
+/score/quantity/flatSurfaceFlux fux325
+/score/filter/particleWithKineticEnergy range325 3250.0 3260.0 keV gamma
+/score/quantity/flatSurfaceFlux fux326
+/score/filter/particleWithKineticEnergy range326 3260.0 3270.0 keV gamma
+/score/quantity/flatSurfaceFlux fux327
+/score/filter/particleWithKineticEnergy range327 3270.0 3280.0 keV gamma
+/score/quantity/flatSurfaceFlux fux328
+/score/filter/particleWithKineticEnergy range328 3280.0 3290.0 keV gamma
+/score/quantity/flatSurfaceFlux fux329
+/score/filter/particleWithKineticEnergy range329 3290.0 3300.0 keV gamma
+/score/quantity/flatSurfaceFlux fux330
+/score/filter/particleWithKineticEnergy range330 3300.0 3310.0 keV gamma
+/score/quantity/flatSurfaceFlux fux331
+/score/filter/particleWithKineticEnergy range331 3310.0 3320.0 keV gamma
+/score/quantity/flatSurfaceFlux fux332
+/score/filter/particleWithKineticEnergy range332 3320.0 3330.0 keV gamma
+/score/quantity/flatSurfaceFlux fux333
+/score/filter/particleWithKineticEnergy range333 3330.0 3340.0 keV gamma
+/score/quantity/flatSurfaceFlux fux334
+/score/filter/particleWithKineticEnergy range334 3340.0 3350.0 keV gamma
+/score/quantity/flatSurfaceFlux fux335
+/score/filter/particleWithKineticEnergy range335 3350.0 3360.0 keV gamma
+/score/quantity/flatSurfaceFlux fux336
+/score/filter/particleWithKineticEnergy range336 3360.0 3370.0 keV gamma
+/score/quantity/flatSurfaceFlux fux337
+/score/filter/particleWithKineticEnergy range337 3370.0 3380.0 keV gamma
+/score/quantity/flatSurfaceFlux fux338
+/score/filter/particleWithKineticEnergy range338 3380.0 3390.0 keV gamma
+/score/quantity/flatSurfaceFlux fux339
+/score/filter/particleWithKineticEnergy range339 3390.0 3400.0 keV gamma
+/score/quantity/flatSurfaceFlux fux340
+/score/filter/particleWithKineticEnergy range340 3400.0 3410.0 keV gamma
+/score/quantity/flatSurfaceFlux fux341
+/score/filter/particleWithKineticEnergy range341 3410.0 3420.0 keV gamma
+/score/quantity/flatSurfaceFlux fux342
+/score/filter/particleWithKineticEnergy range342 3420.0 3430.0 keV gamma
+/score/quantity/flatSurfaceFlux fux343
+/score/filter/particleWithKineticEnergy range343 3430.0 3440.0 keV gamma
+/score/quantity/flatSurfaceFlux fux344
+/score/filter/particleWithKineticEnergy range344 3440.0 3450.0 keV gamma
+/score/quantity/flatSurfaceFlux fux345
+/score/filter/particleWithKineticEnergy range345 3450.0 3460.0 keV gamma
+/score/quantity/flatSurfaceFlux fux346
+/score/filter/particleWithKineticEnergy range346 3460.0 3470.0 keV gamma
+/score/quantity/flatSurfaceFlux fux347
+/score/filter/particleWithKineticEnergy range347 3470.0 3480.0 keV gamma
+/score/quantity/flatSurfaceFlux fux348
+/score/filter/particleWithKineticEnergy range348 3480.0 3490.0 keV gamma
+/score/quantity/flatSurfaceFlux fux349
+/score/filter/particleWithKineticEnergy range349 3490.0 3500.0 keV gamma
+/score/quantity/flatSurfaceFlux fux350
+/score/filter/particleWithKineticEnergy range350 3500.0 3510.0 keV gamma
+/score/quantity/flatSurfaceFlux fux351
+/score/filter/particleWithKineticEnergy range351 3510.0 3520.0 keV gamma
+/score/quantity/flatSurfaceFlux fux352
+/score/filter/particleWithKineticEnergy range352 3520.0 3530.0 keV gamma
+/score/quantity/flatSurfaceFlux fux353
+/score/filter/particleWithKineticEnergy range353 3530.0 3540.0 keV gamma
+/score/quantity/flatSurfaceFlux fux354
+/score/filter/particleWithKineticEnergy range354 3540.0 3550.0 keV gamma
+/score/quantity/flatSurfaceFlux fux355
+/score/filter/particleWithKineticEnergy range355 3550.0 3560.0 keV gamma
+/score/quantity/flatSurfaceFlux fux356
+/score/filter/particleWithKineticEnergy range356 3560.0 3570.0 keV gamma
+/score/quantity/flatSurfaceFlux fux357
+/score/filter/particleWithKineticEnergy range357 3570.0 3580.0 keV gamma
+/score/quantity/flatSurfaceFlux fux358
+/score/filter/particleWithKineticEnergy range358 3580.0 3590.0 keV gamma
+/score/quantity/flatSurfaceFlux fux359
+/score/filter/particleWithKineticEnergy range359 3590.0 3600.0 keV gamma
+/score/quantity/flatSurfaceFlux fux360
+/score/filter/particleWithKineticEnergy range360 3600.0 3610.0 keV gamma
+/score/quantity/flatSurfaceFlux fux361
+/score/filter/particleWithKineticEnergy range361 3610.0 3620.0 keV gamma
+/score/quantity/flatSurfaceFlux fux362
+/score/filter/particleWithKineticEnergy range362 3620.0 3630.0 keV gamma
+/score/quantity/flatSurfaceFlux fux363
+/score/filter/particleWithKineticEnergy range363 3630.0 3640.0 keV gamma
+/score/quantity/flatSurfaceFlux fux364
+/score/filter/particleWithKineticEnergy range364 3640.0 3650.0 keV gamma
+/score/quantity/flatSurfaceFlux fux365
+/score/filter/particleWithKineticEnergy range365 3650.0 3660.0 keV gamma
+/score/quantity/flatSurfaceFlux fux366
+/score/filter/particleWithKineticEnergy range366 3660.0 3670.0 keV gamma
+/score/quantity/flatSurfaceFlux fux367
+/score/filter/particleWithKineticEnergy range367 3670.0 3680.0 keV gamma
+/score/quantity/flatSurfaceFlux fux368
+/score/filter/particleWithKineticEnergy range368 3680.0 3690.0 keV gamma
+/score/quantity/flatSurfaceFlux fux369
+/score/filter/particleWithKineticEnergy range369 3690.0 3700.0 keV gamma
+/score/quantity/flatSurfaceFlux fux370
+/score/filter/particleWithKineticEnergy range370 3700.0 3710.0 keV gamma
+/score/quantity/flatSurfaceFlux fux371
+/score/filter/particleWithKineticEnergy range371 3710.0 3720.0 keV gamma
+/score/quantity/flatSurfaceFlux fux372
+/score/filter/particleWithKineticEnergy range372 3720.0 3730.0 keV gamma
+/score/quantity/flatSurfaceFlux fux373
+/score/filter/particleWithKineticEnergy range373 3730.0 3740.0 keV gamma
+/score/quantity/flatSurfaceFlux fux374
+/score/filter/particleWithKineticEnergy range374 3740.0 3750.0 keV gamma
+/score/quantity/flatSurfaceFlux fux375
+/score/filter/particleWithKineticEnergy range375 3750.0 3760.0 keV gamma
+/score/quantity/flatSurfaceFlux fux376
+/score/filter/particleWithKineticEnergy range376 3760.0 3770.0 keV gamma
+/score/quantity/flatSurfaceFlux fux377
+/score/filter/particleWithKineticEnergy range377 3770.0 3780.0 keV gamma
+/score/quantity/flatSurfaceFlux fux378
+/score/filter/particleWithKineticEnergy range378 3780.0 3790.0 keV gamma
+/score/quantity/flatSurfaceFlux fux379
+/score/filter/particleWithKineticEnergy range379 3790.0 3800.0 keV gamma
+/score/quantity/flatSurfaceFlux fux380
+/score/filter/particleWithKineticEnergy range380 3800.0 3810.0 keV gamma
+/score/quantity/flatSurfaceFlux fux381
+/score/filter/particleWithKineticEnergy range381 3810.0 3820.0 keV gamma
+/score/quantity/flatSurfaceFlux fux382
+/score/filter/particleWithKineticEnergy range382 3820.0 3830.0 keV gamma
+/score/quantity/flatSurfaceFlux fux383
+/score/filter/particleWithKineticEnergy range383 3830.0 3840.0 keV gamma
+/score/quantity/flatSurfaceFlux fux384
+/score/filter/particleWithKineticEnergy range384 3840.0 3850.0 keV gamma
+/score/quantity/flatSurfaceFlux fux385
+/score/filter/particleWithKineticEnergy range385 3850.0 3860.0 keV gamma
+/score/quantity/flatSurfaceFlux fux386
+/score/filter/particleWithKineticEnergy range386 3860.0 3870.0 keV gamma
+/score/quantity/flatSurfaceFlux fux387
+/score/filter/particleWithKineticEnergy range387 3870.0 3880.0 keV gamma
+/score/quantity/flatSurfaceFlux fux388
+/score/filter/particleWithKineticEnergy range388 3880.0 3890.0 keV gamma
+/score/quantity/flatSurfaceFlux fux389
+/score/filter/particleWithKineticEnergy range389 3890.0 3900.0 keV gamma
+/score/quantity/flatSurfaceFlux fux390
+/score/filter/particleWithKineticEnergy range390 3900.0 3910.0 keV gamma
+/score/quantity/flatSurfaceFlux fux391
+/score/filter/particleWithKineticEnergy range391 3910.0 3920.0 keV gamma
+/score/quantity/flatSurfaceFlux fux392
+/score/filter/particleWithKineticEnergy range392 3920.0 3930.0 keV gamma
+/score/quantity/flatSurfaceFlux fux393
+/score/filter/particleWithKineticEnergy range393 3930.0 3940.0 keV gamma
+/score/quantity/flatSurfaceFlux fux394
+/score/filter/particleWithKineticEnergy range394 3940.0 3950.0 keV gamma
+/score/quantity/flatSurfaceFlux fux395
+/score/filter/particleWithKineticEnergy range395 3950.0 3960.0 keV gamma
+/score/quantity/flatSurfaceFlux fux396
+/score/filter/particleWithKineticEnergy range396 3960.0 3970.0 keV gamma
+/score/quantity/flatSurfaceFlux fux397
+/score/filter/particleWithKineticEnergy range397 3970.0 3980.0 keV gamma
+/score/quantity/flatSurfaceFlux fux398
+/score/filter/particleWithKineticEnergy range398 3980.0 3990.0 keV gamma
+/score/quantity/flatSurfaceFlux fux399
+/score/filter/particleWithKineticEnergy range399 3990.0 4000.0 keV gamma
+/score/quantity/flatSurfaceFlux fux400
+/score/filter/particleWithKineticEnergy range400 4000.0 4010.0 keV gamma
+/score/quantity/flatSurfaceFlux fux401
+/score/filter/particleWithKineticEnergy range401 4010.0 4020.0 keV gamma
+/score/quantity/flatSurfaceFlux fux402
+/score/filter/particleWithKineticEnergy range402 4020.0 4030.0 keV gamma
+/score/quantity/flatSurfaceFlux fux403
+/score/filter/particleWithKineticEnergy range403 4030.0 4040.0 keV gamma
+/score/quantity/flatSurfaceFlux fux404
+/score/filter/particleWithKineticEnergy range404 4040.0 4050.0 keV gamma
+/score/quantity/flatSurfaceFlux fux405
+/score/filter/particleWithKineticEnergy range405 4050.0 4060.0 keV gamma
+/score/quantity/flatSurfaceFlux fux406
+/score/filter/particleWithKineticEnergy range406 4060.0 4070.0 keV gamma
+/score/quantity/flatSurfaceFlux fux407
+/score/filter/particleWithKineticEnergy range407 4070.0 4080.0 keV gamma
+/score/quantity/flatSurfaceFlux fux408
+/score/filter/particleWithKineticEnergy range408 4080.0 4090.0 keV gamma
+/score/quantity/flatSurfaceFlux fux409
+/score/filter/particleWithKineticEnergy range409 4090.0 4100.0 keV gamma
+/score/quantity/flatSurfaceFlux fux410
+/score/filter/particleWithKineticEnergy range410 4100.0 4110.0 keV gamma
+/score/quantity/flatSurfaceFlux fux411
+/score/filter/particleWithKineticEnergy range411 4110.0 4120.0 keV gamma
+/score/quantity/flatSurfaceFlux fux412
+/score/filter/particleWithKineticEnergy range412 4120.0 4130.0 keV gamma
+/score/quantity/flatSurfaceFlux fux413
+/score/filter/particleWithKineticEnergy range413 4130.0 4140.0 keV gamma
+/score/quantity/flatSurfaceFlux fux414
+/score/filter/particleWithKineticEnergy range414 4140.0 4150.0 keV gamma
+/score/quantity/flatSurfaceFlux fux415
+/score/filter/particleWithKineticEnergy range415 4150.0 4160.0 keV gamma
+/score/quantity/flatSurfaceFlux fux416
+/score/filter/particleWithKineticEnergy range416 4160.0 4170.0 keV gamma
+/score/quantity/flatSurfaceFlux fux417
+/score/filter/particleWithKineticEnergy range417 4170.0 4180.0 keV gamma
+/score/quantity/flatSurfaceFlux fux418
+/score/filter/particleWithKineticEnergy range418 4180.0 4190.0 keV gamma
+/score/quantity/flatSurfaceFlux fux419
+/score/filter/particleWithKineticEnergy range419 4190.0 4200.0 keV gamma
+/score/quantity/flatSurfaceFlux fux420
+/score/filter/particleWithKineticEnergy range420 4200.0 4210.0 keV gamma
+/score/quantity/flatSurfaceFlux fux421
+/score/filter/particleWithKineticEnergy range421 4210.0 4220.0 keV gamma
+/score/quantity/flatSurfaceFlux fux422
+/score/filter/particleWithKineticEnergy range422 4220.0 4230.0 keV gamma
+/score/quantity/flatSurfaceFlux fux423
+/score/filter/particleWithKineticEnergy range423 4230.0 4240.0 keV gamma
+/score/quantity/flatSurfaceFlux fux424
+/score/filter/particleWithKineticEnergy range424 4240.0 4250.0 keV gamma
+/score/quantity/flatSurfaceFlux fux425
+/score/filter/particleWithKineticEnergy range425 4250.0 4260.0 keV gamma
+/score/quantity/flatSurfaceFlux fux426
+/score/filter/particleWithKineticEnergy range426 4260.0 4270.0 keV gamma
+/score/quantity/flatSurfaceFlux fux427
+/score/filter/particleWithKineticEnergy range427 4270.0 4280.0 keV gamma
+/score/quantity/flatSurfaceFlux fux428
+/score/filter/particleWithKineticEnergy range428 4280.0 4290.0 keV gamma
+/score/quantity/flatSurfaceFlux fux429
+/score/filter/particleWithKineticEnergy range429 4290.0 4300.0 keV gamma
+/score/quantity/flatSurfaceFlux fux430
+/score/filter/particleWithKineticEnergy range430 4300.0 4310.0 keV gamma
+/score/quantity/flatSurfaceFlux fux431
+/score/filter/particleWithKineticEnergy range431 4310.0 4320.0 keV gamma
+/score/quantity/flatSurfaceFlux fux432
+/score/filter/particleWithKineticEnergy range432 4320.0 4330.0 keV gamma
+/score/quantity/flatSurfaceFlux fux433
+/score/filter/particleWithKineticEnergy range433 4330.0 4340.0 keV gamma
+/score/quantity/flatSurfaceFlux fux434
+/score/filter/particleWithKineticEnergy range434 4340.0 4350.0 keV gamma
+/score/quantity/flatSurfaceFlux fux435
+/score/filter/particleWithKineticEnergy range435 4350.0 4360.0 keV gamma
+/score/quantity/flatSurfaceFlux fux436
+/score/filter/particleWithKineticEnergy range436 4360.0 4370.0 keV gamma
+/score/quantity/flatSurfaceFlux fux437
+/score/filter/particleWithKineticEnergy range437 4370.0 4380.0 keV gamma
+/score/quantity/flatSurfaceFlux fux438
+/score/filter/particleWithKineticEnergy range438 4380.0 4390.0 keV gamma
+/score/quantity/flatSurfaceFlux fux439
+/score/filter/particleWithKineticEnergy range439 4390.0 4400.0 keV gamma
+/score/quantity/flatSurfaceFlux fux440
+/score/filter/particleWithKineticEnergy range440 4400.0 4410.0 keV gamma
+/score/quantity/flatSurfaceFlux fux441
+/score/filter/particleWithKineticEnergy range441 4410.0 4420.0 keV gamma
+/score/quantity/flatSurfaceFlux fux442
+/score/filter/particleWithKineticEnergy range442 4420.0 4430.0 keV gamma
+/score/quantity/flatSurfaceFlux fux443
+/score/filter/particleWithKineticEnergy range443 4430.0 4440.0 keV gamma
+/score/quantity/flatSurfaceFlux fux444
+/score/filter/particleWithKineticEnergy range444 4440.0 4450.0 keV gamma
+/score/quantity/flatSurfaceFlux fux445
+/score/filter/particleWithKineticEnergy range445 4450.0 4460.0 keV gamma
+/score/quantity/flatSurfaceFlux fux446
+/score/filter/particleWithKineticEnergy range446 4460.0 4470.0 keV gamma
+/score/quantity/flatSurfaceFlux fux447
+/score/filter/particleWithKineticEnergy range447 4470.0 4480.0 keV gamma
+/score/quantity/flatSurfaceFlux fux448
+/score/filter/particleWithKineticEnergy range448 4480.0 4490.0 keV gamma
+/score/quantity/flatSurfaceFlux fux449
+/score/filter/particleWithKineticEnergy range449 4490.0 4500.0 keV gamma
+/score/quantity/flatSurfaceFlux fux450
+/score/filter/particleWithKineticEnergy range450 4500.0 4510.0 keV gamma
+/score/quantity/flatSurfaceFlux fux451
+/score/filter/particleWithKineticEnergy range451 4510.0 4520.0 keV gamma
+/score/quantity/flatSurfaceFlux fux452
+/score/filter/particleWithKineticEnergy range452 4520.0 4530.0 keV gamma
+/score/quantity/flatSurfaceFlux fux453
+/score/filter/particleWithKineticEnergy range453 4530.0 4540.0 keV gamma
+/score/quantity/flatSurfaceFlux fux454
+/score/filter/particleWithKineticEnergy range454 4540.0 4550.0 keV gamma
+/score/quantity/flatSurfaceFlux fux455
+/score/filter/particleWithKineticEnergy range455 4550.0 4560.0 keV gamma
+/score/quantity/flatSurfaceFlux fux456
+/score/filter/particleWithKineticEnergy range456 4560.0 4570.0 keV gamma
+/score/quantity/flatSurfaceFlux fux457
+/score/filter/particleWithKineticEnergy range457 4570.0 4580.0 keV gamma
+/score/quantity/flatSurfaceFlux fux458
+/score/filter/particleWithKineticEnergy range458 4580.0 4590.0 keV gamma
+/score/quantity/flatSurfaceFlux fux459
+/score/filter/particleWithKineticEnergy range459 4590.0 4600.0 keV gamma
+/score/quantity/flatSurfaceFlux fux460
+/score/filter/particleWithKineticEnergy range460 4600.0 4610.0 keV gamma
+/score/quantity/flatSurfaceFlux fux461
+/score/filter/particleWithKineticEnergy range461 4610.0 4620.0 keV gamma
+/score/quantity/flatSurfaceFlux fux462
+/score/filter/particleWithKineticEnergy range462 4620.0 4630.0 keV gamma
+/score/quantity/flatSurfaceFlux fux463
+/score/filter/particleWithKineticEnergy range463 4630.0 4640.0 keV gamma
+/score/quantity/flatSurfaceFlux fux464
+/score/filter/particleWithKineticEnergy range464 4640.0 4650.0 keV gamma
+/score/quantity/flatSurfaceFlux fux465
+/score/filter/particleWithKineticEnergy range465 4650.0 4660.0 keV gamma
+/score/quantity/flatSurfaceFlux fux466
+/score/filter/particleWithKineticEnergy range466 4660.0 4670.0 keV gamma
+/score/quantity/flatSurfaceFlux fux467
+/score/filter/particleWithKineticEnergy range467 4670.0 4680.0 keV gamma
+/score/quantity/flatSurfaceFlux fux468
+/score/filter/particleWithKineticEnergy range468 4680.0 4690.0 keV gamma
+/score/quantity/flatSurfaceFlux fux469
+/score/filter/particleWithKineticEnergy range469 4690.0 4700.0 keV gamma
+/score/quantity/flatSurfaceFlux fux470
+/score/filter/particleWithKineticEnergy range470 4700.0 4710.0 keV gamma
+/score/quantity/flatSurfaceFlux fux471
+/score/filter/particleWithKineticEnergy range471 4710.0 4720.0 keV gamma
+/score/quantity/flatSurfaceFlux fux472
+/score/filter/particleWithKineticEnergy range472 4720.0 4730.0 keV gamma
+/score/quantity/flatSurfaceFlux fux473
+/score/filter/particleWithKineticEnergy range473 4730.0 4740.0 keV gamma
+/score/quantity/flatSurfaceFlux fux474
+/score/filter/particleWithKineticEnergy range474 4740.0 4750.0 keV gamma
+/score/quantity/flatSurfaceFlux fux475
+/score/filter/particleWithKineticEnergy range475 4750.0 4760.0 keV gamma
+/score/quantity/flatSurfaceFlux fux476
+/score/filter/particleWithKineticEnergy range476 4760.0 4770.0 keV gamma
+/score/quantity/flatSurfaceFlux fux477
+/score/filter/particleWithKineticEnergy range477 4770.0 4780.0 keV gamma
+/score/quantity/flatSurfaceFlux fux478
+/score/filter/particleWithKineticEnergy range478 4780.0 4790.0 keV gamma
+/score/quantity/flatSurfaceFlux fux479
+/score/filter/particleWithKineticEnergy range479 4790.0 4800.0 keV gamma
+/score/quantity/flatSurfaceFlux fux480
+/score/filter/particleWithKineticEnergy range480 4800.0 4810.0 keV gamma
+/score/quantity/flatSurfaceFlux fux481
+/score/filter/particleWithKineticEnergy range481 4810.0 4820.0 keV gamma
+/score/quantity/flatSurfaceFlux fux482
+/score/filter/particleWithKineticEnergy range482 4820.0 4830.0 keV gamma
+/score/quantity/flatSurfaceFlux fux483
+/score/filter/particleWithKineticEnergy range483 4830.0 4840.0 keV gamma
+/score/quantity/flatSurfaceFlux fux484
+/score/filter/particleWithKineticEnergy range484 4840.0 4850.0 keV gamma
+/score/quantity/flatSurfaceFlux fux485
+/score/filter/particleWithKineticEnergy range485 4850.0 4860.0 keV gamma
+/score/quantity/flatSurfaceFlux fux486
+/score/filter/particleWithKineticEnergy range486 4860.0 4870.0 keV gamma
+/score/quantity/flatSurfaceFlux fux487
+/score/filter/particleWithKineticEnergy range487 4870.0 4880.0 keV gamma
+/score/quantity/flatSurfaceFlux fux488
+/score/filter/particleWithKineticEnergy range488 4880.0 4890.0 keV gamma
+/score/quantity/flatSurfaceFlux fux489
+/score/filter/particleWithKineticEnergy range489 4890.0 4900.0 keV gamma
+/score/quantity/flatSurfaceFlux fux490
+/score/filter/particleWithKineticEnergy range490 4900.0 4910.0 keV gamma
+/score/quantity/flatSurfaceFlux fux491
+/score/filter/particleWithKineticEnergy range491 4910.0 4920.0 keV gamma
+/score/quantity/flatSurfaceFlux fux492
+/score/filter/particleWithKineticEnergy range492 4920.0 4930.0 keV gamma
+/score/quantity/flatSurfaceFlux fux493
+/score/filter/particleWithKineticEnergy range493 4930.0 4940.0 keV gamma
+/score/quantity/flatSurfaceFlux fux494
+/score/filter/particleWithKineticEnergy range494 4940.0 4950.0 keV gamma
+/score/quantity/flatSurfaceFlux fux495
+/score/filter/particleWithKineticEnergy range495 4950.0 4960.0 keV gamma
+/score/quantity/flatSurfaceFlux fux496
+/score/filter/particleWithKineticEnergy range496 4960.0 4970.0 keV gamma
+/score/quantity/flatSurfaceFlux fux497
+/score/filter/particleWithKineticEnergy range497 4970.0 4980.0 keV gamma
+/score/quantity/flatSurfaceFlux fux498
+/score/filter/particleWithKineticEnergy range498 4980.0 4990.0 keV gamma
+/score/quantity/flatSurfaceFlux fux499
+/score/filter/particleWithKineticEnergy range499 4990.0 5000.0 keV gamma
+/score/quantity/flatSurfaceFlux fux500
+/score/filter/particleWithKineticEnergy range500 5000.0 5010.0 keV gamma
+/score/quantity/flatSurfaceFlux fux501
+/score/filter/particleWithKineticEnergy range501 5010.0 5020.0 keV gamma
+/score/quantity/flatSurfaceFlux fux502
+/score/filter/particleWithKineticEnergy range502 5020.0 5030.0 keV gamma
+/score/quantity/flatSurfaceFlux fux503
+/score/filter/particleWithKineticEnergy range503 5030.0 5040.0 keV gamma
+/score/quantity/flatSurfaceFlux fux504
+/score/filter/particleWithKineticEnergy range504 5040.0 5050.0 keV gamma
+/score/quantity/flatSurfaceFlux fux505
+/score/filter/particleWithKineticEnergy range505 5050.0 5060.0 keV gamma
+/score/quantity/flatSurfaceFlux fux506
+/score/filter/particleWithKineticEnergy range506 5060.0 5070.0 keV gamma
+/score/quantity/flatSurfaceFlux fux507
+/score/filter/particleWithKineticEnergy range507 5070.0 5080.0 keV gamma
+/score/quantity/flatSurfaceFlux fux508
+/score/filter/particleWithKineticEnergy range508 5080.0 5090.0 keV gamma
+/score/quantity/flatSurfaceFlux fux509
+/score/filter/particleWithKineticEnergy range509 5090.0 5100.0 keV gamma
+/score/quantity/flatSurfaceFlux fux510
+/score/filter/particleWithKineticEnergy range510 5100.0 5110.0 keV gamma
+/score/quantity/flatSurfaceFlux fux511
+/score/filter/particleWithKineticEnergy range511 5110.0 5120.0 keV gamma
+/score/quantity/flatSurfaceFlux fux512
+/score/filter/particleWithKineticEnergy range512 5120.0 5130.0 keV gamma
+/score/quantity/flatSurfaceFlux fux513
+/score/filter/particleWithKineticEnergy range513 5130.0 5140.0 keV gamma
+/score/quantity/flatSurfaceFlux fux514
+/score/filter/particleWithKineticEnergy range514 5140.0 5150.0 keV gamma
+/score/quantity/flatSurfaceFlux fux515
+/score/filter/particleWithKineticEnergy range515 5150.0 5160.0 keV gamma
+/score/quantity/flatSurfaceFlux fux516
+/score/filter/particleWithKineticEnergy range516 5160.0 5170.0 keV gamma
+/score/quantity/flatSurfaceFlux fux517
+/score/filter/particleWithKineticEnergy range517 5170.0 5180.0 keV gamma
+/score/quantity/flatSurfaceFlux fux518
+/score/filter/particleWithKineticEnergy range518 5180.0 5190.0 keV gamma
+/score/quantity/flatSurfaceFlux fux519
+/score/filter/particleWithKineticEnergy range519 5190.0 5200.0 keV gamma
+/score/quantity/flatSurfaceFlux fux520
+/score/filter/particleWithKineticEnergy range520 5200.0 5210.0 keV gamma
+/score/quantity/flatSurfaceFlux fux521
+/score/filter/particleWithKineticEnergy range521 5210.0 5220.0 keV gamma
+/score/quantity/flatSurfaceFlux fux522
+/score/filter/particleWithKineticEnergy range522 5220.0 5230.0 keV gamma
+/score/quantity/flatSurfaceFlux fux523
+/score/filter/particleWithKineticEnergy range523 5230.0 5240.0 keV gamma
+/score/quantity/flatSurfaceFlux fux524
+/score/filter/particleWithKineticEnergy range524 5240.0 5250.0 keV gamma
+/score/quantity/flatSurfaceFlux fux525
+/score/filter/particleWithKineticEnergy range525 5250.0 5260.0 keV gamma
+/score/quantity/flatSurfaceFlux fux526
+/score/filter/particleWithKineticEnergy range526 5260.0 5270.0 keV gamma
+/score/quantity/flatSurfaceFlux fux527
+/score/filter/particleWithKineticEnergy range527 5270.0 5280.0 keV gamma
+/score/quantity/flatSurfaceFlux fux528
+/score/filter/particleWithKineticEnergy range528 5280.0 5290.0 keV gamma
+/score/quantity/flatSurfaceFlux fux529
+/score/filter/particleWithKineticEnergy range529 5290.0 5300.0 keV gamma
+/score/quantity/flatSurfaceFlux fux530
+/score/filter/particleWithKineticEnergy range530 5300.0 5310.0 keV gamma
+/score/quantity/flatSurfaceFlux fux531
+/score/filter/particleWithKineticEnergy range531 5310.0 5320.0 keV gamma
+/score/quantity/flatSurfaceFlux fux532
+/score/filter/particleWithKineticEnergy range532 5320.0 5330.0 keV gamma
+/score/quantity/flatSurfaceFlux fux533
+/score/filter/particleWithKineticEnergy range533 5330.0 5340.0 keV gamma
+/score/quantity/flatSurfaceFlux fux534
+/score/filter/particleWithKineticEnergy range534 5340.0 5350.0 keV gamma
+/score/quantity/flatSurfaceFlux fux535
+/score/filter/particleWithKineticEnergy range535 5350.0 5360.0 keV gamma
+/score/quantity/flatSurfaceFlux fux536
+/score/filter/particleWithKineticEnergy range536 5360.0 5370.0 keV gamma
+/score/quantity/flatSurfaceFlux fux537
+/score/filter/particleWithKineticEnergy range537 5370.0 5380.0 keV gamma
+/score/quantity/flatSurfaceFlux fux538
+/score/filter/particleWithKineticEnergy range538 5380.0 5390.0 keV gamma
+/score/quantity/flatSurfaceFlux fux539
+/score/filter/particleWithKineticEnergy range539 5390.0 5400.0 keV gamma
+/score/quantity/flatSurfaceFlux fux540
+/score/filter/particleWithKineticEnergy range540 5400.0 5410.0 keV gamma
+/score/quantity/flatSurfaceFlux fux541
+/score/filter/particleWithKineticEnergy range541 5410.0 5420.0 keV gamma
+/score/quantity/flatSurfaceFlux fux542
+/score/filter/particleWithKineticEnergy range542 5420.0 5430.0 keV gamma
+/score/quantity/flatSurfaceFlux fux543
+/score/filter/particleWithKineticEnergy range543 5430.0 5440.0 keV gamma
+/score/quantity/flatSurfaceFlux fux544
+/score/filter/particleWithKineticEnergy range544 5440.0 5450.0 keV gamma
+/score/quantity/flatSurfaceFlux fux545
+/score/filter/particleWithKineticEnergy range545 5450.0 5460.0 keV gamma
+/score/quantity/flatSurfaceFlux fux546
+/score/filter/particleWithKineticEnergy range546 5460.0 5470.0 keV gamma
+/score/quantity/flatSurfaceFlux fux547
+/score/filter/particleWithKineticEnergy range547 5470.0 5480.0 keV gamma
+/score/quantity/flatSurfaceFlux fux548
+/score/filter/particleWithKineticEnergy range548 5480.0 5490.0 keV gamma
+/score/quantity/flatSurfaceFlux fux549
+/score/filter/particleWithKineticEnergy range549 5490.0 5500.0 keV gamma
+/score/quantity/flatSurfaceFlux fux550
+/score/filter/particleWithKineticEnergy range550 5500.0 5510.0 keV gamma
+/score/quantity/flatSurfaceFlux fux551
+/score/filter/particleWithKineticEnergy range551 5510.0 5520.0 keV gamma
+/score/quantity/flatSurfaceFlux fux552
+/score/filter/particleWithKineticEnergy range552 5520.0 5530.0 keV gamma
+/score/quantity/flatSurfaceFlux fux553
+/score/filter/particleWithKineticEnergy range553 5530.0 5540.0 keV gamma
+/score/quantity/flatSurfaceFlux fux554
+/score/filter/particleWithKineticEnergy range554 5540.0 5550.0 keV gamma
+/score/quantity/flatSurfaceFlux fux555
+/score/filter/particleWithKineticEnergy range555 5550.0 5560.0 keV gamma
+/score/quantity/flatSurfaceFlux fux556
+/score/filter/particleWithKineticEnergy range556 5560.0 5570.0 keV gamma
+/score/quantity/flatSurfaceFlux fux557
+/score/filter/particleWithKineticEnergy range557 5570.0 5580.0 keV gamma
+/score/quantity/flatSurfaceFlux fux558
+/score/filter/particleWithKineticEnergy range558 5580.0 5590.0 keV gamma
+/score/quantity/flatSurfaceFlux fux559
+/score/filter/particleWithKineticEnergy range559 5590.0 5600.0 keV gamma
+/score/quantity/flatSurfaceFlux fux560
+/score/filter/particleWithKineticEnergy range560 5600.0 5610.0 keV gamma
+/score/quantity/flatSurfaceFlux fux561
+/score/filter/particleWithKineticEnergy range561 5610.0 5620.0 keV gamma
+/score/quantity/flatSurfaceFlux fux562
+/score/filter/particleWithKineticEnergy range562 5620.0 5630.0 keV gamma
+/score/quantity/flatSurfaceFlux fux563
+/score/filter/particleWithKineticEnergy range563 5630.0 5640.0 keV gamma
+/score/quantity/flatSurfaceFlux fux564
+/score/filter/particleWithKineticEnergy range564 5640.0 5650.0 keV gamma
+/score/quantity/flatSurfaceFlux fux565
+/score/filter/particleWithKineticEnergy range565 5650.0 5660.0 keV gamma
+/score/quantity/flatSurfaceFlux fux566
+/score/filter/particleWithKineticEnergy range566 5660.0 5670.0 keV gamma
+/score/quantity/flatSurfaceFlux fux567
+/score/filter/particleWithKineticEnergy range567 5670.0 5680.0 keV gamma
+/score/quantity/flatSurfaceFlux fux568
+/score/filter/particleWithKineticEnergy range568 5680.0 5690.0 keV gamma
+/score/quantity/flatSurfaceFlux fux569
+/score/filter/particleWithKineticEnergy range569 5690.0 5700.0 keV gamma
+/score/quantity/flatSurfaceFlux fux570
+/score/filter/particleWithKineticEnergy range570 5700.0 5710.0 keV gamma
+/score/quantity/flatSurfaceFlux fux571
+/score/filter/particleWithKineticEnergy range571 5710.0 5720.0 keV gamma
+/score/quantity/flatSurfaceFlux fux572
+/score/filter/particleWithKineticEnergy range572 5720.0 5730.0 keV gamma
+/score/quantity/flatSurfaceFlux fux573
+/score/filter/particleWithKineticEnergy range573 5730.0 5740.0 keV gamma
+/score/quantity/flatSurfaceFlux fux574
+/score/filter/particleWithKineticEnergy range574 5740.0 5750.0 keV gamma
+/score/quantity/flatSurfaceFlux fux575
+/score/filter/particleWithKineticEnergy range575 5750.0 5760.0 keV gamma
+/score/quantity/flatSurfaceFlux fux576
+/score/filter/particleWithKineticEnergy range576 5760.0 5770.0 keV gamma
+/score/quantity/flatSurfaceFlux fux577
+/score/filter/particleWithKineticEnergy range577 5770.0 5780.0 keV gamma
+/score/quantity/flatSurfaceFlux fux578
+/score/filter/particleWithKineticEnergy range578 5780.0 5790.0 keV gamma
+/score/quantity/flatSurfaceFlux fux579
+/score/filter/particleWithKineticEnergy range579 5790.0 5800.0 keV gamma
+/score/quantity/flatSurfaceFlux fux580
+/score/filter/particleWithKineticEnergy range580 5800.0 5810.0 keV gamma
+/score/quantity/flatSurfaceFlux fux581
+/score/filter/particleWithKineticEnergy range581 5810.0 5820.0 keV gamma
+/score/quantity/flatSurfaceFlux fux582
+/score/filter/particleWithKineticEnergy range582 5820.0 5830.0 keV gamma
+/score/quantity/flatSurfaceFlux fux583
+/score/filter/particleWithKineticEnergy range583 5830.0 5840.0 keV gamma
+/score/quantity/flatSurfaceFlux fux584
+/score/filter/particleWithKineticEnergy range584 5840.0 5850.0 keV gamma
+/score/quantity/flatSurfaceFlux fux585
+/score/filter/particleWithKineticEnergy range585 5850.0 5860.0 keV gamma
+/score/quantity/flatSurfaceFlux fux586
+/score/filter/particleWithKineticEnergy range586 5860.0 5870.0 keV gamma
+/score/quantity/flatSurfaceFlux fux587
+/score/filter/particleWithKineticEnergy range587 5870.0 5880.0 keV gamma
+/score/quantity/flatSurfaceFlux fux588
+/score/filter/particleWithKineticEnergy range588 5880.0 5890.0 keV gamma
+/score/quantity/flatSurfaceFlux fux589
+/score/filter/particleWithKineticEnergy range589 5890.0 5900.0 keV gamma
+/score/quantity/flatSurfaceFlux fux590
+/score/filter/particleWithKineticEnergy range590 5900.0 5910.0 keV gamma
+/score/quantity/flatSurfaceFlux fux591
+/score/filter/particleWithKineticEnergy range591 5910.0 5920.0 keV gamma
+/score/quantity/flatSurfaceFlux fux592
+/score/filter/particleWithKineticEnergy range592 5920.0 5930.0 keV gamma
+/score/quantity/flatSurfaceFlux fux593
+/score/filter/particleWithKineticEnergy range593 5930.0 5940.0 keV gamma
+/score/quantity/flatSurfaceFlux fux594
+/score/filter/particleWithKineticEnergy range594 5940.0 5950.0 keV gamma
+/score/quantity/flatSurfaceFlux fux595
+/score/filter/particleWithKineticEnergy range595 5950.0 5960.0 keV gamma
+/score/quantity/flatSurfaceFlux fux596
+/score/filter/particleWithKineticEnergy range596 5960.0 5970.0 keV gamma
+/score/quantity/flatSurfaceFlux fux597
+/score/filter/particleWithKineticEnergy range597 5970.0 5980.0 keV gamma
+/score/quantity/flatSurfaceFlux fux598
+/score/filter/particleWithKineticEnergy range598 5980.0 5990.0 keV gamma
+/score/quantity/flatSurfaceFlux fux599
+/score/filter/particleWithKineticEnergy range599 5990.0 6000.0 keV gamma
+/score/quantity/flatSurfaceFlux fux600
+/score/filter/particleWithKineticEnergy range600 6000.0 6010.0 keV gamma
+/score/quantity/flatSurfaceFlux fux601
+/score/filter/particleWithKineticEnergy range601 6010.0 6020.0 keV gamma
+/score/quantity/flatSurfaceFlux fux602
+/score/filter/particleWithKineticEnergy range602 6020.0 6030.0 keV gamma
+/score/quantity/flatSurfaceFlux fux603
+/score/filter/particleWithKineticEnergy range603 6030.0 6040.0 keV gamma
+/score/quantity/flatSurfaceFlux fux604
+/score/filter/particleWithKineticEnergy range604 6040.0 6050.0 keV gamma
+/score/quantity/flatSurfaceFlux fux605
+/score/filter/particleWithKineticEnergy range605 6050.0 6060.0 keV gamma
+/score/quantity/flatSurfaceFlux fux606
+/score/filter/particleWithKineticEnergy range606 6060.0 6070.0 keV gamma
+/score/quantity/flatSurfaceFlux fux607
+/score/filter/particleWithKineticEnergy range607 6070.0 6080.0 keV gamma
+/score/quantity/flatSurfaceFlux fux608
+/score/filter/particleWithKineticEnergy range608 6080.0 6090.0 keV gamma
+/score/quantity/flatSurfaceFlux fux609
+/score/filter/particleWithKineticEnergy range609 6090.0 6100.0 keV gamma
+/score/quantity/flatSurfaceFlux fux610
+/score/filter/particleWithKineticEnergy range610 6100.0 6110.0 keV gamma
+/score/quantity/flatSurfaceFlux fux611
+/score/filter/particleWithKineticEnergy range611 6110.0 6120.0 keV gamma
+/score/quantity/flatSurfaceFlux fux612
+/score/filter/particleWithKineticEnergy range612 6120.0 6130.0 keV gamma
+/score/quantity/flatSurfaceFlux fux613
+/score/filter/particleWithKineticEnergy range613 6130.0 6140.0 keV gamma
+/score/quantity/flatSurfaceFlux fux614
+/score/filter/particleWithKineticEnergy range614 6140.0 6150.0 keV gamma
+/score/quantity/flatSurfaceFlux fux615
+/score/filter/particleWithKineticEnergy range615 6150.0 6160.0 keV gamma
+/score/quantity/flatSurfaceFlux fux616
+/score/filter/particleWithKineticEnergy range616 6160.0 6170.0 keV gamma
+/score/quantity/flatSurfaceFlux fux617
+/score/filter/particleWithKineticEnergy range617 6170.0 6180.0 keV gamma
+/score/quantity/flatSurfaceFlux fux618
+/score/filter/particleWithKineticEnergy range618 6180.0 6190.0 keV gamma
+/score/quantity/flatSurfaceFlux fux619
+/score/filter/particleWithKineticEnergy range619 6190.0 6200.0 keV gamma
+/score/quantity/flatSurfaceFlux fux620
+/score/filter/particleWithKineticEnergy range620 6200.0 6210.0 keV gamma
+/score/quantity/flatSurfaceFlux fux621
+/score/filter/particleWithKineticEnergy range621 6210.0 6220.0 keV gamma
+/score/quantity/flatSurfaceFlux fux622
+/score/filter/particleWithKineticEnergy range622 6220.0 6230.0 keV gamma
+/score/quantity/flatSurfaceFlux fux623
+/score/filter/particleWithKineticEnergy range623 6230.0 6240.0 keV gamma
+/score/quantity/flatSurfaceFlux fux624
+/score/filter/particleWithKineticEnergy range624 6240.0 6250.0 keV gamma
+/score/quantity/flatSurfaceFlux fux625
+/score/filter/particleWithKineticEnergy range625 6250.0 6260.0 keV gamma
+/score/quantity/flatSurfaceFlux fux626
+/score/filter/particleWithKineticEnergy range626 6260.0 6270.0 keV gamma
+/score/quantity/flatSurfaceFlux fux627
+/score/filter/particleWithKineticEnergy range627 6270.0 6280.0 keV gamma
+/score/quantity/flatSurfaceFlux fux628
+/score/filter/particleWithKineticEnergy range628 6280.0 6290.0 keV gamma
+/score/quantity/flatSurfaceFlux fux629
+/score/filter/particleWithKineticEnergy range629 6290.0 6300.0 keV gamma
+/score/quantity/flatSurfaceFlux fux630
+/score/filter/particleWithKineticEnergy range630 6300.0 6310.0 keV gamma
+/score/quantity/flatSurfaceFlux fux631
+/score/filter/particleWithKineticEnergy range631 6310.0 6320.0 keV gamma
+/score/quantity/flatSurfaceFlux fux632
+/score/filter/particleWithKineticEnergy range632 6320.0 6330.0 keV gamma
+/score/quantity/flatSurfaceFlux fux633
+/score/filter/particleWithKineticEnergy range633 6330.0 6340.0 keV gamma
+/score/quantity/flatSurfaceFlux fux634
+/score/filter/particleWithKineticEnergy range634 6340.0 6350.0 keV gamma
+/score/quantity/flatSurfaceFlux fux635
+/score/filter/particleWithKineticEnergy range635 6350.0 6360.0 keV gamma
+/score/quantity/flatSurfaceFlux fux636
+/score/filter/particleWithKineticEnergy range636 6360.0 6370.0 keV gamma
+/score/quantity/flatSurfaceFlux fux637
+/score/filter/particleWithKineticEnergy range637 6370.0 6380.0 keV gamma
+/score/quantity/flatSurfaceFlux fux638
+/score/filter/particleWithKineticEnergy range638 6380.0 6390.0 keV gamma
+/score/quantity/flatSurfaceFlux fux639
+/score/filter/particleWithKineticEnergy range639 6390.0 6400.0 keV gamma
+/score/quantity/flatSurfaceFlux fux640
+/score/filter/particleWithKineticEnergy range640 6400.0 6410.0 keV gamma
+/score/quantity/flatSurfaceFlux fux641
+/score/filter/particleWithKineticEnergy range641 6410.0 6420.0 keV gamma
+/score/quantity/flatSurfaceFlux fux642
+/score/filter/particleWithKineticEnergy range642 6420.0 6430.0 keV gamma
+/score/quantity/flatSurfaceFlux fux643
+/score/filter/particleWithKineticEnergy range643 6430.0 6440.0 keV gamma
+/score/quantity/flatSurfaceFlux fux644
+/score/filter/particleWithKineticEnergy range644 6440.0 6450.0 keV gamma
+/score/quantity/flatSurfaceFlux fux645
+/score/filter/particleWithKineticEnergy range645 6450.0 6460.0 keV gamma
+/score/quantity/flatSurfaceFlux fux646
+/score/filter/particleWithKineticEnergy range646 6460.0 6470.0 keV gamma
+/score/quantity/flatSurfaceFlux fux647
+/score/filter/particleWithKineticEnergy range647 6470.0 6480.0 keV gamma
+/score/quantity/flatSurfaceFlux fux648
+/score/filter/particleWithKineticEnergy range648 6480.0 6490.0 keV gamma
+/score/quantity/flatSurfaceFlux fux649
+/score/filter/particleWithKineticEnergy range649 6490.0 6500.0 keV gamma
+/score/quantity/flatSurfaceFlux fux650
+/score/filter/particleWithKineticEnergy range650 6500.0 6510.0 keV gamma
+/score/quantity/flatSurfaceFlux fux651
+/score/filter/particleWithKineticEnergy range651 6510.0 6520.0 keV gamma
+/score/quantity/flatSurfaceFlux fux652
+/score/filter/particleWithKineticEnergy range652 6520.0 6530.0 keV gamma
+/score/quantity/flatSurfaceFlux fux653
+/score/filter/particleWithKineticEnergy range653 6530.0 6540.0 keV gamma
+/score/quantity/flatSurfaceFlux fux654
+/score/filter/particleWithKineticEnergy range654 6540.0 6550.0 keV gamma
+/score/quantity/flatSurfaceFlux fux655
+/score/filter/particleWithKineticEnergy range655 6550.0 6560.0 keV gamma
+/score/quantity/flatSurfaceFlux fux656
+/score/filter/particleWithKineticEnergy range656 6560.0 6570.0 keV gamma
+/score/quantity/flatSurfaceFlux fux657
+/score/filter/particleWithKineticEnergy range657 6570.0 6580.0 keV gamma
+/score/quantity/flatSurfaceFlux fux658
+/score/filter/particleWithKineticEnergy range658 6580.0 6590.0 keV gamma
+/score/quantity/flatSurfaceFlux fux659
+/score/filter/particleWithKineticEnergy range659 6590.0 6600.0 keV gamma
+/score/quantity/flatSurfaceFlux fux660
+/score/filter/particleWithKineticEnergy range660 6600.0 6610.0 keV gamma
+/score/quantity/flatSurfaceFlux fux661
+/score/filter/particleWithKineticEnergy range661 6610.0 6620.0 keV gamma
+/score/quantity/flatSurfaceFlux fux662
+/score/filter/particleWithKineticEnergy range662 6620.0 6630.0 keV gamma
+/score/quantity/flatSurfaceFlux fux663
+/score/filter/particleWithKineticEnergy range663 6630.0 6640.0 keV gamma
+/score/quantity/flatSurfaceFlux fux664
+/score/filter/particleWithKineticEnergy range664 6640.0 6650.0 keV gamma
+/score/quantity/flatSurfaceFlux fux665
+/score/filter/particleWithKineticEnergy range665 6650.0 6660.0 keV gamma
+/score/quantity/flatSurfaceFlux fux666
+/score/filter/particleWithKineticEnergy range666 6660.0 6670.0 keV gamma
+/score/quantity/flatSurfaceFlux fux667
+/score/filter/particleWithKineticEnergy range667 6670.0 6680.0 keV gamma
+/score/quantity/flatSurfaceFlux fux668
+/score/filter/particleWithKineticEnergy range668 6680.0 6690.0 keV gamma
+/score/quantity/flatSurfaceFlux fux669
+/score/filter/particleWithKineticEnergy range669 6690.0 6700.0 keV gamma
+/score/quantity/flatSurfaceFlux fux670
+/score/filter/particleWithKineticEnergy range670 6700.0 6710.0 keV gamma
+/score/quantity/flatSurfaceFlux fux671
+/score/filter/particleWithKineticEnergy range671 6710.0 6720.0 keV gamma
+/score/quantity/flatSurfaceFlux fux672
+/score/filter/particleWithKineticEnergy range672 6720.0 6730.0 keV gamma
+/score/quantity/flatSurfaceFlux fux673
+/score/filter/particleWithKineticEnergy range673 6730.0 6740.0 keV gamma
+/score/quantity/flatSurfaceFlux fux674
+/score/filter/particleWithKineticEnergy range674 6740.0 6750.0 keV gamma
+/score/quantity/flatSurfaceFlux fux675
+/score/filter/particleWithKineticEnergy range675 6750.0 6760.0 keV gamma
+/score/quantity/flatSurfaceFlux fux676
+/score/filter/particleWithKineticEnergy range676 6760.0 6770.0 keV gamma
+/score/quantity/flatSurfaceFlux fux677
+/score/filter/particleWithKineticEnergy range677 6770.0 6780.0 keV gamma
+/score/quantity/flatSurfaceFlux fux678
+/score/filter/particleWithKineticEnergy range678 6780.0 6790.0 keV gamma
+/score/quantity/flatSurfaceFlux fux679
+/score/filter/particleWithKineticEnergy range679 6790.0 6800.0 keV gamma
+/score/quantity/flatSurfaceFlux fux680
+/score/filter/particleWithKineticEnergy range680 6800.0 6810.0 keV gamma
+/score/quantity/flatSurfaceFlux fux681
+/score/filter/particleWithKineticEnergy range681 6810.0 6820.0 keV gamma
+/score/quantity/flatSurfaceFlux fux682
+/score/filter/particleWithKineticEnergy range682 6820.0 6830.0 keV gamma
+/score/quantity/flatSurfaceFlux fux683
+/score/filter/particleWithKineticEnergy range683 6830.0 6840.0 keV gamma
+/score/quantity/flatSurfaceFlux fux684
+/score/filter/particleWithKineticEnergy range684 6840.0 6850.0 keV gamma
+/score/quantity/flatSurfaceFlux fux685
+/score/filter/particleWithKineticEnergy range685 6850.0 6860.0 keV gamma
+/score/quantity/flatSurfaceFlux fux686
+/score/filter/particleWithKineticEnergy range686 6860.0 6870.0 keV gamma
+/score/quantity/flatSurfaceFlux fux687
+/score/filter/particleWithKineticEnergy range687 6870.0 6880.0 keV gamma
+/score/quantity/flatSurfaceFlux fux688
+/score/filter/particleWithKineticEnergy range688 6880.0 6890.0 keV gamma
+/score/quantity/flatSurfaceFlux fux689
+/score/filter/particleWithKineticEnergy range689 6890.0 6900.0 keV gamma
+/score/quantity/flatSurfaceFlux fux690
+/score/filter/particleWithKineticEnergy range690 6900.0 6910.0 keV gamma
+/score/quantity/flatSurfaceFlux fux691
+/score/filter/particleWithKineticEnergy range691 6910.0 6920.0 keV gamma
+/score/quantity/flatSurfaceFlux fux692
+/score/filter/particleWithKineticEnergy range692 6920.0 6930.0 keV gamma
+/score/quantity/flatSurfaceFlux fux693
+/score/filter/particleWithKineticEnergy range693 6930.0 6940.0 keV gamma
+/score/quantity/flatSurfaceFlux fux694
+/score/filter/particleWithKineticEnergy range694 6940.0 6950.0 keV gamma
+/score/quantity/flatSurfaceFlux fux695
+/score/filter/particleWithKineticEnergy range695 6950.0 6960.0 keV gamma
+/score/quantity/flatSurfaceFlux fux696
+/score/filter/particleWithKineticEnergy range696 6960.0 6970.0 keV gamma
+/score/quantity/flatSurfaceFlux fux697
+/score/filter/particleWithKineticEnergy range697 6970.0 6980.0 keV gamma
+/score/quantity/flatSurfaceFlux fux698
+/score/filter/particleWithKineticEnergy range698 6980.0 6990.0 keV gamma
+/score/quantity/flatSurfaceFlux fux699
+/score/filter/particleWithKineticEnergy range699 6990.0 7000.0 keV gamma
+/score/quantity/flatSurfaceFlux fux700
+/score/filter/particleWithKineticEnergy range700 7000.0 7010.0 keV gamma
+/score/quantity/flatSurfaceFlux fux701
+/score/filter/particleWithKineticEnergy range701 7010.0 7020.0 keV gamma
+/score/quantity/flatSurfaceFlux fux702
+/score/filter/particleWithKineticEnergy range702 7020.0 7030.0 keV gamma
+/score/quantity/flatSurfaceFlux fux703
+/score/filter/particleWithKineticEnergy range703 7030.0 7040.0 keV gamma
+/score/quantity/flatSurfaceFlux fux704
+/score/filter/particleWithKineticEnergy range704 7040.0 7050.0 keV gamma
+/score/quantity/flatSurfaceFlux fux705
+/score/filter/particleWithKineticEnergy range705 7050.0 7060.0 keV gamma
+/score/quantity/flatSurfaceFlux fux706
+/score/filter/particleWithKineticEnergy range706 7060.0 7070.0 keV gamma
+/score/quantity/flatSurfaceFlux fux707
+/score/filter/particleWithKineticEnergy range707 7070.0 7080.0 keV gamma
+/score/quantity/flatSurfaceFlux fux708
+/score/filter/particleWithKineticEnergy range708 7080.0 7090.0 keV gamma
+/score/quantity/flatSurfaceFlux fux709
+/score/filter/particleWithKineticEnergy range709 7090.0 7100.0 keV gamma
+/score/quantity/flatSurfaceFlux fux710
+/score/filter/particleWithKineticEnergy range710 7100.0 7110.0 keV gamma
+/score/quantity/flatSurfaceFlux fux711
+/score/filter/particleWithKineticEnergy range711 7110.0 7120.0 keV gamma
+/score/quantity/flatSurfaceFlux fux712
+/score/filter/particleWithKineticEnergy range712 7120.0 7130.0 keV gamma
+/score/quantity/flatSurfaceFlux fux713
+/score/filter/particleWithKineticEnergy range713 7130.0 7140.0 keV gamma
+/score/quantity/flatSurfaceFlux fux714
+/score/filter/particleWithKineticEnergy range714 7140.0 7150.0 keV gamma
+/score/quantity/flatSurfaceFlux fux715
+/score/filter/particleWithKineticEnergy range715 7150.0 7160.0 keV gamma
+/score/quantity/flatSurfaceFlux fux716
+/score/filter/particleWithKineticEnergy range716 7160.0 7170.0 keV gamma
+/score/quantity/flatSurfaceFlux fux717
+/score/filter/particleWithKineticEnergy range717 7170.0 7180.0 keV gamma
+/score/quantity/flatSurfaceFlux fux718
+/score/filter/particleWithKineticEnergy range718 7180.0 7190.0 keV gamma
+/score/quantity/flatSurfaceFlux fux719
+/score/filter/particleWithKineticEnergy range719 7190.0 7200.0 keV gamma
+/score/quantity/flatSurfaceFlux fux720
+/score/filter/particleWithKineticEnergy range720 7200.0 7210.0 keV gamma
+/score/quantity/flatSurfaceFlux fux721
+/score/filter/particleWithKineticEnergy range721 7210.0 7220.0 keV gamma
+/score/quantity/flatSurfaceFlux fux722
+/score/filter/particleWithKineticEnergy range722 7220.0 7230.0 keV gamma
+/score/quantity/flatSurfaceFlux fux723
+/score/filter/particleWithKineticEnergy range723 7230.0 7240.0 keV gamma
+/score/quantity/flatSurfaceFlux fux724
+/score/filter/particleWithKineticEnergy range724 7240.0 7250.0 keV gamma
+/score/quantity/flatSurfaceFlux fux725
+/score/filter/particleWithKineticEnergy range725 7250.0 7260.0 keV gamma
+/score/quantity/flatSurfaceFlux fux726
+/score/filter/particleWithKineticEnergy range726 7260.0 7270.0 keV gamma
+/score/quantity/flatSurfaceFlux fux727
+/score/filter/particleWithKineticEnergy range727 7270.0 7280.0 keV gamma
+/score/quantity/flatSurfaceFlux fux728
+/score/filter/particleWithKineticEnergy range728 7280.0 7290.0 keV gamma
+/score/quantity/flatSurfaceFlux fux729
+/score/filter/particleWithKineticEnergy range729 7290.0 7300.0 keV gamma
+/score/quantity/flatSurfaceFlux fux730
+/score/filter/particleWithKineticEnergy range730 7300.0 7310.0 keV gamma
+/score/quantity/flatSurfaceFlux fux731
+/score/filter/particleWithKineticEnergy range731 7310.0 7320.0 keV gamma
+/score/quantity/flatSurfaceFlux fux732
+/score/filter/particleWithKineticEnergy range732 7320.0 7330.0 keV gamma
+/score/quantity/flatSurfaceFlux fux733
+/score/filter/particleWithKineticEnergy range733 7330.0 7340.0 keV gamma
+/score/quantity/flatSurfaceFlux fux734
+/score/filter/particleWithKineticEnergy range734 7340.0 7350.0 keV gamma
+/score/quantity/flatSurfaceFlux fux735
+/score/filter/particleWithKineticEnergy range735 7350.0 7360.0 keV gamma
+/score/quantity/flatSurfaceFlux fux736
+/score/filter/particleWithKineticEnergy range736 7360.0 7370.0 keV gamma
+/score/quantity/flatSurfaceFlux fux737
+/score/filter/particleWithKineticEnergy range737 7370.0 7380.0 keV gamma
+/score/quantity/flatSurfaceFlux fux738
+/score/filter/particleWithKineticEnergy range738 7380.0 7390.0 keV gamma
+/score/quantity/flatSurfaceFlux fux739
+/score/filter/particleWithKineticEnergy range739 7390.0 7400.0 keV gamma
+/score/quantity/flatSurfaceFlux fux740
+/score/filter/particleWithKineticEnergy range740 7400.0 7410.0 keV gamma
+/score/quantity/flatSurfaceFlux fux741
+/score/filter/particleWithKineticEnergy range741 7410.0 7420.0 keV gamma
+/score/quantity/flatSurfaceFlux fux742
+/score/filter/particleWithKineticEnergy range742 7420.0 7430.0 keV gamma
+/score/quantity/flatSurfaceFlux fux743
+/score/filter/particleWithKineticEnergy range743 7430.0 7440.0 keV gamma
+/score/quantity/flatSurfaceFlux fux744
+/score/filter/particleWithKineticEnergy range744 7440.0 7450.0 keV gamma
+/score/quantity/flatSurfaceFlux fux745
+/score/filter/particleWithKineticEnergy range745 7450.0 7460.0 keV gamma
+/score/quantity/flatSurfaceFlux fux746
+/score/filter/particleWithKineticEnergy range746 7460.0 7470.0 keV gamma
+/score/quantity/flatSurfaceFlux fux747
+/score/filter/particleWithKineticEnergy range747 7470.0 7480.0 keV gamma
+/score/quantity/flatSurfaceFlux fux748
+/score/filter/particleWithKineticEnergy range748 7480.0 7490.0 keV gamma
+/score/quantity/flatSurfaceFlux fux749
+/score/filter/particleWithKineticEnergy range749 7490.0 7500.0 keV gamma
+/score/quantity/flatSurfaceFlux fux750
+/score/filter/particleWithKineticEnergy range750 7500.0 7510.0 keV gamma
+/score/quantity/flatSurfaceFlux fux751
+/score/filter/particleWithKineticEnergy range751 7510.0 7520.0 keV gamma
+/score/quantity/flatSurfaceFlux fux752
+/score/filter/particleWithKineticEnergy range752 7520.0 7530.0 keV gamma
+/score/quantity/flatSurfaceFlux fux753
+/score/filter/particleWithKineticEnergy range753 7530.0 7540.0 keV gamma
+/score/quantity/flatSurfaceFlux fux754
+/score/filter/particleWithKineticEnergy range754 7540.0 7550.0 keV gamma
+/score/quantity/flatSurfaceFlux fux755
+/score/filter/particleWithKineticEnergy range755 7550.0 7560.0 keV gamma
+/score/quantity/flatSurfaceFlux fux756
+/score/filter/particleWithKineticEnergy range756 7560.0 7570.0 keV gamma
+/score/quantity/flatSurfaceFlux fux757
+/score/filter/particleWithKineticEnergy range757 7570.0 7580.0 keV gamma
+/score/quantity/flatSurfaceFlux fux758
+/score/filter/particleWithKineticEnergy range758 7580.0 7590.0 keV gamma
+/score/quantity/flatSurfaceFlux fux759
+/score/filter/particleWithKineticEnergy range759 7590.0 7600.0 keV gamma
+/score/quantity/flatSurfaceFlux fux760
+/score/filter/particleWithKineticEnergy range760 7600.0 7610.0 keV gamma
+/score/quantity/flatSurfaceFlux fux761
+/score/filter/particleWithKineticEnergy range761 7610.0 7620.0 keV gamma
+/score/quantity/flatSurfaceFlux fux762
+/score/filter/particleWithKineticEnergy range762 7620.0 7630.0 keV gamma
+/score/quantity/flatSurfaceFlux fux763
+/score/filter/particleWithKineticEnergy range763 7630.0 7640.0 keV gamma
+/score/quantity/flatSurfaceFlux fux764
+/score/filter/particleWithKineticEnergy range764 7640.0 7650.0 keV gamma
+/score/quantity/flatSurfaceFlux fux765
+/score/filter/particleWithKineticEnergy range765 7650.0 7660.0 keV gamma
+/score/quantity/flatSurfaceFlux fux766
+/score/filter/particleWithKineticEnergy range766 7660.0 7670.0 keV gamma
+/score/quantity/flatSurfaceFlux fux767
+/score/filter/particleWithKineticEnergy range767 7670.0 7680.0 keV gamma
+/score/quantity/flatSurfaceFlux fux768
+/score/filter/particleWithKineticEnergy range768 7680.0 7690.0 keV gamma
+/score/quantity/flatSurfaceFlux fux769
+/score/filter/particleWithKineticEnergy range769 7690.0 7700.0 keV gamma
+/score/quantity/flatSurfaceFlux fux770
+/score/filter/particleWithKineticEnergy range770 7700.0 7710.0 keV gamma
+/score/quantity/flatSurfaceFlux fux771
+/score/filter/particleWithKineticEnergy range771 7710.0 7720.0 keV gamma
+/score/quantity/flatSurfaceFlux fux772
+/score/filter/particleWithKineticEnergy range772 7720.0 7730.0 keV gamma
+/score/quantity/flatSurfaceFlux fux773
+/score/filter/particleWithKineticEnergy range773 7730.0 7740.0 keV gamma
+/score/quantity/flatSurfaceFlux fux774
+/score/filter/particleWithKineticEnergy range774 7740.0 7750.0 keV gamma
+/score/quantity/flatSurfaceFlux fux775
+/score/filter/particleWithKineticEnergy range775 7750.0 7760.0 keV gamma
+/score/quantity/flatSurfaceFlux fux776
+/score/filter/particleWithKineticEnergy range776 7760.0 7770.0 keV gamma
+/score/quantity/flatSurfaceFlux fux777
+/score/filter/particleWithKineticEnergy range777 7770.0 7780.0 keV gamma
+/score/quantity/flatSurfaceFlux fux778
+/score/filter/particleWithKineticEnergy range778 7780.0 7790.0 keV gamma
+/score/quantity/flatSurfaceFlux fux779
+/score/filter/particleWithKineticEnergy range779 7790.0 7800.0 keV gamma
+/score/quantity/flatSurfaceFlux fux780
+/score/filter/particleWithKineticEnergy range780 7800.0 7810.0 keV gamma
+/score/quantity/flatSurfaceFlux fux781
+/score/filter/particleWithKineticEnergy range781 7810.0 7820.0 keV gamma
+/score/quantity/flatSurfaceFlux fux782
+/score/filter/particleWithKineticEnergy range782 7820.0 7830.0 keV gamma
+/score/quantity/flatSurfaceFlux fux783
+/score/filter/particleWithKineticEnergy range783 7830.0 7840.0 keV gamma
+/score/quantity/flatSurfaceFlux fux784
+/score/filter/particleWithKineticEnergy range784 7840.0 7850.0 keV gamma
+/score/quantity/flatSurfaceFlux fux785
+/score/filter/particleWithKineticEnergy range785 7850.0 7860.0 keV gamma
+/score/quantity/flatSurfaceFlux fux786
+/score/filter/particleWithKineticEnergy range786 7860.0 7870.0 keV gamma
+/score/quantity/flatSurfaceFlux fux787
+/score/filter/particleWithKineticEnergy range787 7870.0 7880.0 keV gamma
+/score/quantity/flatSurfaceFlux fux788
+/score/filter/particleWithKineticEnergy range788 7880.0 7890.0 keV gamma
+/score/quantity/flatSurfaceFlux fux789
+/score/filter/particleWithKineticEnergy range789 7890.0 7900.0 keV gamma
+/score/quantity/flatSurfaceFlux fux790
+/score/filter/particleWithKineticEnergy range790 7900.0 7910.0 keV gamma
+/score/quantity/flatSurfaceFlux fux791
+/score/filter/particleWithKineticEnergy range791 7910.0 7920.0 keV gamma
+/score/quantity/flatSurfaceFlux fux792
+/score/filter/particleWithKineticEnergy range792 7920.0 7930.0 keV gamma
+/score/quantity/flatSurfaceFlux fux793
+/score/filter/particleWithKineticEnergy range793 7930.0 7940.0 keV gamma
+/score/quantity/flatSurfaceFlux fux794
+/score/filter/particleWithKineticEnergy range794 7940.0 7950.0 keV gamma
+/score/quantity/flatSurfaceFlux fux795
+/score/filter/particleWithKineticEnergy range795 7950.0 7960.0 keV gamma
+/score/quantity/flatSurfaceFlux fux796
+/score/filter/particleWithKineticEnergy range796 7960.0 7970.0 keV gamma
+/score/quantity/flatSurfaceFlux fux797
+/score/filter/particleWithKineticEnergy range797 7970.0 7980.0 keV gamma
+/score/quantity/flatSurfaceFlux fux798
+/score/filter/particleWithKineticEnergy range798 7980.0 7990.0 keV gamma
+/score/quantity/flatSurfaceFlux fux799
+/score/filter/particleWithKineticEnergy range799 7990.0 8000.0 keV gamma
+/score/quantity/flatSurfaceFlux fux800
+/score/filter/particleWithKineticEnergy range800 8000.0 8010.0 keV gamma
+/score/quantity/flatSurfaceFlux fux801
+/score/filter/particleWithKineticEnergy range801 8010.0 8020.0 keV gamma
+/score/quantity/flatSurfaceFlux fux802
+/score/filter/particleWithKineticEnergy range802 8020.0 8030.0 keV gamma
+/score/quantity/flatSurfaceFlux fux803
+/score/filter/particleWithKineticEnergy range803 8030.0 8040.0 keV gamma
+/score/quantity/flatSurfaceFlux fux804
+/score/filter/particleWithKineticEnergy range804 8040.0 8050.0 keV gamma
+/score/quantity/flatSurfaceFlux fux805
+/score/filter/particleWithKineticEnergy range805 8050.0 8060.0 keV gamma
+/score/quantity/flatSurfaceFlux fux806
+/score/filter/particleWithKineticEnergy range806 8060.0 8070.0 keV gamma
+/score/quantity/flatSurfaceFlux fux807
+/score/filter/particleWithKineticEnergy range807 8070.0 8080.0 keV gamma
+/score/quantity/flatSurfaceFlux fux808
+/score/filter/particleWithKineticEnergy range808 8080.0 8090.0 keV gamma
+/score/quantity/flatSurfaceFlux fux809
+/score/filter/particleWithKineticEnergy range809 8090.0 8100.0 keV gamma
+/score/quantity/flatSurfaceFlux fux810
+/score/filter/particleWithKineticEnergy range810 8100.0 8110.0 keV gamma
+/score/quantity/flatSurfaceFlux fux811
+/score/filter/particleWithKineticEnergy range811 8110.0 8120.0 keV gamma
+/score/quantity/flatSurfaceFlux fux812
+/score/filter/particleWithKineticEnergy range812 8120.0 8130.0 keV gamma
+/score/quantity/flatSurfaceFlux fux813
+/score/filter/particleWithKineticEnergy range813 8130.0 8140.0 keV gamma
+/score/quantity/flatSurfaceFlux fux814
+/score/filter/particleWithKineticEnergy range814 8140.0 8150.0 keV gamma
+/score/quantity/flatSurfaceFlux fux815
+/score/filter/particleWithKineticEnergy range815 8150.0 8160.0 keV gamma
+/score/quantity/flatSurfaceFlux fux816
+/score/filter/particleWithKineticEnergy range816 8160.0 8170.0 keV gamma
+/score/quantity/flatSurfaceFlux fux817
+/score/filter/particleWithKineticEnergy range817 8170.0 8180.0 keV gamma
+/score/quantity/flatSurfaceFlux fux818
+/score/filter/particleWithKineticEnergy range818 8180.0 8190.0 keV gamma
+/score/quantity/flatSurfaceFlux fux819
+/score/filter/particleWithKineticEnergy range819 8190.0 8200.0 keV gamma
+/score/quantity/flatSurfaceFlux fux820
+/score/filter/particleWithKineticEnergy range820 8200.0 8210.0 keV gamma
+/score/quantity/flatSurfaceFlux fux821
+/score/filter/particleWithKineticEnergy range821 8210.0 8220.0 keV gamma
+/score/quantity/flatSurfaceFlux fux822
+/score/filter/particleWithKineticEnergy range822 8220.0 8230.0 keV gamma
+/score/quantity/flatSurfaceFlux fux823
+/score/filter/particleWithKineticEnergy range823 8230.0 8240.0 keV gamma
+/score/quantity/flatSurfaceFlux fux824
+/score/filter/particleWithKineticEnergy range824 8240.0 8250.0 keV gamma
+/score/quantity/flatSurfaceFlux fux825
+/score/filter/particleWithKineticEnergy range825 8250.0 8260.0 keV gamma
+/score/quantity/flatSurfaceFlux fux826
+/score/filter/particleWithKineticEnergy range826 8260.0 8270.0 keV gamma
+/score/quantity/flatSurfaceFlux fux827
+/score/filter/particleWithKineticEnergy range827 8270.0 8280.0 keV gamma
+/score/quantity/flatSurfaceFlux fux828
+/score/filter/particleWithKineticEnergy range828 8280.0 8290.0 keV gamma
+/score/quantity/flatSurfaceFlux fux829
+/score/filter/particleWithKineticEnergy range829 8290.0 8300.0 keV gamma
+/score/quantity/flatSurfaceFlux fux830
+/score/filter/particleWithKineticEnergy range830 8300.0 8310.0 keV gamma
+/score/quantity/flatSurfaceFlux fux831
+/score/filter/particleWithKineticEnergy range831 8310.0 8320.0 keV gamma
+/score/quantity/flatSurfaceFlux fux832
+/score/filter/particleWithKineticEnergy range832 8320.0 8330.0 keV gamma
+/score/quantity/flatSurfaceFlux fux833
+/score/filter/particleWithKineticEnergy range833 8330.0 8340.0 keV gamma
+/score/quantity/flatSurfaceFlux fux834
+/score/filter/particleWithKineticEnergy range834 8340.0 8350.0 keV gamma
+/score/quantity/flatSurfaceFlux fux835
+/score/filter/particleWithKineticEnergy range835 8350.0 8360.0 keV gamma
+/score/quantity/flatSurfaceFlux fux836
+/score/filter/particleWithKineticEnergy range836 8360.0 8370.0 keV gamma
+/score/quantity/flatSurfaceFlux fux837
+/score/filter/particleWithKineticEnergy range837 8370.0 8380.0 keV gamma
+/score/quantity/flatSurfaceFlux fux838
+/score/filter/particleWithKineticEnergy range838 8380.0 8390.0 keV gamma
+/score/quantity/flatSurfaceFlux fux839
+/score/filter/particleWithKineticEnergy range839 8390.0 8400.0 keV gamma
+/score/quantity/flatSurfaceFlux fux840
+/score/filter/particleWithKineticEnergy range840 8400.0 8410.0 keV gamma
+/score/quantity/flatSurfaceFlux fux841
+/score/filter/particleWithKineticEnergy range841 8410.0 8420.0 keV gamma
+/score/quantity/flatSurfaceFlux fux842
+/score/filter/particleWithKineticEnergy range842 8420.0 8430.0 keV gamma
+/score/quantity/flatSurfaceFlux fux843
+/score/filter/particleWithKineticEnergy range843 8430.0 8440.0 keV gamma
+/score/quantity/flatSurfaceFlux fux844
+/score/filter/particleWithKineticEnergy range844 8440.0 8450.0 keV gamma
+/score/quantity/flatSurfaceFlux fux845
+/score/filter/particleWithKineticEnergy range845 8450.0 8460.0 keV gamma
+/score/quantity/flatSurfaceFlux fux846
+/score/filter/particleWithKineticEnergy range846 8460.0 8470.0 keV gamma
+/score/quantity/flatSurfaceFlux fux847
+/score/filter/particleWithKineticEnergy range847 8470.0 8480.0 keV gamma
+/score/quantity/flatSurfaceFlux fux848
+/score/filter/particleWithKineticEnergy range848 8480.0 8490.0 keV gamma
+/score/quantity/flatSurfaceFlux fux849
+/score/filter/particleWithKineticEnergy range849 8490.0 8500.0 keV gamma
+/score/quantity/flatSurfaceFlux fux850
+/score/filter/particleWithKineticEnergy range850 8500.0 8510.0 keV gamma
+/score/quantity/flatSurfaceFlux fux851
+/score/filter/particleWithKineticEnergy range851 8510.0 8520.0 keV gamma
+/score/quantity/flatSurfaceFlux fux852
+/score/filter/particleWithKineticEnergy range852 8520.0 8530.0 keV gamma
+/score/quantity/flatSurfaceFlux fux853
+/score/filter/particleWithKineticEnergy range853 8530.0 8540.0 keV gamma
+/score/quantity/flatSurfaceFlux fux854
+/score/filter/particleWithKineticEnergy range854 8540.0 8550.0 keV gamma
+/score/quantity/flatSurfaceFlux fux855
+/score/filter/particleWithKineticEnergy range855 8550.0 8560.0 keV gamma
+/score/quantity/flatSurfaceFlux fux856
+/score/filter/particleWithKineticEnergy range856 8560.0 8570.0 keV gamma
+/score/quantity/flatSurfaceFlux fux857
+/score/filter/particleWithKineticEnergy range857 8570.0 8580.0 keV gamma
+/score/quantity/flatSurfaceFlux fux858
+/score/filter/particleWithKineticEnergy range858 8580.0 8590.0 keV gamma
+/score/quantity/flatSurfaceFlux fux859
+/score/filter/particleWithKineticEnergy range859 8590.0 8600.0 keV gamma
+/score/quantity/flatSurfaceFlux fux860
+/score/filter/particleWithKineticEnergy range860 8600.0 8610.0 keV gamma
+/score/quantity/flatSurfaceFlux fux861
+/score/filter/particleWithKineticEnergy range861 8610.0 8620.0 keV gamma
+/score/quantity/flatSurfaceFlux fux862
+/score/filter/particleWithKineticEnergy range862 8620.0 8630.0 keV gamma
+/score/quantity/flatSurfaceFlux fux863
+/score/filter/particleWithKineticEnergy range863 8630.0 8640.0 keV gamma
+/score/quantity/flatSurfaceFlux fux864
+/score/filter/particleWithKineticEnergy range864 8640.0 8650.0 keV gamma
+/score/quantity/flatSurfaceFlux fux865
+/score/filter/particleWithKineticEnergy range865 8650.0 8660.0 keV gamma
+/score/quantity/flatSurfaceFlux fux866
+/score/filter/particleWithKineticEnergy range866 8660.0 8670.0 keV gamma
+/score/quantity/flatSurfaceFlux fux867
+/score/filter/particleWithKineticEnergy range867 8670.0 8680.0 keV gamma
+/score/quantity/flatSurfaceFlux fux868
+/score/filter/particleWithKineticEnergy range868 8680.0 8690.0 keV gamma
+/score/quantity/flatSurfaceFlux fux869
+/score/filter/particleWithKineticEnergy range869 8690.0 8700.0 keV gamma
+/score/quantity/flatSurfaceFlux fux870
+/score/filter/particleWithKineticEnergy range870 8700.0 8710.0 keV gamma
+/score/quantity/flatSurfaceFlux fux871
+/score/filter/particleWithKineticEnergy range871 8710.0 8720.0 keV gamma
+/score/quantity/flatSurfaceFlux fux872
+/score/filter/particleWithKineticEnergy range872 8720.0 8730.0 keV gamma
+/score/quantity/flatSurfaceFlux fux873
+/score/filter/particleWithKineticEnergy range873 8730.0 8740.0 keV gamma
+/score/quantity/flatSurfaceFlux fux874
+/score/filter/particleWithKineticEnergy range874 8740.0 8750.0 keV gamma
+/score/quantity/flatSurfaceFlux fux875
+/score/filter/particleWithKineticEnergy range875 8750.0 8760.0 keV gamma
+/score/quantity/flatSurfaceFlux fux876
+/score/filter/particleWithKineticEnergy range876 8760.0 8770.0 keV gamma
+/score/quantity/flatSurfaceFlux fux877
+/score/filter/particleWithKineticEnergy range877 8770.0 8780.0 keV gamma
+/score/quantity/flatSurfaceFlux fux878
+/score/filter/particleWithKineticEnergy range878 8780.0 8790.0 keV gamma
+/score/quantity/flatSurfaceFlux fux879
+/score/filter/particleWithKineticEnergy range879 8790.0 8800.0 keV gamma
+/score/quantity/flatSurfaceFlux fux880
+/score/filter/particleWithKineticEnergy range880 8800.0 8810.0 keV gamma
+/score/quantity/flatSurfaceFlux fux881
+/score/filter/particleWithKineticEnergy range881 8810.0 8820.0 keV gamma
+/score/quantity/flatSurfaceFlux fux882
+/score/filter/particleWithKineticEnergy range882 8820.0 8830.0 keV gamma
+/score/quantity/flatSurfaceFlux fux883
+/score/filter/particleWithKineticEnergy range883 8830.0 8840.0 keV gamma
+/score/quantity/flatSurfaceFlux fux884
+/score/filter/particleWithKineticEnergy range884 8840.0 8850.0 keV gamma
+/score/quantity/flatSurfaceFlux fux885
+/score/filter/particleWithKineticEnergy range885 8850.0 8860.0 keV gamma
+/score/quantity/flatSurfaceFlux fux886
+/score/filter/particleWithKineticEnergy range886 8860.0 8870.0 keV gamma
+/score/quantity/flatSurfaceFlux fux887
+/score/filter/particleWithKineticEnergy range887 8870.0 8880.0 keV gamma
+/score/quantity/flatSurfaceFlux fux888
+/score/filter/particleWithKineticEnergy range888 8880.0 8890.0 keV gamma
+/score/quantity/flatSurfaceFlux fux889
+/score/filter/particleWithKineticEnergy range889 8890.0 8900.0 keV gamma
+/score/quantity/flatSurfaceFlux fux890
+/score/filter/particleWithKineticEnergy range890 8900.0 8910.0 keV gamma
+/score/quantity/flatSurfaceFlux fux891
+/score/filter/particleWithKineticEnergy range891 8910.0 8920.0 keV gamma
+/score/quantity/flatSurfaceFlux fux892
+/score/filter/particleWithKineticEnergy range892 8920.0 8930.0 keV gamma
+/score/quantity/flatSurfaceFlux fux893
+/score/filter/particleWithKineticEnergy range893 8930.0 8940.0 keV gamma
+/score/quantity/flatSurfaceFlux fux894
+/score/filter/particleWithKineticEnergy range894 8940.0 8950.0 keV gamma
+/score/quantity/flatSurfaceFlux fux895
+/score/filter/particleWithKineticEnergy range895 8950.0 8960.0 keV gamma
+/score/quantity/flatSurfaceFlux fux896
+/score/filter/particleWithKineticEnergy range896 8960.0 8970.0 keV gamma
+/score/quantity/flatSurfaceFlux fux897
+/score/filter/particleWithKineticEnergy range897 8970.0 8980.0 keV gamma
+/score/quantity/flatSurfaceFlux fux898
+/score/filter/particleWithKineticEnergy range898 8980.0 8990.0 keV gamma
+/score/quantity/flatSurfaceFlux fux899
+/score/filter/particleWithKineticEnergy range899 8990.0 9000.0 keV gamma
+/score/quantity/flatSurfaceFlux fux900
+/score/filter/particleWithKineticEnergy range900 9000.0 9010.0 keV gamma
+/score/quantity/flatSurfaceFlux fux901
+/score/filter/particleWithKineticEnergy range901 9010.0 9020.0 keV gamma
+/score/quantity/flatSurfaceFlux fux902
+/score/filter/particleWithKineticEnergy range902 9020.0 9030.0 keV gamma
+/score/quantity/flatSurfaceFlux fux903
+/score/filter/particleWithKineticEnergy range903 9030.0 9040.0 keV gamma
+/score/quantity/flatSurfaceFlux fux904
+/score/filter/particleWithKineticEnergy range904 9040.0 9050.0 keV gamma
+/score/quantity/flatSurfaceFlux fux905
+/score/filter/particleWithKineticEnergy range905 9050.0 9060.0 keV gamma
+/score/quantity/flatSurfaceFlux fux906
+/score/filter/particleWithKineticEnergy range906 9060.0 9070.0 keV gamma
+/score/quantity/flatSurfaceFlux fux907
+/score/filter/particleWithKineticEnergy range907 9070.0 9080.0 keV gamma
+/score/quantity/flatSurfaceFlux fux908
+/score/filter/particleWithKineticEnergy range908 9080.0 9090.0 keV gamma
+/score/quantity/flatSurfaceFlux fux909
+/score/filter/particleWithKineticEnergy range909 9090.0 9100.0 keV gamma
+/score/quantity/flatSurfaceFlux fux910
+/score/filter/particleWithKineticEnergy range910 9100.0 9110.0 keV gamma
+/score/quantity/flatSurfaceFlux fux911
+/score/filter/particleWithKineticEnergy range911 9110.0 9120.0 keV gamma
+/score/quantity/flatSurfaceFlux fux912
+/score/filter/particleWithKineticEnergy range912 9120.0 9130.0 keV gamma
+/score/quantity/flatSurfaceFlux fux913
+/score/filter/particleWithKineticEnergy range913 9130.0 9140.0 keV gamma
+/score/quantity/flatSurfaceFlux fux914
+/score/filter/particleWithKineticEnergy range914 9140.0 9150.0 keV gamma
+/score/quantity/flatSurfaceFlux fux915
+/score/filter/particleWithKineticEnergy range915 9150.0 9160.0 keV gamma
+/score/quantity/flatSurfaceFlux fux916
+/score/filter/particleWithKineticEnergy range916 9160.0 9170.0 keV gamma
+/score/quantity/flatSurfaceFlux fux917
+/score/filter/particleWithKineticEnergy range917 9170.0 9180.0 keV gamma
+/score/quantity/flatSurfaceFlux fux918
+/score/filter/particleWithKineticEnergy range918 9180.0 9190.0 keV gamma
+/score/quantity/flatSurfaceFlux fux919
+/score/filter/particleWithKineticEnergy range919 9190.0 9200.0 keV gamma
+/score/quantity/flatSurfaceFlux fux920
+/score/filter/particleWithKineticEnergy range920 9200.0 9210.0 keV gamma
+/score/quantity/flatSurfaceFlux fux921
+/score/filter/particleWithKineticEnergy range921 9210.0 9220.0 keV gamma
+/score/quantity/flatSurfaceFlux fux922
+/score/filter/particleWithKineticEnergy range922 9220.0 9230.0 keV gamma
+/score/quantity/flatSurfaceFlux fux923
+/score/filter/particleWithKineticEnergy range923 9230.0 9240.0 keV gamma
+/score/quantity/flatSurfaceFlux fux924
+/score/filter/particleWithKineticEnergy range924 9240.0 9250.0 keV gamma
+/score/quantity/flatSurfaceFlux fux925
+/score/filter/particleWithKineticEnergy range925 9250.0 9260.0 keV gamma
+/score/quantity/flatSurfaceFlux fux926
+/score/filter/particleWithKineticEnergy range926 9260.0 9270.0 keV gamma
+/score/quantity/flatSurfaceFlux fux927
+/score/filter/particleWithKineticEnergy range927 9270.0 9280.0 keV gamma
+/score/quantity/flatSurfaceFlux fux928
+/score/filter/particleWithKineticEnergy range928 9280.0 9290.0 keV gamma
+/score/quantity/flatSurfaceFlux fux929
+/score/filter/particleWithKineticEnergy range929 9290.0 9300.0 keV gamma
+/score/quantity/flatSurfaceFlux fux930
+/score/filter/particleWithKineticEnergy range930 9300.0 9310.0 keV gamma
+/score/quantity/flatSurfaceFlux fux931
+/score/filter/particleWithKineticEnergy range931 9310.0 9320.0 keV gamma
+/score/quantity/flatSurfaceFlux fux932
+/score/filter/particleWithKineticEnergy range932 9320.0 9330.0 keV gamma
+/score/quantity/flatSurfaceFlux fux933
+/score/filter/particleWithKineticEnergy range933 9330.0 9340.0 keV gamma
+/score/quantity/flatSurfaceFlux fux934
+/score/filter/particleWithKineticEnergy range934 9340.0 9350.0 keV gamma
+/score/quantity/flatSurfaceFlux fux935
+/score/filter/particleWithKineticEnergy range935 9350.0 9360.0 keV gamma
+/score/quantity/flatSurfaceFlux fux936
+/score/filter/particleWithKineticEnergy range936 9360.0 9370.0 keV gamma
+/score/quantity/flatSurfaceFlux fux937
+/score/filter/particleWithKineticEnergy range937 9370.0 9380.0 keV gamma
+/score/quantity/flatSurfaceFlux fux938
+/score/filter/particleWithKineticEnergy range938 9380.0 9390.0 keV gamma
+/score/quantity/flatSurfaceFlux fux939
+/score/filter/particleWithKineticEnergy range939 9390.0 9400.0 keV gamma
+/score/quantity/flatSurfaceFlux fux940
+/score/filter/particleWithKineticEnergy range940 9400.0 9410.0 keV gamma
+/score/quantity/flatSurfaceFlux fux941
+/score/filter/particleWithKineticEnergy range941 9410.0 9420.0 keV gamma
+/score/quantity/flatSurfaceFlux fux942
+/score/filter/particleWithKineticEnergy range942 9420.0 9430.0 keV gamma
+/score/quantity/flatSurfaceFlux fux943
+/score/filter/particleWithKineticEnergy range943 9430.0 9440.0 keV gamma
+/score/quantity/flatSurfaceFlux fux944
+/score/filter/particleWithKineticEnergy range944 9440.0 9450.0 keV gamma
+/score/quantity/flatSurfaceFlux fux945
+/score/filter/particleWithKineticEnergy range945 9450.0 9460.0 keV gamma
+/score/quantity/flatSurfaceFlux fux946
+/score/filter/particleWithKineticEnergy range946 9460.0 9470.0 keV gamma
+/score/quantity/flatSurfaceFlux fux947
+/score/filter/particleWithKineticEnergy range947 9470.0 9480.0 keV gamma
+/score/quantity/flatSurfaceFlux fux948
+/score/filter/particleWithKineticEnergy range948 9480.0 9490.0 keV gamma
+/score/quantity/flatSurfaceFlux fux949
+/score/filter/particleWithKineticEnergy range949 9490.0 9500.0 keV gamma
+/score/quantity/flatSurfaceFlux fux950
+/score/filter/particleWithKineticEnergy range950 9500.0 9510.0 keV gamma
+/score/quantity/flatSurfaceFlux fux951
+/score/filter/particleWithKineticEnergy range951 9510.0 9520.0 keV gamma
+/score/quantity/flatSurfaceFlux fux952
+/score/filter/particleWithKineticEnergy range952 9520.0 9530.0 keV gamma
+/score/quantity/flatSurfaceFlux fux953
+/score/filter/particleWithKineticEnergy range953 9530.0 9540.0 keV gamma
+/score/quantity/flatSurfaceFlux fux954
+/score/filter/particleWithKineticEnergy range954 9540.0 9550.0 keV gamma
+/score/quantity/flatSurfaceFlux fux955
+/score/filter/particleWithKineticEnergy range955 9550.0 9560.0 keV gamma
+/score/quantity/flatSurfaceFlux fux956
+/score/filter/particleWithKineticEnergy range956 9560.0 9570.0 keV gamma
+/score/quantity/flatSurfaceFlux fux957
+/score/filter/particleWithKineticEnergy range957 9570.0 9580.0 keV gamma
+/score/quantity/flatSurfaceFlux fux958
+/score/filter/particleWithKineticEnergy range958 9580.0 9590.0 keV gamma
+/score/quantity/flatSurfaceFlux fux959
+/score/filter/particleWithKineticEnergy range959 9590.0 9600.0 keV gamma
+/score/quantity/flatSurfaceFlux fux960
+/score/filter/particleWithKineticEnergy range960 9600.0 9610.0 keV gamma
+/score/quantity/flatSurfaceFlux fux961
+/score/filter/particleWithKineticEnergy range961 9610.0 9620.0 keV gamma
+/score/quantity/flatSurfaceFlux fux962
+/score/filter/particleWithKineticEnergy range962 9620.0 9630.0 keV gamma
+/score/quantity/flatSurfaceFlux fux963
+/score/filter/particleWithKineticEnergy range963 9630.0 9640.0 keV gamma
+/score/quantity/flatSurfaceFlux fux964
+/score/filter/particleWithKineticEnergy range964 9640.0 9650.0 keV gamma
+/score/quantity/flatSurfaceFlux fux965
+/score/filter/particleWithKineticEnergy range965 9650.0 9660.0 keV gamma
+/score/quantity/flatSurfaceFlux fux966
+/score/filter/particleWithKineticEnergy range966 9660.0 9670.0 keV gamma
+/score/quantity/flatSurfaceFlux fux967
+/score/filter/particleWithKineticEnergy range967 9670.0 9680.0 keV gamma
+/score/quantity/flatSurfaceFlux fux968
+/score/filter/particleWithKineticEnergy range968 9680.0 9690.0 keV gamma
+/score/quantity/flatSurfaceFlux fux969
+/score/filter/particleWithKineticEnergy range969 9690.0 9700.0 keV gamma
+/score/quantity/flatSurfaceFlux fux970
+/score/filter/particleWithKineticEnergy range970 9700.0 9710.0 keV gamma
+/score/quantity/flatSurfaceFlux fux971
+/score/filter/particleWithKineticEnergy range971 9710.0 9720.0 keV gamma
+/score/quantity/flatSurfaceFlux fux972
+/score/filter/particleWithKineticEnergy range972 9720.0 9730.0 keV gamma
+/score/quantity/flatSurfaceFlux fux973
+/score/filter/particleWithKineticEnergy range973 9730.0 9740.0 keV gamma
+/score/quantity/flatSurfaceFlux fux974
+/score/filter/particleWithKineticEnergy range974 9740.0 9750.0 keV gamma
+/score/quantity/flatSurfaceFlux fux975
+/score/filter/particleWithKineticEnergy range975 9750.0 9760.0 keV gamma
+/score/quantity/flatSurfaceFlux fux976
+/score/filter/particleWithKineticEnergy range976 9760.0 9770.0 keV gamma
+/score/quantity/flatSurfaceFlux fux977
+/score/filter/particleWithKineticEnergy range977 9770.0 9780.0 keV gamma
+/score/quantity/flatSurfaceFlux fux978
+/score/filter/particleWithKineticEnergy range978 9780.0 9790.0 keV gamma
+/score/quantity/flatSurfaceFlux fux979
+/score/filter/particleWithKineticEnergy range979 9790.0 9800.0 keV gamma
+/score/quantity/flatSurfaceFlux fux980
+/score/filter/particleWithKineticEnergy range980 9800.0 9810.0 keV gamma
+/score/quantity/flatSurfaceFlux fux981
+/score/filter/particleWithKineticEnergy range981 9810.0 9820.0 keV gamma
+/score/quantity/flatSurfaceFlux fux982
+/score/filter/particleWithKineticEnergy range982 9820.0 9830.0 keV gamma
+/score/quantity/flatSurfaceFlux fux983
+/score/filter/particleWithKineticEnergy range983 9830.0 9840.0 keV gamma
+/score/quantity/flatSurfaceFlux fux984
+/score/filter/particleWithKineticEnergy range984 9840.0 9850.0 keV gamma
+/score/quantity/flatSurfaceFlux fux985
+/score/filter/particleWithKineticEnergy range985 9850.0 9860.0 keV gamma
+/score/quantity/flatSurfaceFlux fux986
+/score/filter/particleWithKineticEnergy range986 9860.0 9870.0 keV gamma
+/score/quantity/flatSurfaceFlux fux987
+/score/filter/particleWithKineticEnergy range987 9870.0 9880.0 keV gamma
+/score/quantity/flatSurfaceFlux fux988
+/score/filter/particleWithKineticEnergy range988 9880.0 9890.0 keV gamma
+/score/quantity/flatSurfaceFlux fux989
+/score/filter/particleWithKineticEnergy range989 9890.0 9900.0 keV gamma
+/score/quantity/flatSurfaceFlux fux990
+/score/filter/particleWithKineticEnergy range990 9900.0 9910.0 keV gamma
+/score/quantity/flatSurfaceFlux fux991
+/score/filter/particleWithKineticEnergy range991 9910.0 9920.0 keV gamma
+/score/quantity/flatSurfaceFlux fux992
+/score/filter/particleWithKineticEnergy range992 9920.0 9930.0 keV gamma
+/score/quantity/flatSurfaceFlux fux993
+/score/filter/particleWithKineticEnergy range993 9930.0 9940.0 keV gamma
+/score/quantity/flatSurfaceFlux fux994
+/score/filter/particleWithKineticEnergy range994 9940.0 9950.0 keV gamma
+/score/quantity/flatSurfaceFlux fux995
+/score/filter/particleWithKineticEnergy range995 9950.0 9960.0 keV gamma
+/score/quantity/flatSurfaceFlux fux996
+/score/filter/particleWithKineticEnergy range996 9960.0 9970.0 keV gamma
+/score/quantity/flatSurfaceFlux fux997
+/score/filter/particleWithKineticEnergy range997 9970.0 9980.0 keV gamma
+/score/quantity/flatSurfaceFlux fux998
+/score/filter/particleWithKineticEnergy range998 9980.0 9990.0 keV gamma
+/score/quantity/flatSurfaceFlux fux999
+/score/filter/particleWithKineticEnergy range999 9990.0 10000.0 keV gamma
+/score/close
+/score/list

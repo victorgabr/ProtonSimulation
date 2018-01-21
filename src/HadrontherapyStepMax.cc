@@ -30,29 +30,20 @@
 #include "HadrontherapyStepMax.hh"
 #include "HadrontherapyStepMaxMessenger.hh"
 
-/////////////////////////////////////////////////////////////////////////////
 HadrontherapyStepMax::HadrontherapyStepMax(const G4String &processName)
     : G4VDiscreteProcess(processName), MaxChargedStep(DBL_MAX) {
     pMess = new HadrontherapyStepMaxMessenger(this);
 }
 
-/////////////////////////////////////////////////////////////////////////////
-HadrontherapyStepMax::~HadrontherapyStepMax() {
-    delete pMess;
-}
+HadrontherapyStepMax::~HadrontherapyStepMax() { delete pMess; }
 
-/////////////////////////////////////////////////////////////////////////////
 G4bool
 HadrontherapyStepMax::IsApplicable(const G4ParticleDefinition &particle) {
     return (particle.GetPDGCharge() != 0.);
 }
 
-/////////////////////////////////////////////////////////////////////////////
-void HadrontherapyStepMax::SetMaxStep(G4double step) {
-    MaxChargedStep = step;
-}
+void HadrontherapyStepMax::SetMaxStep(G4double step) { MaxChargedStep = step; }
 
-/////////////////////////////////////////////////////////////////////////////
 G4double HadrontherapyStepMax::PostStepGetPhysicalInteractionLength(
     const G4Track &aTrack, G4double, G4ForceCondition *condition) {
     // condition is set to "Not Forced"
@@ -60,25 +51,24 @@ G4double HadrontherapyStepMax::PostStepGetPhysicalInteractionLength(
 
     G4double ProposedStep = DBL_MAX;
     if ((MaxChargedStep > 0.) && (aTrack.GetVolume() != 0) &&
-            ((aTrack.GetVolume()->GetName() == "DetectorPhys") ||
-             (aTrack.GetVolume()->GetName() == "InternalChamber") ||
-             (aTrack.GetVolume()->GetName() == "CollimatorHole") ||
-             (aTrack.GetVolume()->GetName() == "PhysFourthTQuad") ||
-             (aTrack.GetVolume()->GetName() == "PhysThirdTQuad") ||
-             (aTrack.GetVolume()->GetName() == "PhysSecondTQuad") ||
-             (aTrack.GetVolume()->GetName() == "PhysFirstTQuad") ||
-             (aTrack.GetVolume()->GetName() == "physQuadChamber") ||
-             (aTrack.GetVolume()->GetName() == "PVirtualMag") ||
-             (aTrack.GetVolume()->GetName() == "PhysicCup")))
+        ((aTrack.GetVolume()->GetName() == "DetectorPhys") ||
+         (aTrack.GetVolume()->GetName() == "InternalChamber") ||
+         (aTrack.GetVolume()->GetName() == "CollimatorHole") ||
+         (aTrack.GetVolume()->GetName() == "PhysFourthTQuad") ||
+         (aTrack.GetVolume()->GetName() == "PhysThirdTQuad") ||
+         (aTrack.GetVolume()->GetName() == "PhysSecondTQuad") ||
+         (aTrack.GetVolume()->GetName() == "PhysFirstTQuad") ||
+         (aTrack.GetVolume()->GetName() == "physQuadChamber") ||
+         (aTrack.GetVolume()->GetName() == "PVirtualMag") ||
+         (aTrack.GetVolume()->GetName() == "PhysicCup")))
 
         ProposedStep = MaxChargedStep;
 
     return ProposedStep;
 }
 
-/////////////////////////////////////////////////////////////////////////////
 G4VParticleChange *HadrontherapyStepMax::PostStepDoIt(const G4Track &aTrack,
-        const G4Step &) {
+                                                      const G4Step &) {
     // do nothing
     aParticleChange.Initialize(aTrack);
     return &aParticleChange;

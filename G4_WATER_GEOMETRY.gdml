@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
 <gdml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:noNamespaceSchemaLocation="http://service-spi.web.cern.ch/service-spi/app/releases/GDML/schema/gdml.xsd">
-">
   <define>
   </define>
 
@@ -10,7 +9,7 @@ xsi:noNamespaceSchemaLocation="http://service-spi.web.cern.ch/service-spi/app/re
       <D unit="g/cm3" value="2.7"/>
       <atom unit="g/mole" value="26.98"/>
     </material>
-    <material Z="1" name="AIR" state="gas">
+    <material Z="1" name="Galactic" state="gas">
       <D unit="g/cm3" value="1e-24"/>
       <atom unit="g/mole" value="1.00794"/>
     </material>
@@ -18,39 +17,16 @@ xsi:noNamespaceSchemaLocation="http://service-spi.web.cern.ch/service-spi/app/re
 
 
   <solids>
-    <box lunit="mm" name="Cube" x="350" y="350" z="2"/>
-    <box lunit="mm" name="MotherCube" x="350" y="350" z="350"/>
-    <box lunit="mm" name="sPhantom" x="350" y="350" z="350"/>
-    <box lunit="mm" name="WorldBox" x="2000" y="2000" z="2000"/>
+      <box lunit="mm" name="WorldBox" x="1000" y="1000" z="1000"/>
+      <box lunit="mm" name="sPhantom" x="350" y="350" z="350"/>
   </solids>
 
   <structure>
 
-        <volume name="lvCube">
-          <materialref ref="G4_WATER"/>
-          <solidref ref="Cube"/>
-          <auxiliary auxtype="SensDet" auxvalue="SD"/>
-        </volume>
-
-        <volume name="lvReplica">
-            <materialref ref="G4_WATER"/>
-            <solidref ref="MotherCube"/>
-            <replicavol number="175">
-                <volumeref ref="lvCube"/>
-                    <replicate_along_axis>
-                        <direction  z="1" />
-                        <width value="2" unit="mm"/>
-                        <offset value="0" unit="mm"/>
-                    </replicate_along_axis>
-            </replicavol>
-         </volume>
 
         <volume name="phantom">
             <materialref ref="G4_WATER"/>
             <solidref ref="sPhantom"/>
-            <physvol name="lvReplica_phys">
-                  <volumeref ref="lvReplica"/>
-            </physvol>
         </volume>
 
 

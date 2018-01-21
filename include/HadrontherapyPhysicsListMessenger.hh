@@ -1,4 +1,3 @@
-//
 // ********************************************************************
 // * License and Disclaimer                                           *
 // *                                                                  *
@@ -38,22 +37,18 @@ class G4UIdirectory;
 class G4UIcmdWithADoubleAndUnit;
 class G4UIcmdWithAString;
 
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-
 class HadrontherapyPhysicsListMessenger : public G4UImessenger {
-public:
-    HadrontherapyPhysicsListMessenger(HadrontherapyPhysicsList*);
+  public:
+    HadrontherapyPhysicsListMessenger(HadrontherapyPhysicsList *);
     ~HadrontherapyPhysicsListMessenger();
 
-    void SetNewValue(G4UIcommand*, G4String);
+    void SetNewValue(G4UIcommand *, G4String);
 
-private:
-    HadrontherapyPhysicsList* pPhysicsList;
+  private:
+    HadrontherapyPhysicsList *pPhysicsList;
 
-    G4UIdirectory* physDir;
-    G4UIcmdWithAString* pListCmd;
+    G4UIdirectory *physDir;
+    G4UIcmdWithAString *pListCmd;
 };
-
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 #endif

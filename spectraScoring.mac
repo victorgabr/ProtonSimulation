@@ -1,0 +1,206 @@
+#the energy deposition in the phantom
+/score/create/boxMesh boxMesh_1
+/score/mesh/boxSize 15.0 25.0 175.0 mm
+/score/mesh/nBin 1 1 175
+/score/mesh/translate/xyz 0.0 0.0 0.0  mm
+# scoring spectra
+/score/quantity/flatSurfaceFlux fux0
+/score/filter/particleWithKineticEnergy range0 0.0 1.0 MeV proton
+/score/quantity/flatSurfaceFlux fux1
+/score/filter/particleWithKineticEnergy range1 1.0 2.0 MeV proton
+/score/quantity/flatSurfaceFlux fux2
+/score/filter/particleWithKineticEnergy range2 2.0 3.0 MeV proton
+/score/quantity/flatSurfaceFlux fux3
+/score/filter/particleWithKineticEnergy range3 3.0 4.0 MeV proton
+/score/quantity/flatSurfaceFlux fux4
+/score/filter/particleWithKineticEnergy range4 4.0 5.0 MeV proton
+/score/quantity/flatSurfaceFlux fux5
+/score/filter/particleWithKineticEnergy range5 5.0 6.0 MeV proton
+/score/quantity/flatSurfaceFlux fux6
+/score/filter/particleWithKineticEnergy range6 6.0 7.0 MeV proton
+/score/quantity/flatSurfaceFlux fux7
+/score/filter/particleWithKineticEnergy range7 7.0 8.0 MeV proton
+/score/quantity/flatSurfaceFlux fux8
+/score/filter/particleWithKineticEnergy range8 8.0 9.0 MeV proton
+/score/quantity/flatSurfaceFlux fux9
+/score/filter/particleWithKineticEnergy range9 9.0 10.0 MeV proton
+/score/quantity/flatSurfaceFlux fux10
+/score/filter/particleWithKineticEnergy range10 10.0 11.0 MeV proton
+/score/quantity/flatSurfaceFlux fux11
+/score/filter/particleWithKineticEnergy range11 11.0 12.0 MeV proton
+/score/quantity/flatSurfaceFlux fux12
+/score/filter/particleWithKineticEnergy range12 12.0 13.0 MeV proton
+/score/quantity/flatSurfaceFlux fux13
+/score/filter/particleWithKineticEnergy range13 13.0 14.0 MeV proton
+/score/quantity/flatSurfaceFlux fux14
+/score/filter/particleWithKineticEnergy range14 14.0 15.0 MeV proton
+/score/quantity/flatSurfaceFlux fux15
+/score/filter/particleWithKineticEnergy range15 15.0 16.0 MeV proton
+/score/quantity/flatSurfaceFlux fux16
+/score/filter/particleWithKineticEnergy range16 16.0 17.0 MeV proton
+/score/quantity/flatSurfaceFlux fux17
+/score/filter/particleWithKineticEnergy range17 17.0 18.0 MeV proton
+/score/quantity/flatSurfaceFlux fux18
+/score/filter/particleWithKineticEnergy range18 18.0 19.0 MeV proton
+/score/quantity/flatSurfaceFlux fux19
+/score/filter/particleWithKineticEnergy range19 19.0 20.0 MeV proton
+/score/quantity/flatSurfaceFlux fux20
+/score/filter/particleWithKineticEnergy range20 20.0 21.0 MeV proton
+/score/quantity/flatSurfaceFlux fux21
+/score/filter/particleWithKineticEnergy range21 21.0 22.0 MeV proton
+/score/quantity/flatSurfaceFlux fux22
+/score/filter/particleWithKineticEnergy range22 22.0 23.0 MeV proton
+/score/quantity/flatSurfaceFlux fux23
+/score/filter/particleWithKineticEnergy range23 23.0 24.0 MeV proton
+/score/quantity/flatSurfaceFlux fux24
+/score/filter/particleWithKineticEnergy range24 24.0 25.0 MeV proton
+/score/quantity/flatSurfaceFlux fux25
+/score/filter/particleWithKineticEnergy range25 25.0 26.0 MeV proton
+/score/quantity/flatSurfaceFlux fux26
+/score/filter/particleWithKineticEnergy range26 26.0 27.0 MeV proton
+/score/quantity/flatSurfaceFlux fux27
+/score/filter/particleWithKineticEnergy range27 27.0 28.0 MeV proton
+/score/quantity/flatSurfaceFlux fux28
+/score/filter/particleWithKineticEnergy range28 28.0 29.0 MeV proton
+/score/quantity/flatSurfaceFlux fux29
+/score/filter/particleWithKineticEnergy range29 29.0 30.0 MeV proton
+/score/quantity/flatSurfaceFlux fux30
+/score/filter/particleWithKineticEnergy range30 30.0 31.0 MeV proton
+/score/quantity/flatSurfaceFlux fux31
+/score/filter/particleWithKineticEnergy range31 31.0 32.0 MeV proton
+/score/quantity/flatSurfaceFlux fux32
+/score/filter/particleWithKineticEnergy range32 32.0 33.0 MeV proton
+/score/quantity/flatSurfaceFlux fux33
+/score/filter/particleWithKineticEnergy range33 33.0 34.0 MeV proton
+/score/quantity/flatSurfaceFlux fux34
+/score/filter/particleWithKineticEnergy range34 34.0 35.0 MeV proton
+/score/quantity/flatSurfaceFlux fux35
+/score/filter/particleWithKineticEnergy range35 35.0 36.0 MeV proton
+/score/quantity/flatSurfaceFlux fux36
+/score/filter/particleWithKineticEnergy range36 36.0 37.0 MeV proton
+/score/quantity/flatSurfaceFlux fux37
+/score/filter/particleWithKineticEnergy range37 37.0 38.0 MeV proton
+/score/quantity/flatSurfaceFlux fux38
+/score/filter/particleWithKineticEnergy range38 38.0 39.0 MeV proton
+/score/quantity/flatSurfaceFlux fux39
+/score/filter/particleWithKineticEnergy range39 39.0 40.0 MeV proton
+/score/quantity/flatSurfaceFlux fux40
+/score/filter/particleWithKineticEnergy range40 40.0 41.0 MeV proton
+/score/quantity/flatSurfaceFlux fux41
+/score/filter/particleWithKineticEnergy range41 41.0 42.0 MeV proton
+/score/quantity/flatSurfaceFlux fux42
+/score/filter/particleWithKineticEnergy range42 42.0 43.0 MeV proton
+/score/quantity/flatSurfaceFlux fux43
+/score/filter/particleWithKineticEnergy range43 43.0 44.0 MeV proton
+/score/quantity/flatSurfaceFlux fux44
+/score/filter/particleWithKineticEnergy range44 44.0 45.0 MeV proton
+/score/quantity/flatSurfaceFlux fux45
+/score/filter/particleWithKineticEnergy range45 45.0 46.0 MeV proton
+/score/quantity/flatSurfaceFlux fux46
+/score/filter/particleWithKineticEnergy range46 46.0 47.0 MeV proton
+/score/quantity/flatSurfaceFlux fux47
+/score/filter/particleWithKineticEnergy range47 47.0 48.0 MeV proton
+/score/quantity/flatSurfaceFlux fux48
+/score/filter/particleWithKineticEnergy range48 48.0 49.0 MeV proton
+/score/quantity/flatSurfaceFlux fux49
+/score/filter/particleWithKineticEnergy range49 49.0 51.0 MeV proton
+/score/quantity/flatSurfaceFlux fux50
+/score/filter/particleWithKineticEnergy range50 51.0 52.0 MeV proton
+/score/quantity/flatSurfaceFlux fux51
+/score/filter/particleWithKineticEnergy range51 52.0 53.0 MeV proton
+/score/quantity/flatSurfaceFlux fux52
+/score/filter/particleWithKineticEnergy range52 53.0 54.0 MeV proton
+/score/quantity/flatSurfaceFlux fux53
+/score/filter/particleWithKineticEnergy range53 54.0 55.0 MeV proton
+/score/quantity/flatSurfaceFlux fux54
+/score/filter/particleWithKineticEnergy range54 55.0 56.0 MeV proton
+/score/quantity/flatSurfaceFlux fux55
+/score/filter/particleWithKineticEnergy range55 56.0 57.0 MeV proton
+/score/quantity/flatSurfaceFlux fux56
+/score/filter/particleWithKineticEnergy range56 57.0 58.0 MeV proton
+/score/quantity/flatSurfaceFlux fux57
+/score/filter/particleWithKineticEnergy range57 58.0 59.0 MeV proton
+/score/quantity/flatSurfaceFlux fux58
+/score/filter/particleWithKineticEnergy range58 59.0 60.0 MeV proton
+/score/quantity/flatSurfaceFlux fux59
+/score/filter/particleWithKineticEnergy range59 60.0 61.0 MeV proton
+/score/quantity/flatSurfaceFlux fux60
+/score/filter/particleWithKineticEnergy range60 61.0 62.0 MeV proton
+/score/quantity/flatSurfaceFlux fux61
+/score/filter/particleWithKineticEnergy range61 62.0 63.0 MeV proton
+/score/quantity/flatSurfaceFlux fux62
+/score/filter/particleWithKineticEnergy range62 63.0 64.0 MeV proton
+/score/quantity/flatSurfaceFlux fux63
+/score/filter/particleWithKineticEnergy range63 64.0 65.0 MeV proton
+/score/quantity/flatSurfaceFlux fux64
+/score/filter/particleWithKineticEnergy range64 65.0 66.0 MeV proton
+/score/quantity/flatSurfaceFlux fux65
+/score/filter/particleWithKineticEnergy range65 66.0 67.0 MeV proton
+/score/quantity/flatSurfaceFlux fux66
+/score/filter/particleWithKineticEnergy range66 67.0 68.0 MeV proton
+/score/quantity/flatSurfaceFlux fux67
+/score/filter/particleWithKineticEnergy range67 68.0 69.0 MeV proton
+/score/quantity/flatSurfaceFlux fux68
+/score/filter/particleWithKineticEnergy range68 69.0 70.0 MeV proton
+/score/quantity/flatSurfaceFlux fux69
+/score/filter/particleWithKineticEnergy range69 70.0 71.0 MeV proton
+/score/quantity/flatSurfaceFlux fux70
+/score/filter/particleWithKineticEnergy range70 71.0 72.0 MeV proton
+/score/quantity/flatSurfaceFlux fux71
+/score/filter/particleWithKineticEnergy range71 72.0 73.0 MeV proton
+/score/quantity/flatSurfaceFlux fux72
+/score/filter/particleWithKineticEnergy range72 73.0 74.0 MeV proton
+/score/quantity/flatSurfaceFlux fux73
+/score/filter/particleWithKineticEnergy range73 74.0 75.0 MeV proton
+/score/quantity/flatSurfaceFlux fux74
+/score/filter/particleWithKineticEnergy range74 75.0 76.0 MeV proton
+/score/quantity/flatSurfaceFlux fux75
+/score/filter/particleWithKineticEnergy range75 76.0 77.0 MeV proton
+/score/quantity/flatSurfaceFlux fux76
+/score/filter/particleWithKineticEnergy range76 77.0 78.0 MeV proton
+/score/quantity/flatSurfaceFlux fux77
+/score/filter/particleWithKineticEnergy range77 78.0 79.0 MeV proton
+/score/quantity/flatSurfaceFlux fux78
+/score/filter/particleWithKineticEnergy range78 79.0 80.0 MeV proton
+/score/quantity/flatSurfaceFlux fux79
+/score/filter/particleWithKineticEnergy range79 80.0 81.0 MeV proton
+/score/quantity/flatSurfaceFlux fux80
+/score/filter/particleWithKineticEnergy range80 81.0 82.0 MeV proton
+/score/quantity/flatSurfaceFlux fux81
+/score/filter/particleWithKineticEnergy range81 82.0 83.0 MeV proton
+/score/quantity/flatSurfaceFlux fux82
+/score/filter/particleWithKineticEnergy range82 83.0 84.0 MeV proton
+/score/quantity/flatSurfaceFlux fux83
+/score/filter/particleWithKineticEnergy range83 84.0 85.0 MeV proton
+/score/quantity/flatSurfaceFlux fux84
+/score/filter/particleWithKineticEnergy range84 85.0 86.0 MeV proton
+/score/quantity/flatSurfaceFlux fux85
+/score/filter/particleWithKineticEnergy range85 86.0 87.0 MeV proton
+/score/quantity/flatSurfaceFlux fux86
+/score/filter/particleWithKineticEnergy range86 87.0 88.0 MeV proton
+/score/quantity/flatSurfaceFlux fux87
+/score/filter/particleWithKineticEnergy range87 88.0 89.0 MeV proton
+/score/quantity/flatSurfaceFlux fux88
+/score/filter/particleWithKineticEnergy range88 89.0 90.0 MeV proton
+/score/quantity/flatSurfaceFlux fux89
+/score/filter/particleWithKineticEnergy range89 90.0 91.0 MeV proton
+/score/quantity/flatSurfaceFlux fux90
+/score/filter/particleWithKineticEnergy range90 91.0 92.0 MeV proton
+/score/quantity/flatSurfaceFlux fux91
+/score/filter/particleWithKineticEnergy range91 92.0 93.0 MeV proton
+/score/quantity/flatSurfaceFlux fux92
+/score/filter/particleWithKineticEnergy range92 93.0 94.0 MeV proton
+/score/quantity/flatSurfaceFlux fux93
+/score/filter/particleWithKineticEnergy range93 94.0 95.0 MeV proton
+/score/quantity/flatSurfaceFlux fux94
+/score/filter/particleWithKineticEnergy range94 95.0 96.0 MeV proton
+/score/quantity/flatSurfaceFlux fux95
+/score/filter/particleWithKineticEnergy range95 96.0 97.0 MeV proton
+/score/quantity/flatSurfaceFlux fux96
+/score/filter/particleWithKineticEnergy range96 97.0 98.0 MeV proton
+/score/quantity/flatSurfaceFlux fux97
+/score/filter/particleWithKineticEnergy range97 98.0 99.0 MeV proton
+/score/quantity/flatSurfaceFlux fux98
+/score/filter/particleWithKineticEnergy range98 99.0 100.0 MeV proton
+/score/close
+/score/list

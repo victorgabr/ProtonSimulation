@@ -1,4 +1,3 @@
-//
 // ********************************************************************
 // * License and Disclaimer                                           *
 // *                                                                  *
@@ -23,35 +22,30 @@
 // * acceptance of all terms of the Geant4 Software license.          *
 // ********************************************************************
 //
-// Hadrontherapy advanced example for Geant4
-// See more at:
-// https://twiki.cern.ch/twiki/bin/view/Geant4/AdvancedExamplesHadrontherapy
+//
+#ifndef ScoreWriter_h
+#define ScoreWriter_h 1
 
-#include "HadrontherapyPhysicsListMessenger.hh"
-#include "G4UIcmdWithADoubleAndUnit.hh"
-#include "G4UIcmdWithAString.hh"
-#include "G4UIdirectory.hh"
-#include "HadrontherapyPhysicsList.hh"
-
-HadrontherapyPhysicsListMessenger::HadrontherapyPhysicsListMessenger(
-    HadrontherapyPhysicsList *pPhys)
-    : pPhysicsList(pPhys) {
-    physDir = new G4UIdirectory("/Physics/");
-    physDir->SetGuidance("Commands to activate physics models and set cuts");
-
-    pListCmd = new G4UIcmdWithAString("/Physics/addPhysics", this);
-    pListCmd->SetGuidance("Add physics list.");
-    pListCmd->SetParameterName("PList", false);
-    pListCmd->AvailableForStates(G4State_PreInit, G4State_Idle);
-}
-
-HadrontherapyPhysicsListMessenger::~HadrontherapyPhysicsListMessenger() {
-    delete physDir;
-}
-
-void HadrontherapyPhysicsListMessenger::SetNewValue(G4UIcommand *command,
-                                                    G4String newValue) {
-    if (command == pListCmd) {
-        pPhysicsList->AddPhysicsList(newValue);
-    }
-}
+#include "G4VScoreWriter.hh"
+#include "globals.hh"
+/*
+// Code developed by:
+// Victor Gabriel Leandro Alves, victorgabr@gmail.com
+//
+Original code from geant4/examples/extended/runAndEvent/RE03,
+// by M. Asai
+*/
+//
+// class description:
+//
+// This class represents storing the scored quantity into a file.
+//
+class ScoreWriter : public G4VScoreWriter {
+  public:
+    ScoreWriter();
+    virtual ~ScoreWriter();
+    // store a quantity into a file
+    void DumpQuantityToFile(const G4String &psName, const G4String &fileName,
+                            const G4String &option);
+};
+#endif

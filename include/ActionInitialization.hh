@@ -23,35 +23,22 @@
 // * acceptance of all terms of the Geant4 Software license.          *
 // ********************************************************************
 //
-// Hadrontherapy advanced example for Geant4
-// See more at:
-// https://twiki.cern.ch/twiki/bin/view/Geant4/AdvancedExamplesHadrontherapy
+// Author: S. Guatelli, susanna@uow.edu.au
+//
+#ifndef ActionInitialization_h
+#define ActionInitialization_h 1
 
-#include "HadrontherapyPhysicsListMessenger.hh"
-#include "G4UIcmdWithADoubleAndUnit.hh"
-#include "G4UIcmdWithAString.hh"
-#include "G4UIdirectory.hh"
-#include "HadrontherapyPhysicsList.hh"
+#include "G4VUserActionInitialization.hh"
 
-HadrontherapyPhysicsListMessenger::HadrontherapyPhysicsListMessenger(
-    HadrontherapyPhysicsList *pPhys)
-    : pPhysicsList(pPhys) {
-    physDir = new G4UIdirectory("/Physics/");
-    physDir->SetGuidance("Commands to activate physics models and set cuts");
+class G4GeneralParticleSource;
 
-    pListCmd = new G4UIcmdWithAString("/Physics/addPhysics", this);
-    pListCmd->SetGuidance("Add physics list.");
-    pListCmd->SetParameterName("PList", false);
-    pListCmd->AvailableForStates(G4State_PreInit, G4State_Idle);
-}
+class ActionInitialization : public G4VUserActionInitialization {
+  public:
+    ActionInitialization();
+    virtual ~ActionInitialization();
 
-HadrontherapyPhysicsListMessenger::~HadrontherapyPhysicsListMessenger() {
-    delete physDir;
-}
+    virtual void BuildForMaster() const;
+    virtual void Build() const;
+};
 
-void HadrontherapyPhysicsListMessenger::SetNewValue(G4UIcommand *command,
-                                                    G4String newValue) {
-    if (command == pListCmd) {
-        pPhysicsList->AddPhysicsList(newValue);
-    }
-}
+#endif

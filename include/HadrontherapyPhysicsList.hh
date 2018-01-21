@@ -27,8 +27,6 @@
 // https://twiki.cern.ch/twiki/bin/view/Geant4/AdvancedExamplesHadrontherapy
 //
 
-
-
 #ifndef HadrontherapyPhysicsList_h
 #define HadrontherapyPhysicsList_h 1
 
@@ -43,7 +41,7 @@ class HadrontherapyStepMax;
 class HadrontherapyPhysicsListMessenger;
 
 class HadrontherapyPhysicsList : public G4VModularPhysicsList {
-public:
+  public:
     HadrontherapyPhysicsList();
     virtual ~HadrontherapyPhysicsList();
 
@@ -53,12 +51,12 @@ public:
     void SetCutForElectron(G4double);
     void SetCutForPositron(G4double);
     void SetDetectorCut(G4double cut);
-    void AddPhysicsList(const G4String& name);
+    void AddPhysicsList(const G4String &name);
     void ConstructProcess();
     void AddStepMax();
-    void AddPackage(const G4String& name);
+    void AddPackage(const G4String &name);
 
-private:
+  private:
     G4EmConfigurator em_config;
 
     G4double cutForGamma;
@@ -67,13 +65,13 @@ private:
     G4bool locIonIonInelasticIsRegistered;
     G4bool radioactiveDecayIsRegistered;
     G4String emName;
-    G4VPhysicsConstructor* emPhysicsList;
-    G4VPhysicsConstructor* decay_List;
-    G4VPhysicsConstructor* radioactiveDecay_List;
+    G4VPhysicsConstructor *emPhysicsList;
+    G4VPhysicsConstructor *decay_List;
+    G4VPhysicsConstructor *radioactiveDecay_List;
 
-    std::vector<G4VPhysicsConstructor*> hadronPhys;
+    std::vector<G4VPhysicsConstructor *> hadronPhys;
 
-    HadrontherapyPhysicsListMessenger* pMessenger;
+    HadrontherapyPhysicsListMessenger *pMessenger;
 };
 
 #endif

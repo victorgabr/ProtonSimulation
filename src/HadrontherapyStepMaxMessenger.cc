@@ -24,34 +24,32 @@
 // ********************************************************************
 //
 // Hadrontherapy advanced example for Geant4
-// See more at: https://twiki.cern.ch/twiki/bin/view/Geant4/AdvancedExamplesHadrontherapy
+// See more at:
+// https://twiki.cern.ch/twiki/bin/view/Geant4/AdvancedExamplesHadrontherapy
 
 #include "HadrontherapyStepMaxMessenger.hh"
-#include "HadrontherapyStepMax.hh"
-#include "G4UIcmdWithADoubleAndUnit.hh"
 #include "G4SystemOfUnits.hh"
+#include "G4UIcmdWithADoubleAndUnit.hh"
+#include "HadrontherapyStepMax.hh"
 
-/////////////////////////////////////////////////////////////////////////////
-HadrontherapyStepMaxMessenger::HadrontherapyStepMaxMessenger(HadrontherapyStepMax* stepM)
-:stepMax(stepM)
-{ 
-  StepMaxCmd = new G4UIcmdWithADoubleAndUnit("/Step/waterPhantomStepMax",this);
-  StepMaxCmd->SetGuidance("Set max allowed step length");
-  StepMaxCmd->SetParameterName("mxStep",false);
-  StepMaxCmd->SetRange("mxStep>0.");
-  StepMaxCmd->SetUnitCategory("Length");
+HadrontherapyStepMaxMessenger::HadrontherapyStepMaxMessenger(
+    HadrontherapyStepMax *stepM)
+    : stepMax(stepM) {
+    StepMaxCmd =
+        new G4UIcmdWithADoubleAndUnit("/Step/waterPhantomStepMax", this);
+    StepMaxCmd->SetGuidance("Set max allowed step length");
+    StepMaxCmd->SetParameterName("mxStep", false);
+    StepMaxCmd->SetRange("mxStep>0.");
+    StepMaxCmd->SetUnitCategory("Length");
 }
 
-/////////////////////////////////////////////////////////////////////////////
-HadrontherapyStepMaxMessenger::~HadrontherapyStepMaxMessenger()
-{
-  delete StepMaxCmd;
+HadrontherapyStepMaxMessenger::~HadrontherapyStepMaxMessenger() {
+    delete StepMaxCmd;
 }
 
-/////////////////////////////////////////////////////////////////////////////
-void HadrontherapyStepMaxMessenger::SetNewValue(G4UIcommand* command, G4String newValue)
-{ 
-  if (command == StepMaxCmd)
-    { stepMax->SetMaxStep(StepMaxCmd->GetNewDoubleValue(newValue));}
+void HadrontherapyStepMaxMessenger::SetNewValue(G4UIcommand *command,
+                                                G4String newValue) {
+    if (command == StepMaxCmd) {
+        stepMax->SetMaxStep(StepMaxCmd->GetNewDoubleValue(newValue));
+    }
 }
-

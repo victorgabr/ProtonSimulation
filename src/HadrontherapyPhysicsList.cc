@@ -94,7 +94,8 @@ HadrontherapyPhysicsList::HadrontherapyPhysicsList() : G4VModularPhysicsList() {
     // --> G4EmStandardPhysics_option4 for the electromagnetic processes
     //     is used n place of the less accurate G4EmStandardPhysics
     // --> The G4RadioactiveDecayPhysics is add
-    // --> G4HadronPhysicsQGSP_BIC is used in place of G4HadronPhysicsQGSP_BIC_HP
+    // --> G4HadronPhysicsQGSP_BIC is used in place of
+    // G4HadronPhysicsQGSP_BIC_HP
     // --> G4HadronElasticPhysics is used in place of G4HadronElasticPhysics_HP
 
     // Elecromagnetic physics
@@ -157,7 +158,8 @@ void HadrontherapyPhysicsList::ConstructProcess() {
     AddStepMax();
 
     // Parallel world sensitivity - scorers
-    G4ParallelWorldPhysics *pWorld = new G4ParallelWorldPhysics("DetectorROGeometry");
+    G4ParallelWorldPhysics *pWorld =
+        new G4ParallelWorldPhysics("DetectorROGeometry");
     pWorld->ConstructProcess();
 
     return;
@@ -180,11 +182,13 @@ void HadrontherapyPhysicsList::AddPhysicsList(const G4String &name) {
         hadronPhys.clear();
         emPhysicsList = new G4EmStandardPhysics_option4();
         G4RunManager::GetRunManager()->PhysicsHasBeenModified();
-        G4cout << "THE FOLLOWING ELECTROMAGNETIC PHYSICS LIST HAS BEEN ACTIVATED: "
+        G4cout
+            << "THE FOLLOWING ELECTROMAGNETIC PHYSICS LIST HAS BEEN ACTIVATED: "
                "G4EmStandardPhysics_option4"
-               << G4endl;
+            << G4endl;
 
-        // The following 'local_ion_ion_inelastic' is an example of implemenation of
+        // The following 'local_ion_ion_inelastic' is an example of
+        // implemenation of
         // inelastic hadronic models to be used when
         // mucleus-nulceus (ion-ion) interactions have to be
         // taken into account;
@@ -192,7 +196,8 @@ void HadrontherapyPhysicsList::AddPhysicsList(const G4String &name) {
         // electromagnetic
         // plus hadronic elastic plus nucleon-nulcleon hadronic inelastic
         //
-        // An example of coplete physics list using the 'local_ion_ion_inelastic'
+        // An example of coplete physics list using the
+        // 'local_ion_ion_inelastic'
         // physics
         // is the one named HADRONTHERAPY_2, and defined below.
         //
@@ -202,16 +207,18 @@ void HadrontherapyPhysicsList::AddPhysicsList(const G4String &name) {
         hadronPhys.clear();
         emPhysicsList = new G4EmStandardPhysics_option3();
         G4RunManager::GetRunManager()->PhysicsHasBeenModified();
-        G4cout << "THE FOLLOWING ELECTROMAGNETIC PHYSICS LIST HAS BEEN ACTIVATED: "
+        G4cout
+            << "THE FOLLOWING ELECTROMAGNETIC PHYSICS LIST HAS BEEN ACTIVATED: "
                "G4EmStandardPhysics_option3"
-               << G4endl;
+            << G4endl;
     } else if (name == "local_ion_ion_inelastic") {
         hadronPhys.push_back(new LocalIonIonInelasticPhysic());
         locIonIonInelasticIsRegistered = true;
 
     } else if (name == "HADRONTHERAPY_1") {
 
-        // The HADRONTHERAPY_1 physics list corresponds to the actual QGSP_BIC_HP
+        // The HADRONTHERAPY_1 physics list corresponds to the actual
+        // QGSP_BIC_HP
         // list
         // but with the following differences:
         // --> G4EmStandardPhysics_option4 for the electromagnetic processes
@@ -230,7 +237,8 @@ void HadrontherapyPhysicsList::AddPhysicsList(const G4String &name) {
         G4cout << "HADRONTHERAPY_1 PHYSICS LIST has been activated" << G4endl;
 
     } else if (name == "HADRONTHERAPY_2") {
-        // The HADRONTHERAPY_2 physics list corresponds to the actual QGSP_BIC_HP
+        // The HADRONTHERAPY_2 physics list corresponds to the actual
+        // QGSP_BIC_HP
         // list
         // but with the following differences:
         // --> G4EmStandardPhysics_option4 for the electromagnetic processes
@@ -291,7 +299,8 @@ void HadrontherapyPhysicsList::AddStepMax() {
 void HadrontherapyPhysicsList::SetCuts() {
     if (verboseLevel > 0) {
         G4cout << "PhysicsList::SetCuts:";
-        G4cout << "CutLength : " << G4BestUnit(defaultCutValue, "Length") << G4endl;
+        G4cout << "CutLength : " << G4BestUnit(defaultCutValue, "Length")
+               << G4endl;
     }
 
     // Production thresholds for detector regions
@@ -302,15 +311,4 @@ void HadrontherapyPhysicsList::SetCuts() {
     SetCutValue(cutForGamma, "gamma");
     SetCutValue(cutForElectron, "e-");
     SetCutValue(cutForPositron, "e+");
-    // At moment, only 'DetectorLog' is defined as G4Region
-    //
-    //    G4String regName[] = {"DetectorLog"};
-    //    G4double fuc = 1.;
-    //    for (G4int i = 0; i < 1; i++) {
-    //        G4Region* reg = G4RegionStore::GetInstance()->GetRegion(regName[i]);
-    //        G4ProductionCuts* cuts = new G4ProductionCuts;
-    //        cuts->SetProductionCut(defaultCutValue * fuc);
-    //        reg->SetProductionCuts(cuts);
-    //        fuc *= 10.;
-    //    }
 }

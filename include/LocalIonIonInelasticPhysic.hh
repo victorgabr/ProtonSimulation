@@ -1,4 +1,3 @@
-//
 // ********************************************************************
 // * License and Disclaimer                                           *
 // *                                                                  *
@@ -34,11 +33,12 @@
 #include "globals.hh"
 
 class LocalIonIonInelasticPhysic : public G4VPhysicsConstructor {
-public:
-    LocalIonIonInelasticPhysic(const G4String& name = "local_ion_ion_inelastic");
+  public:
+    LocalIonIonInelasticPhysic(
+        const G4String &name = "local_ion_ion_inelastic");
     virtual ~LocalIonIonInelasticPhysic();
 
-protected:
+  protected:
     void ConstructParticle() {}
     void ConstructProcess();
 };

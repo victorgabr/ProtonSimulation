@@ -1,4 +1,3 @@
-//
 // ********************************************************************
 // * License and Disclaimer                                           *
 // *                                                                  *
@@ -24,7 +23,8 @@
 // ********************************************************************
 //
 // Hadrontherapy advanced example for Geant4
-// See more at: https://twiki.cern.ch/twiki/bin/view/Geant4/AdvancedExamplesHadrontherapy
+// See more at:
+// https://twiki.cern.ch/twiki/bin/view/Geant4/AdvancedExamplesHadrontherapy
 
 #ifndef HadrontherapyStepMaxMessenger_h
 #define HadrontherapyStepMaxMessenger_h 1
@@ -35,18 +35,16 @@
 class HadrontherapyStepMax;
 class G4UIcmdWithADoubleAndUnit;
 
-/////////////////////////////////////////////////////////////////////////////
-class HadrontherapyStepMaxMessenger: public G4UImessenger
-{
-public:
-  HadrontherapyStepMaxMessenger(HadrontherapyStepMax*);
-  ~HadrontherapyStepMaxMessenger();
-    
-  void SetNewValue(G4UIcommand*, G4String);
-    
-private:
-  HadrontherapyStepMax* stepMax;
-  G4UIcmdWithADoubleAndUnit* StepMaxCmd;
+class HadrontherapyStepMaxMessenger : public G4UImessenger {
+  public:
+    HadrontherapyStepMaxMessenger(HadrontherapyStepMax *);
+    ~HadrontherapyStepMaxMessenger();
+
+    void SetNewValue(G4UIcommand *, G4String);
+
+  private:
+    HadrontherapyStepMax *stepMax;
+    G4UIcmdWithADoubleAndUnit *StepMaxCmd;
 };
 
 #endif

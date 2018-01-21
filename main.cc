@@ -1,3 +1,4 @@
+//
 // ********************************************************************
 // * License and Disclaimer                                           *
 // *                                                                  *
@@ -23,96 +24,102 @@
 // ********************************************************************
 //
 // --------------------------------------------------------------
-//                 GEANT 4 - ProtonSimulation
+//                 GEANT 4 - therapy example
 // --------------------------------------------------------------
 //
-// Code developed by:  Victor Gabriel Leandro Alves
-// Copyright 2017
-//    *******************************
-//    *                             *
-//    *    main.cc                *
-//    *                             *
-//    *******************************
+// Code developed currently by:
+//  S.Guatelli & D. Cutajar
 
-#include "DetectorConstruction.hh"
+#ifdef G4MULTITHREADED
+#include "G4MTRunManager.hh"
+#else
 #include "G4RunManager.hh"
-#include "G4UImanager.hh"
-#include "G4UIterminal.hh"
-#include "HadrontherapyPhysicsList.hh"
-#include "PrimaryGeneratorAction.hh"
-#include "Randomize.hh"
-#include "RunAction.hh"
-#include "globals.hh"
-
-#ifdef G4UI_USE
-#include "G4UIExecutive.hh"
 #endif
 
 #ifdef G4VIS_USE
 #include "G4VisExecutive.hh"
 #endif
 
+#ifdef G4UI_USE
+#include "G4UIExecutive.hh"
+#endif
+
+#include "ActionInitialization.hh"
+#include "DetectorConstruction.hh"
+#include "G4UImanager.hh"
+#include "HadrontherapyPhysicsList.hh"
+
+#include "G4ScoringManager.hh"
+#include "ScoreWriter.hh"
 
 int main(int argc, char **argv) {
 
-    CLHEP::HepRandom::setTheEngine(new CLHEP::RanecuEngine);
-    // Set the random number generator manually
+#ifdef G4MULTITHREADED
+    G4MTRunManager *pRunManager = new G4MTRunManager;
+    pRunManager->SetNumberOfThreads(8); // Is equal to 2 by default
+#else
+    G4RunManager *pRunManager = new G4RunManager;
+#endif
 
-    G4long myseed = 1;
-    CLHEP::HepRandom::setTheSeed(myseed);
+    G4cout << "***********************" << G4endl;
+    G4cout << "*** " << G4Random::getTheSeed() << " ***" << G4endl;
+    G4cout << "***********************" << G4endl;
+    // Access to the Scoring Manager pointer
 
-    // Set mandatory initialization and user action classes
-    const G4String fileName = argv[1];
-    G4String outFilename = argv[2];
-    G4String macroFilename = argv[3];
+    G4ScoringManager *scoringManager = G4ScoringManager::GetScoringManager();
 
-    DetectorConstruction *detector = new DetectorConstruction(fileName);
+    // Overwrite the default output file with user-defined one
+    scoringManager->SetScoreWriter(new ScoreWriter());
 
-    // Start Run manager
-    G4RunManager *runManager = new G4RunManager;
-    runManager->SetUserInitialization(detector);
-    runManager->SetUserInitialization(new HadrontherapyPhysicsList);
-    PrimaryGeneratorAction *particleGun = new PrimaryGeneratorAction;
-    runManager->SetUserAction(particleGun);
-    // using output filename
-    RunAction *runAction = new RunAction(outFilename);
-    runManager->SetUserAction(runAction);
-    runManager->Initialize();
+    // Initialize the physics component
+    pRunManager->SetUserInitialization(new HadrontherapyPhysicsList);
 
+    // 32Initialize the detector component
+    DetectorConstruction *pDetectorConstruction =
+        new DetectorConstruction(argv[1]);
+    pRunManager->SetUserInitialization(pDetectorConstruction);
+
+    // User action initialization
+    ActionInitialization *actions = new ActionInitialization();
+    pRunManager->SetUserInitialization(actions);
+
+    // Initialize G4 kernel
+    pRunManager->Initialize();
+
+//// Initialize the Visualization component
 #ifdef G4VIS_USE
-    // Initialize visualization
+    // Visualization manager
     G4VisManager *visManager = new G4VisExecutive;
-    // G4VisExecutive can take a verbosity argument - see /vis/verbose guidance.
-    // G4VisManager* visManager = new G4VisExecutive("Quiet");
     visManager->Initialize();
 #endif
 
-    // Get the pointer to the User Interface manager
+    // get the pointer to the User Interface manager
     G4UImanager *UImanager = G4UImanager::GetUIpointer();
 
-// interactive mode : define UI session
+    // implement batch mode selection using gdml files
+    if (argc == 2) // Define UI session for interactive mode.
+    {
 #ifdef G4UI_USE
-    G4UIExecutive *ui = new G4UIExecutive(argc, argv);
-#ifdef G4VIS_USE
-    //    UImanager->ApplyCommand("/control/execute proton_source.mac");
-    //    G4double en = particleGun->getParticleEnergy();
-    UImanager->ApplyCommand("/control/execute " + macroFilename);
-#else
-    UImanager->ApplyCommand("/control/execute " + macroFilename);
+        G4UIExecutive *ui = new G4UIExecutive(argc, argv);
+        G4cout << " UI session starts ..." << G4endl;
+        G4String fileName = "init.mac";
+        UImanager->ApplyCommand("/control/execute " + fileName);
+        ui->SessionStart();
+        delete ui;
 #endif
-    ui->SessionStart();
-    delete ui;
-#endif
+    } else if (argc == 3) // Batch mode
+    {
+        G4String command = "/control/execute ";
+        G4String fileName = argv[2];
+        UImanager->ApplyCommand(command + fileName);
+    }
 
 // Job termination
-// Free the store: user actions, physics_list and detector_description are
-// owned and deleted by the run manager, so they should not be deleted
-// in the main() program !
-
 #ifdef G4VIS_USE
     delete visManager;
 #endif
-    delete runManager;
+
+    delete pRunManager;
 
     return 0;
 }

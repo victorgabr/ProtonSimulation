@@ -1,0 +1,10 @@
+#  the energy deposition in the phantom
+/score/create/boxMesh boxMesh_4
+# the voxels are 1 mm wide.
+/score/mesh/boxSize 15 25 175 mm
+/score/mesh/nBin 15 25 175
+#/score/mesh/translate/xyz 0. 0. 0. mm
+/score/quantity/energyDeposit eDep
+/score/filter/particle protonFilter proton
+/score/close
+/score/list

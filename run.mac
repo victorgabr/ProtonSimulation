@@ -3,6 +3,21 @@
 
 # Physics
 /Physics/addPhysics HADRONTHERAPY_1
+# add scorer
+
+# Scoring mesh is used to calculate
+#  the energy deposition in the phantom
+/score/create/boxMesh boxMesh_4
+# the voxels are 1 mm wide.
+/score/mesh/boxSize 15 15 175 mm
+/score/mesh/nBin 1 1 175
+#/score/mesh/translate/xyz 0. 0. 0. mm
+/score/quantity/energyDeposit eDep
+#/score/filter/particle protonFilter proton
+/score/close
+/score/list
+
+
 #=====================================================
 # Pencil Beam Source - GATE example
 #=====================================================
@@ -15,15 +30,12 @@
 /gps/pos/centre 0 0 -40 cm
 /gps/pos/sigma_x 3 mm
 /gps/pos/sigma_y 3 mm
-/gps/ene/mono 226 MeV
+/gps/ene/mono 100 MeV
 /gps/ene/type Gauss
 /gps/ene/sigma 2.0 MeV
 /gps/direction 0 0 1
 
-
 # Run particles
-/run/beamOn 100
+/run/beamOn 10000
 
-
-
-
+/score/dumpAllQuantitiesToFile boxMesh_4 EnergyDeposition_Proton_100MeV.out csv

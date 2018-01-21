@@ -23,16 +23,10 @@
 // ********************************************************************
 //
 // --------------------------------------------------------------
-//                 GEANT 4 - ProtonSimulation
+//                 DetectorConstruction.hh
 // --------------------------------------------------------------
 //
 // Code developed by:  Victor Gabriel Leandro Alves
-// Copyright 2008-2017
-//    *******************************
-//    *                             *
-//    *    DetectorConstruction.hh                *
-//    *                             *
-//    *******************************
 
 #ifndef DetectorConstruction_H
 #define DetectorConstruction_H 1
@@ -45,7 +39,7 @@ class DetectorMessenger;
 // ----------------------------------------------------------------------------
 
 class DetectorConstruction : public G4VUserDetectorConstruction {
-public:
+  public:
     // Constructor and destructor
     //
     DetectorConstruction();
@@ -61,34 +55,16 @@ public:
     void readGDML();
     void setScoring();
 
-private:
+  private:
     // GDMLparser
-    G4GDMLParser parser;
+    G4GDMLParser fParser;
 
-    G4int nScoreVols;
     // Reading and Writing Settings
     G4String fReadFile;
 
     // Reading and Writing Settings
-    const G4String _gdmlFile;
+    const G4String fGDMLFile;
     G4VPhysicalVolume *fWorldPhysVol;
-
-public:
-    // position mapping
-    // Output map - energy binning on x axis, theta on y
-    std::map<G4int, CLHEP::Hep3Vector> scorerPositions;
-    std::map<G4int, CLHEP::Hep3Vector> GetScorerPositions();
-
-    void DescriptionFcnPtr(G4VPhysicalVolume *aPV, G4int aDepth, G4int replicaNo,
-                           const G4Transform3D &aTransform);
-
-private:
-    void TraverseReplicas(G4VPhysicalVolume *aPV, G4int aDepth,
-                          const G4Transform3D &aTransform);
-
-    void DescribeAndDescendGeometry(G4VPhysicalVolume *aPV, G4int aDepth,
-                                    G4int replicaNo,
-                                    const G4Transform3D &aTransform);
 };
 
 // ----------------------------------------------------------------------------

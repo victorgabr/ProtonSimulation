@@ -1,48 +1,47 @@
-#=====================================================
-# VISUALISATION
-#=====================================================
-
-#/vis/open OGLIQt
+# Use this open statement to create an OpenGL view:
 /vis/open OGL
-/vis/drawVolume
-/vis/viewer/flush
-/tracking/storeTrajectory             1
-/vis/scene/add/trajectories
-/vis/scene/endOfEventAction           accumulate
 
+# Disable auto refresh and quieten vis messages whilst scene and
+# trajectories are established:
+/vis/viewer/set/autoRefresh false
+/vis/verbose errors
+#
+# Draw geometry:
+/vis/drawVolume
+# Draw coordinate axes:
 /vis/scene/add/axes            0 0 0 40 cm
 /vis/scene/add/text            40 0 0 cm  20 0 0   X
 /vis/scene/add/text            0 40 0 cm  20 0 0   Y
 /vis/scene/add/text            0 0 40 cm  20 0 0   Z
 /vis/viewer/set/auxiliaryEdge true
 
-
-#=====================================================
-# Pencil Beam Source - GATE example
-#=====================================================
-
-/gps/particle proton
-/gps/pos/type Beam
-/gps/pos/rot1 0 1 0
-/gps/pos/rot2 1 0 0
-/gps/pos/shape Circle
-/gps/pos/centre 0 0 -37 cm
-#/gps/pos/sigma_x 3 mm
-#/gps/pos/sigma_y 3 mm
-/gps/ene/mono 226 MeV
-/gps/ene/type Gauss
-#/gps/ene/sigma 2.0 MeV
-/gps/direction 0 0 1
-
-
-/control/verbose 2
-/run/verbose 2
-
-# Physics
-/Physics/addPhysics HADRONTHERAPY_1
-
-# Run 1 particles
-/run/beamOn 100
-
-
-
+# Draw smooth trajectories at end of event, showing trajectory points
+# as markers 2 pixels wide:
+/vis/scene/add/trajectories smooth
+/vis/modeling/trajectories/create/drawByCharge
+/vis/modeling/trajectories/drawByCharge-0/default/setDrawStepPts true
+/vis/modeling/trajectories/drawByCharge-0/default/setStepPtsSize 2
+# (if too many tracks cause core dump => /tracking/storeTrajectory 0)
+#
+# Draw hits at end of event:
+#/vis/scene/add/hits
+#
+# To draw only gammas:
+#/vis/filtering/trajectories/create/particleFilter
+#/vis/filtering/trajectories/particleFilter-0/add gamma
+#
+# To invert the above, drawing all particles except gammas,
+# keep the above two lines but also add:
+#/vis/filtering/trajectories/particleFilter-0/invert true
+#
+# Many other options are available with /vis/modeling and /vis/filtering.
+# For example, to select colour by particle ID:
+#/vis/modeling/trajectories/create/drawByParticleID
+#/vis/modeling/trajectories/drawByParticleID-0/set e- blue
+#
+# To superimpose all of the events from a given run:
+/vis/scene/endOfEventAction accumulate
+#
+# Re-establish auto refreshing and verbosity:
+/vis/viewer/set/autoRefresh true
+/vis/verbose warnings

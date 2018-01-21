@@ -22,8 +22,6 @@
 // * use  in  resulting  scientific  publications,  and indicate your *
 // * acceptance of all terms of the Geant4 Software license.          *
 // ********************************************************************
-//
-//
 // --------------------------------------------------------------
 //                 GEANT 4 - Based on Brachytherapy example
 // --------------------------------------------------------------
@@ -37,9 +35,7 @@
 //    *                                          *
 //    ********************************************
 //
-// $Id: PrimaryGeneratorAction.ccBrachytherapy example 84280 2014-10-13
-// 07:21:10Z gcosmo $
-//
+
 #include "PrimaryGeneratorAction.hh"
 #include <G4GeneralParticleSource.hh>
 
@@ -50,13 +46,10 @@ PrimaryGeneratorAction::PrimaryGeneratorAction() {
     gun = new G4GeneralParticleSource();
 }
 
-PrimaryGeneratorAction::~PrimaryGeneratorAction() {
-    delete gun;
-}
+PrimaryGeneratorAction::~PrimaryGeneratorAction() { delete gun; }
 
 void PrimaryGeneratorAction::GeneratePrimaries(G4Event *anEvent) {
     gun->GeneratePrimaryVertex(anEvent);
-
 }
 
 G4double PrimaryGeneratorAction::getParticleEnergy() {

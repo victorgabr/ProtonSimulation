@@ -1,101 +1,52 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <gdml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:noNamespaceSchemaLocation="/home/victor/geant4/source/source/persistency/gdml/schema/gdml.xsd">
-    <define>
-        <variable name="i" value="0"/>
-        <variable name="j" value="0"/>
-        <variable name="k" value="0"/>
-        <constant name="num" value="350"/>
-        <constant name="scale" value="1"/>
-    </define>
-
-    <materials>
-        <material Z="13" name="ALU" state="solid">
-            <D unit="g/cm3" value="2.7"/>
-            <atom unit="g/mole" value="26.98"/>
-        </material>
-        <material Z="1" name="AIR" state="gas">
-            <D unit="g/cm3" value="1e-24"/>
-            <atom unit="g/mole" value="1.00794"/>
-        </material>
-    </materials>
-
-    <solids>
-        <box lunit="mm" name="WorldBox" x="2000" y="2000" z="2000"/>
-        <tube name= "sPhantom" rmin="0" rmax="50" z="350" deltaphi="2*pi" startphi="0" aunit="rad" lunit= "mm"/>
-        <tube name= "motherDetector" rmin="200" rmax="210" z="350" deltaphi="2*pi" startphi="0" aunit="rad" lunit= "mm"/>
-        <tube name= "detector" rmin="200" rmax="210" z="2" deltaphi="2*pi" startphi="0" aunit="rad" lunit= "mm"/>
-
-        <tube name= "Colimator" rmin="55" rmax="200" z="1" deltaphi="2*pi" startphi="0" aunit="rad" lunit= "mm"/>
-
-        <box name="Box" x="5" y="5" z="5" lunit="mm"/>
-
-    </solids>
-
-    <structure>
-    <volume name="logBox">
-       <materialref ref="G4_WATER"/>
-       <solidref ref="Box"/>
-         <auxiliary auxtype="SensDet" auxvalue="SD"/>
+  <define>
+    <position name="col_pos" x="0" y="-110" z="-200"/>
+    <position name="col_pos1" x="0" y="-110" z="+200"/>
+  </define>
+  <materials>
+    <material Z="1" name="Vacuum" state="gas">
+      <D unit="g/cm3" value="1e-24"/>
+      <atom unit="g/mole" value="1.00794"/>
+    </material>
+  </materials>
+  <solids>
+    <box lunit="mm" name="WorldBox" x="2000" y="2000" z="2000"/>
+    <tube name= "sPhantom" rmin="0" rmax="50" z="400" deltaphi="2*pi" startphi="0" aunit="rad" lunit= "mm"/>
+    <box name="Box" x="200" y="100" z="360" lunit="mm"/>
+    <box name="Box1" x="200" y="100" z="360" lunit="mm"/>
+  </solids>
+  <structure>
+    <volume name="phantom">
+      <materialref ref="G4_WATER"/>
+      <solidref ref="sPhantom"/>
     </volume>
-
-
-
-        <volume name="phantom">
-            <materialref ref="G4_WATER"/>
-            <solidref ref="sPhantom"/>
-        </volume>
-
-        <volume name="lvColimator">
-            <materialref ref="G4_Pb"/>
-            <solidref ref="Colimator" />
-        </volume>
-
-        <volume name="lvDetector">
-          <materialref ref="G4_AIR"/>
-          <solidref ref="detector"/>
-          <auxiliary auxtype="SensDet" auxvalue="SD"/>
-        </volume>
-
-        <volume name="lvReplica">
-            <materialref ref="G4_AIR"/>
-            <solidref ref="motherDetector"/>
-            <replicavol number="175">
-                <volumeref ref="lvDetector"/>
-                    <replicate_along_axis>
-                        <direction  z="1" />
-                        <width value="2" unit="mm"/>
-                        <offset value="0" unit="mm"/>
-                    </replicate_along_axis>
-            </replicavol>
-         </volume>
-
-
-
-        <volume name="TOP">
-            <materialref ref="G4_AIR"/>
-                <solidref ref="WorldBox"/>
-
-                    <physvol name="phantom_phys">
-                        <volumeref ref="phantom"/>
-                    </physvol>
-
-                    <loop for="k" from="0" to="num" step="2">
-                       <physvol>
-                          <volumeref ref="lvColimator"/>
-                          <position name="posijk" x="0" y="0" z="scale*(k-num/2)"/>
-                       </physvol>
-                    </loop>
-                    <physvol name="detectorPhys">
-                        <volumeref ref="lvReplica"/>
-                    </physvol>
-
-        </volume>
-
-    </structure>
-
-    <setup name="Default" version="1.0">
-        <world ref="TOP"/>
+    <volume name="lvColimator">
+      <materialref ref="G4_Pb"/>
+      <solidref ref="Box" />
+    </volume>
+    <volume name="lvColimator1">
+      <materialref ref="G4_Pb"/>
+      <solidref ref="Box1" />
+    </volume>
+    <volume name="TOP">
+      <materialref ref="Vacuum"/>
+      <solidref ref="WorldBox"/>
+      <physvol name="phantom_phys">
+        <volumeref ref="phantom"/>
+      </physvol>
+      <physvol name="pvColimator">
+        <volumeref ref="lvColimator"/>
+        <positionref ref="col_pos"/>
+      </physvol>
+      <physvol name="pvColimator1">
+        <volumeref ref="lvColimator1"/>
+        <positionref ref="col_pos1"/>
+      </physvol>
+    </volume>
+  </structure>
+  <setup name="Default" version="1.0">
+      <world ref="TOP"/>
     </setup>
-
-</gdml>
+  </gdml>

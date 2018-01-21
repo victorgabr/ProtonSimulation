@@ -42,15 +42,15 @@
 class G4GeneralParticleSource;
 
 class PrimaryGeneratorAction : public G4VUserPrimaryGeneratorAction {
-public:
+  public:
     PrimaryGeneratorAction();
     ~PrimaryGeneratorAction();
 
-public:
+  public:
     void GeneratePrimaries(G4Event *anEvent);
-    G4double getParticleEnergy() ;
+    G4double getParticleEnergy();
 
-private:
+  private:
     G4GeneralParticleSource *gun;
 };
 #endif
