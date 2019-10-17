@@ -52,11 +52,14 @@
 #include "G4ScoringManager.hh"
 #include "ScoreWriter.hh"
 
+#include <thread>
+
 int main(int argc, char **argv) {
 
 #ifdef G4MULTITHREADED
     G4MTRunManager *pRunManager = new G4MTRunManager;
-    pRunManager->SetNumberOfThreads(8); // Is equal to 2 by default
+    auto nThreads = std::thread::hardware_concurrency();
+    pRunManager->SetNumberOfThreads(static_cast<G4int>(nThreads));
 #else
     G4RunManager *pRunManager = new G4RunManager;
 #endif
